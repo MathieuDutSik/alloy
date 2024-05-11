@@ -86,6 +86,7 @@ hyper = [
     "alloy-provider?/hyper",
     "alloy-transport-http?/hyper",
 ]
+disable_wasm_spawn = []
 
 # ---------------------------------------- Main re-exports --------------------------------------- #
 
