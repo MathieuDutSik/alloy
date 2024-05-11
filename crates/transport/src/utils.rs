@@ -54,7 +54,7 @@ where
     T: Future<Output = ()> + 'static,
 {
     fn spawn_task(self) {
-//        #[cfg(not(feature = "disable_wasm_spawn"))]
-//        wasm_bindgen_futures::spawn_local(self);
+        #[cfg(feature = "enable_wasm_spawn")]
+        wasm_bindgen_futures::spawn_local(self);
     }
 }
