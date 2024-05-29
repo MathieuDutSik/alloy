@@ -281,11 +281,11 @@ impl<L, F, N> ProviderBuilder<L, F, N> {
     ) -> Result<F::Provider, TransportError>
     where
         L: ProviderLayer<
-            RootProvider<alloy_pubsub::PubSubFrontend, N>,
-            alloy_pubsub::PubSubFrontend,
+            RootProvider<linera_alloy_pubsub::PubSubFrontend, N>,
+            linera_alloy_pubsub::PubSubFrontend,
             N,
         >,
-        F: TxFiller<N> + ProviderLayer<L::Provider, alloy_pubsub::PubSubFrontend, N>,
+        F: TxFiller<N> + ProviderLayer<L::Provider, linera_alloy_pubsub::PubSubFrontend, N>,
         N: Network,
     {
         let client = ClientBuilder::default().ws(connect).await?;
@@ -299,13 +299,13 @@ impl<L, F, N> ProviderBuilder<L, F, N> {
         connect: alloy_transport_ipc::IpcConnect<T>,
     ) -> Result<F::Provider, TransportError>
     where
-        alloy_transport_ipc::IpcConnect<T>: alloy_pubsub::PubSubConnect,
+        alloy_transport_ipc::IpcConnect<T>: linera_alloy_pubsub::PubSubConnect,
         L: ProviderLayer<
-            RootProvider<alloy_pubsub::PubSubFrontend, N>,
-            alloy_pubsub::PubSubFrontend,
+            RootProvider<linera_alloy_pubsub::PubSubFrontend, N>,
+            linera_alloy_pubsub::PubSubFrontend,
             N,
         >,
-        F: TxFiller<N> + ProviderLayer<L::Provider, alloy_pubsub::PubSubFrontend, N>,
+        F: TxFiller<N> + ProviderLayer<L::Provider, linera_alloy_pubsub::PubSubFrontend, N>,
         N: Network,
     {
         let client = ClientBuilder::default().ipc(connect).await?;

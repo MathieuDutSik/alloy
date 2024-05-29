@@ -9,7 +9,7 @@
 #[macro_use]
 extern crate tracing;
 
-use alloy_pubsub::ConnectionInterface;
+use linera_alloy_pubsub::ConnectionInterface;
 
 #[cfg(not(target_arch = "wasm32"))]
 mod native;
@@ -26,7 +26,7 @@ pub use wasm::WsConnect;
 /// Users should NEVER instantiate a backend directly. Instead, they should use
 /// [`PubSubConnect`] to get a running service with a running backend.
 ///
-/// [`PubSubConnect`]: alloy_pubsub::PubSubConnect
+/// [`PubSubConnect`]: linera_alloy_pubsub::PubSubConnect
 #[derive(Debug)]
 pub struct WsBackend<T> {
     /// The websocket connection.

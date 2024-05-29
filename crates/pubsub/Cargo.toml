@@ -1,5 +1,5 @@
 [package]
-name = "alloy-pubsub"
+name = "linera-alloy-pubsub"
 description = "Ethereum JSON-RPC publish-subscribe tower service and type definitions"
 
 version.workspace = true

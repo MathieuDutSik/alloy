@@ -24,10 +24,10 @@ Alloy maintains the following transports:
 
 - [alloy-transport-http]: JSON-RPC via HTTP.
 - [alloy-transport-ws]: JSON-RPC via Websocket, supports pubsub via
-    [alloy-pubsub].
-- [alloy-transport-ipc]: JSON-RPC via IPC, supports pubsub via [alloy-pubsub].
+    [linera-alloy-pubsub].
+- [alloy-transport-ipc]: JSON-RPC via IPC, supports pubsub via [linera-alloy-pubsub].
 
 [alloy-transport-http]: https://alloy-rs.github.io/alloy/alloy_transport_http/index.html
 [alloy-transport-ws]: https://alloy-rs.github.io/alloy/alloy_transport_ws/index.html
 [alloy-transport-ipc]: https://alloy-rs.github.io/alloy/alloy_transport_ipc/index.html
-[alloy-pubsub]: https://alloy-rs.github.io/alloy/alloy_pubsub/index.html
+[linera-alloy-pubsub]: https://alloy-rs.github.io/alloy/linera_alloy_pubsub/index.html

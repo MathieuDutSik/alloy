@@ -5,7 +5,7 @@ no_std_packages=(
     linera-alloy-eips
     linera-alloy-genesis
     alloy-serde
-    alloy-consensus
+    linera-alloy-consensus
 )
 
 for package in "${no_std_packages[@]}"; do

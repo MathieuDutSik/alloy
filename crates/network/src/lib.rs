@@ -6,7 +6,7 @@
 #![cfg_attr(not(test), warn(unused_crate_dependencies))]
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
-use alloy_consensus::TxReceipt;
+use linera_alloy_consensus::TxReceipt;
 use linera_alloy_eips::eip2718::{Eip2718Envelope, Eip2718Error};
 use alloy_json_rpc::RpcObject;
 use alloy_primitives::Address;
@@ -30,7 +30,7 @@ pub use linera_alloy_eips::eip2718;
 ///
 /// This is distinct from [`TxReceipt`], since this is for JSON-RPC receipts.
 ///
-/// [`TxReceipt`]: alloy_consensus::TxReceipt
+/// [`TxReceipt`]: linera_alloy_consensus::TxReceipt
 pub trait ReceiptResponse {
     /// Address of the created contract, or `None` if the transaction was not a deployment.
     fn contract_address(&self) -> Option<Address>;

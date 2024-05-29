@@ -31,7 +31,7 @@ After incorporating Alloy, you may wish to utilize specific features of the crat
 This repository contains the following crates:
 
 - [`alloy`]: Meta-crate for the entire project, including [`alloy-core`]
-- [`alloy-consensus`] - Ethereum consensus interface
+- [`linera-alloy-consensus`] - Ethereum consensus interface
 - [`alloy-contract`] - Interact with on-chain contracts
 - [`linera-alloy-eips`] - Ethereum Improvement Proposal (EIP) implementations
 - [`linera-alloy-genesis`] - Ethereum genesis file definitions
@@ -39,7 +39,7 @@ This repository contains the following crates:
 - [`alloy-network`] - Network abstraction for RPC types
 - [`alloy-node-bindings`] - Ethereum execution-layer client bindings
 - [`alloy-provider`] - Interface with an Ethereum blockchain
-- [`alloy-pubsub`] - Ethereum JSON-RPC [publish-subscribe] tower service and type definitions
+- [`linera-alloy-pubsub`] - Ethereum JSON-RPC [publish-subscribe] tower service and type definitions
 - [`alloy-rpc-client`] - Low-level Ethereum JSON-RPC client implementation
 - [`alloy-rpc-types`] - Ethereum JSON-RPC types
   - [`alloy-rpc-types-engine`] - Ethereum execution-consensus layer (engine) API RPC types
@@ -56,7 +56,7 @@ This repository contains the following crates:
   - [`alloy-transport-ws`] - WS transport implementation
 
 [`alloy`]: https://github.com/alloy-rs/alloy/tree/main/crates/alloy
-[`alloy-consensus`]: https://github.com/alloy-rs/alloy/tree/main/crates/consensus
+[`linera-alloy-consensus`]: https://github.com/alloy-rs/alloy/tree/main/crates/consensus
 [`alloy-contract`]: https://github.com/alloy-rs/alloy/tree/main/crates/contract
 [`linera-alloy-eips`]: https://github.com/alloy-rs/alloy/tree/main/crates/eips
 [`linera-alloy-genesis`]: https://github.com/alloy-rs/alloy/tree/main/crates/genesis
@@ -64,7 +64,7 @@ This repository contains the following crates:
 [`alloy-network`]: https://github.com/alloy-rs/alloy/tree/main/crates/network
 [`alloy-node-bindings`]: https://github.com/alloy-rs/alloy/tree/main/crates/node-bindings
 [`alloy-provider`]: https://github.com/alloy-rs/alloy/tree/main/crates/provider
-[`alloy-pubsub`]: https://github.com/alloy-rs/alloy/tree/main/crates/pubsub
+[`linera-alloy-pubsub`]: https://github.com/alloy-rs/alloy/tree/main/crates/pubsub
 [`alloy-rpc-client`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-client
 [`alloy-rpc-types-engine`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-types-engine
 [`alloy-rpc-types-trace`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-types-trace
@@ -121,7 +121,7 @@ The following crates support `no_std`:
 - linera-alloy-eips
 - linera-alloy-genesis
 - alloy-serde
-- alloy-consensus
+- linera-alloy-consensus
 
 If you would like to add `no_std` support to a crate, please make sure to update
 `scripts/check_no_std.sh` as well.

@@ -109,7 +109,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # }
     /// ```
     #[cfg(feature = "pubsub")]
-    async fn subscribe_blocks(&self) -> TransportResult<alloy_pubsub::Subscription<Block>> {
+    async fn subscribe_blocks(&self) -> TransportResult<linera_alloy_pubsub::Subscription<Block>> {
         self.root().pubsub_frontend()?;
         let id = self.client().request("eth_subscribe", ("newHeads",)).await?;
         self.root().get_subscription(id).await
@@ -143,7 +143,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     #[cfg(feature = "pubsub")]
     async fn subscribe_pending_transactions(
         &self,
-    ) -> TransportResult<alloy_pubsub::Subscription<B256>> {
+    ) -> TransportResult<linera_alloy_pubsub::Subscription<B256>> {
         self.root().pubsub_frontend()?;
         let id = self.client().request("eth_subscribe", ("newPendingTransactions",)).await?;
         self.root().get_subscription(id).await
@@ -182,7 +182,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     #[cfg(feature = "pubsub")]
     async fn subscribe_full_pending_transactions(
         &self,
-    ) -> TransportResult<alloy_pubsub::Subscription<N::TransactionResponse>> {
+    ) -> TransportResult<linera_alloy_pubsub::Subscription<N::TransactionResponse>> {
         self.root().pubsub_frontend()?;
         let id = self.client().request("eth_subscribe", ("newPendingTransactions", true)).await?;
         self.root().get_subscription(id).await
@@ -222,7 +222,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     async fn subscribe_logs(
         &self,
         filter: &Filter,
-    ) -> TransportResult<alloy_pubsub::Subscription<Log>> {
+    ) -> TransportResult<linera_alloy_pubsub::Subscription<Log>> {
         self.root().pubsub_frontend()?;
         let id = self.client().request("eth_subscribe", ("logs", filter)).await?;
         self.root().get_subscription(id).await
@@ -231,7 +231,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// Subscribe to an RPC event.
     #[cfg(feature = "pubsub")]
     #[auto_impl(keep_default_for(&, &mut, Rc, Arc, Box))]
-    async fn subscribe<P, R>(&self, params: P) -> TransportResult<alloy_pubsub::Subscription<R>>
+    async fn subscribe<P, R>(&self, params: P) -> TransportResult<linera_alloy_pubsub::Subscription<R>>
     where
         P: RpcParam,
         R: RpcReturn,
@@ -574,12 +574,12 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
         self.client().request("eth_getLogs", (filter,)).await
     }
 
-    /// Retrieves account information ([Account](alloy_consensus::Account)) for the given [Address]
+    /// Retrieves account information ([Account](linera_alloy_consensus::Account)) for the given [Address]
     /// at the particular [BlockId].
     async fn get_account(
         &self,
         address: Address,
-    ) -> RpcWithBlock<T, Address, alloy_consensus::Account> {
+    ) -> RpcWithBlock<T, Address, linera_alloy_consensus::Account> {
         RpcWithBlock::new(self.weak_client(), "eth_getAccount", address)
     }
 

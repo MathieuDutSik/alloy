@@ -1,4 +1,4 @@
-# alloy-pubsub
+# linera-alloy-pubsub
 
 Ethereum JSON-RPC [publish-subscribe] tower service and type definitions.
 

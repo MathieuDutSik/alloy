@@ -15,7 +15,7 @@ use std::{
 use alloy_transport_http::Http;
 
 #[cfg(feature = "pubsub")]
-use alloy_pubsub::{PubSubFrontend, Subscription};
+use linera_alloy_pubsub::{PubSubFrontend, Subscription};
 
 /// The root provider manages the RPC client and the heartbeat. It is at the
 /// base of every provider stack.

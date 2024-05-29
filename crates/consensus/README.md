@@ -1,4 +1,4 @@
-# alloy-consensus
+# linera-alloy-consensus
 
 Ethereum consensus interface.
 

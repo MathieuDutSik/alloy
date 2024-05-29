@@ -4,7 +4,7 @@ use alloy_json_rpc::RpcError;
 use alloy_transport::{BoxTransport, BoxTransportConnect, TransportError, TransportErrorKind};
 
 #[cfg(feature = "pubsub")]
-use alloy_pubsub::PubSubConnect;
+use linera_alloy_pubsub::PubSubConnect;
 
 /// Connection string for built-in transports.
 #[derive(Clone, Debug, PartialEq, Eq)]

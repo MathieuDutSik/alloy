@@ -1,14 +1,14 @@
 //! RPC types for transactions
 
 use crate::eth::other::OtherFields;
-use alloy_consensus::{
+use linera_alloy_consensus::{
     SignableTransaction, Signed, TxEip1559, TxEip2930, TxEip4844, TxEip4844Variant, TxEnvelope,
     TxLegacy, TxType,
 };
 use alloy_primitives::{Address, Bytes, TxKind, B256, U256};
 use serde::{Deserialize, Serialize};
 
-pub use alloy_consensus::BlobTransactionSidecar;
+pub use linera_alloy_consensus::BlobTransactionSidecar;
 pub use linera_alloy_eips::eip2930::{AccessList, AccessListItem, AccessListWithGasUsed};
 
 mod common;
@@ -29,7 +29,7 @@ pub use request::{TransactionInput, TransactionRequest};
 mod signature;
 pub use signature::{Parity, Signature};
 
-pub use alloy_consensus::{AnyReceiptEnvelope, Receipt, ReceiptEnvelope, ReceiptWithBloom};
+pub use linera_alloy_consensus::{AnyReceiptEnvelope, Receipt, ReceiptEnvelope, ReceiptWithBloom};
 
 /// Transaction object used in RPC
 #[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]

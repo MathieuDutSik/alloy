@@ -1,5 +1,5 @@
 use crate::{other::OtherFields, TransactionRequest};
-use alloy_consensus::{TxEnvelope, TypedTransaction};
+use linera_alloy_consensus::{TxEnvelope, TypedTransaction};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::ops::{Deref, DerefMut};

@@ -1,5 +1,5 @@
 //! Payload types.
-use alloy_consensus::{Blob, Bytes48};
+use linera_alloy_consensus::{Blob, Bytes48};
 use linera_alloy_eips::{eip6110::DepositRequest, eip7002::WithdrawalRequest};
 use alloy_primitives::{Address, Bloom, Bytes, B256, B64, U256};
 use alloy_rpc_types::{transaction::BlobTransactionSidecar, Withdrawal};
@@ -457,11 +457,11 @@ impl ExecutionPayloadV4 {
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BlobsBundleV1 {
     /// All commitments in the bundle.
-    pub commitments: Vec<alloy_consensus::Bytes48>,
+    pub commitments: Vec<linera_alloy_consensus::Bytes48>,
     /// All proofs in the bundle.
-    pub proofs: Vec<alloy_consensus::Bytes48>,
+    pub proofs: Vec<linera_alloy_consensus::Bytes48>,
     /// All blobs in the bundle.
-    pub blobs: Vec<alloy_consensus::Blob>,
+    pub blobs: Vec<linera_alloy_consensus::Blob>,
 }
 
 #[cfg(feature = "ssz")]

@@ -68,7 +68,7 @@ pub use alloy_contract as contract;
 
 #[cfg(feature = "consensus")]
 #[doc(inline)]
-pub use alloy_consensus as consensus;
+pub use linera_alloy_consensus as consensus;
 
 #[cfg(feature = "eips")]
 #[doc(inline)]
@@ -100,7 +100,7 @@ pub mod providers {
 /// You will likely not need to use this module;
 /// see the [`providers`] module for high-level usage of pubsub.
 ///
-/// See [`alloy_pubsub`] for more details.
+/// See [`linera_alloy_pubsub`] for more details.
 #[doc = "\n"] // Empty doc line `///` gets deleted by rustfmt.
 #[cfg_attr(feature = "providers", doc = "[`providers`]: crate::providers")]
 #[cfg_attr(
@@ -110,7 +110,7 @@ pub mod providers {
 #[cfg(feature = "pubsub")]
 pub mod pubsub {
     #[doc(inline)]
-    pub use alloy_pubsub::*;
+    pub use linera_alloy_pubsub::*;
 }
 
 /// Ethereum JSON-RPC client and types.

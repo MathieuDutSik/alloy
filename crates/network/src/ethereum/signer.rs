@@ -1,5 +1,5 @@
 use crate::{Network, NetworkSigner, TxSigner};
-use alloy_consensus::{SignableTransaction, TxEnvelope, TypedTransaction};
+use linera_alloy_consensus::{SignableTransaction, TxEnvelope, TypedTransaction};
 use alloy_primitives::Address;
 use alloy_signer::Signature;
 use async_trait::async_trait;

@@ -1,7 +1,7 @@
 //! Ledger Ethereum app wrapper.
 
 use crate::types::{DerivationType, LedgerError, INS, P1, P1_FIRST, P2};
-use alloy_consensus::SignableTransaction;
+use linera_alloy_consensus::SignableTransaction;
 use alloy_primitives::{hex, Address, ChainId, B256};
 use alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
 use async_trait::async_trait;
@@ -346,7 +346,7 @@ mod tests {
     #[ignore]
     async fn test_sign_tx_legacy() {
         // https://github.com/gakonst/ethers-rs/blob/90b87bd85be98caa8bb592b67f3f9acbc8a409cf/ethers-signers/src/ledger/app.rs#L321
-        let mut tx = alloy_consensus::TxLegacy {
+        let mut tx = linera_alloy_consensus::TxLegacy {
             nonce: 5,
             gas_price: 400e9 as u128,
             gas_limit: 1000000,
@@ -375,7 +375,7 @@ mod tests {
         // Skip signature.
         let tx_rlp = hex!("01f8a30380018402625a0094cccccccccccccccccccccccccccccccccccccccc830186a0a4693c61390000000000000000000000000000000000000000000000000000000000000002f85bf859940000000000000000000000000000000000000102f842a00000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000060a7");
         let mut untyped_rlp = &tx_rlp[1..];
-        let mut tx = alloy_consensus::TxEip2930::decode(&mut untyped_rlp).unwrap();
+        let mut tx = linera_alloy_consensus::TxEip2930::decode(&mut untyped_rlp).unwrap();
         assert_eq!(hex::encode(tx.encoded_for_signing()), hex::encode(tx_rlp));
         test_sign_tx_generic(&mut tx).await;
     }
@@ -387,7 +387,7 @@ mod tests {
         // From the Ledger Ethereum app example: https://github.com/LedgerHQ/app-ethereum/blob/2264f677568cbc1e3177f9eccb3c14a229ab3255/examples/signTx.py#L100-L102
         let tx_rlp = hex!("02ef0306843b9aca008504a817c80082520894b2bb2b958afa2e96dab3f3ce7162b87daea39017872386f26fc1000080c0");
         let mut untyped_rlp = &tx_rlp[1..];
-        let mut tx = alloy_consensus::TxEip1559::decode(&mut untyped_rlp).unwrap();
+        let mut tx = linera_alloy_consensus::TxEip1559::decode(&mut untyped_rlp).unwrap();
         assert_eq!(hex::encode(tx.encoded_for_signing()), hex::encode(tx_rlp));
         test_sign_tx_generic(&mut tx).await;
     }

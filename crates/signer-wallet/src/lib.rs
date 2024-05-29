@@ -6,7 +6,7 @@
 #![cfg_attr(not(test), warn(unused_crate_dependencies))]
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
-use alloy_consensus::SignableTransaction;
+use linera_alloy_consensus::SignableTransaction;
 use alloy_network::{TxSigner, TxSignerSync};
 use alloy_primitives::{Address, ChainId, Signature, B256};
 use alloy_signer::{sign_transaction_with_chain_id, Result, Signer, SignerSync};
@@ -197,7 +197,7 @@ where
 #[cfg(test)]
 mod test {
     use super::*;
-    use alloy_consensus::TxLegacy;
+    use linera_alloy_consensus::TxLegacy;
     use alloy_primitives::{address, U256};
 
     #[tokio::test]

@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-pubsub.workspace = true
+linera-alloy-pubsub.workspace = true
 alloy-transport.workspace = true
 
 futures.workspace = true

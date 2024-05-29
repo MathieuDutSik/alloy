@@ -1,6 +1,6 @@
 use std::num::TryFromIntError;
 
-/// Error variants when converting from [crate::Transaction] to [alloy_consensus::Signed]
+/// Error variants when converting from [crate::Transaction] to [linera_alloy_consensus::Signed]
 /// transaction.
 #[derive(Debug, thiserror::Error)]
 pub enum ConversionError {

@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-consensus = { workspace = true, features = ["std"] }
+linera-alloy-consensus = { workspace = true, features = ["std"] }
 alloy-network.workspace = true
 alloy-primitives.workspace = true
 alloy-signer.workspace = true

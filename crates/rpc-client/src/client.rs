@@ -295,7 +295,7 @@ impl<T: Transport + Clone> RpcClientInner<T> {
 #[cfg(feature = "pubsub")]
 mod pubsub_impl {
     use super::*;
-    use alloy_pubsub::{PubSubConnect, PubSubFrontend, RawSubscription, Subscription};
+    use linera_alloy_pubsub::{PubSubConnect, PubSubFrontend, RawSubscription, Subscription};
     use alloy_transport::TransportResult;
 
     impl RpcClientInner<PubSubFrontend> {

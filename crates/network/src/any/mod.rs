@@ -1,7 +1,7 @@
 use core::fmt;
 
 use crate::{Network, ReceiptResponse};
-use alloy_consensus::TxType;
+use linera_alloy_consensus::TxType;
 use linera_alloy_eips::eip2718::Eip2718Error;
 use alloy_rpc_types::{
     AnyTransactionReceipt, Header, Transaction, TransactionRequest, WithOtherFields,
@@ -59,13 +59,13 @@ pub struct AnyNetwork {
 impl Network for AnyNetwork {
     type TxType = AnyTxType;
 
-    type TxEnvelope = alloy_consensus::TxEnvelope;
+    type TxEnvelope = linera_alloy_consensus::TxEnvelope;
 
-    type UnsignedTx = alloy_consensus::TypedTransaction;
+    type UnsignedTx = linera_alloy_consensus::TypedTransaction;
 
-    type ReceiptEnvelope = alloy_consensus::AnyReceiptEnvelope;
+    type ReceiptEnvelope = linera_alloy_consensus::AnyReceiptEnvelope;
 
-    type Header = alloy_consensus::Header;
+    type Header = linera_alloy_consensus::Header;
 
     type TransactionRequest = WithOtherFields<TransactionRequest>;
 

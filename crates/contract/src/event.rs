@@ -148,7 +148,7 @@ fn decode_log<E: SolEvent>(log: &Log) -> alloy_sol_types::Result<E> {
 #[cfg(feature = "pubsub")]
 pub(crate) mod subscription {
     use super::*;
-    use alloy_pubsub::Subscription;
+    use linera_alloy_pubsub::Subscription;
 
     /// An event subscription.
     ///

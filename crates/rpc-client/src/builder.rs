@@ -80,8 +80,8 @@ impl<L> ClientBuilder<L> {
     #[cfg(feature = "pubsub")]
     pub async fn pubsub<C>(self, pubsub_connect: C) -> TransportResult<RpcClient<L::Service>>
     where
-        C: alloy_pubsub::PubSubConnect,
-        L: Layer<alloy_pubsub::PubSubFrontend>,
+        C: linera_alloy_pubsub::PubSubConnect,
+        L: Layer<linera_alloy_pubsub::PubSubFrontend>,
         L::Service: Transport,
     {
         let is_local = pubsub_connect.is_local();
@@ -97,7 +97,7 @@ impl<L> ClientBuilder<L> {
         ws_connect: alloy_transport_ws::WsConnect,
     ) -> TransportResult<RpcClient<L::Service>>
     where
-        L: Layer<alloy_pubsub::PubSubFrontend>,
+        L: Layer<linera_alloy_pubsub::PubSubFrontend>,
         L::Service: Transport,
     {
         self.pubsub(ws_connect).await
@@ -111,8 +111,8 @@ impl<L> ClientBuilder<L> {
         ipc_connect: alloy_transport_ipc::IpcConnect<T>,
     ) -> TransportResult<RpcClient<L::Service>>
     where
-        alloy_transport_ipc::IpcConnect<T>: alloy_pubsub::PubSubConnect,
-        L: Layer<alloy_pubsub::PubSubFrontend>,
+        alloy_transport_ipc::IpcConnect<T>: linera_alloy_pubsub::PubSubConnect,
+        L: Layer<linera_alloy_pubsub::PubSubFrontend>,
         L::Service: Transport,
     {
         self.pubsub(ipc_connect).await

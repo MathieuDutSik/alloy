@@ -1,5 +1,5 @@
 [package]
-name = "alloy-consensus"
+name = "linera-alloy-consensus"
 description = "Ethereum consensus interface"
 
 version.workspace = true

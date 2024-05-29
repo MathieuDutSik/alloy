@@ -39,7 +39,7 @@ assert_eq!(recovered, signer.address());
 Sign a transaction:
 
 ```rust
-use alloy_consensus::TxLegacy;
+use linera_alloy_consensus::TxLegacy;
 use alloy_primitives::{U256, address, bytes};
 use alloy_signer::{Signer, SignerSync};
 use alloy_network::{TxSignerSync};

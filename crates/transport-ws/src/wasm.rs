@@ -1,5 +1,5 @@
 use super::WsBackend;
-use alloy_pubsub::PubSubConnect;
+use linera_alloy_pubsub::PubSubConnect;
 use alloy_transport::{utils::Spawnable, TransportErrorKind, TransportResult};
 use futures::{
     sink::SinkExt,
@@ -20,11 +20,11 @@ impl PubSubConnect for WsConnect {
         alloy_transport::utils::guess_local_url(&self.url)
     }
 
-    async fn connect(&self) -> TransportResult<alloy_pubsub::ConnectionHandle> {
+    async fn connect(&self) -> TransportResult<linera_alloy_pubsub::ConnectionHandle> {
         let socket =
             WsMeta::connect(&self.url, None).await.map_err(TransportErrorKind::custom)?.1.fuse();
 
-        let (handle, interface) = alloy_pubsub::ConnectionHandle::new();
+        let (handle, interface) = linera_alloy_pubsub::ConnectionHandle::new();
         let backend = WsBackend { socket, interface };
 
         backend.spawn();

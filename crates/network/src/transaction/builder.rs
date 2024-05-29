@@ -1,6 +1,6 @@
 use super::signer::NetworkSigner;
 use crate::Network;
-use alloy_consensus::BlobTransactionSidecar;
+use linera_alloy_consensus::BlobTransactionSidecar;
 use alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
 use alloy_rpc_types::AccessList;
 use alloy_sol_types::SolCall;

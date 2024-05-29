@@ -1,6 +1,6 @@
 use std::ops::{Deref, DerefMut};
 
-use alloy_consensus::BlobTransactionSidecar;
+use linera_alloy_consensus::BlobTransactionSidecar;
 use alloy_primitives::Bytes;
 use alloy_rpc_types::{AccessList, TransactionRequest, WithOtherFields};
 

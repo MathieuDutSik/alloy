@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-consensus = { workspace = true, features = ["std"] }
+linera-alloy-consensus = { workspace = true, features = ["std"] }
 linera-alloy-eips = { workspace = true, features = ["serde"] }
 alloy-json-rpc.workspace = true
 alloy-primitives.workspace = true
@@ -33,4 +33,4 @@ alloy-signer-wallet.workspace = true
 tokio.workspace = true
 
 [features]
-k256 = ["alloy-primitives/k256", "alloy-consensus/k256"]
+k256 = ["alloy-primitives/k256", "linera-alloy-consensus/k256"]

@@ -1,5 +1,5 @@
 use crate::{Network, TransactionBuilder};
-use alloy_consensus::SignableTransaction;
+use linera_alloy_consensus::SignableTransaction;
 use alloy_primitives::Address;
 use async_trait::async_trait;
 use auto_impl::auto_impl;

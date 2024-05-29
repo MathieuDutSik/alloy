@@ -29,7 +29,7 @@ futures-util.workspace = true
 futures.workspace = true
 thiserror.workspace = true
 
-alloy-pubsub = { workspace = true, optional = true }
+linera-alloy-pubsub = { workspace = true, optional = true }
 
 [dev-dependencies]
 alloy-rpc-client = { workspace = true, features = ["pubsub", "ws"] }
@@ -42,4 +42,4 @@ tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
 tracing-subscriber.workspace = true
 
 [features]
-pubsub = ["alloy-provider/pubsub", "dep:alloy-pubsub"]
+pubsub = ["alloy-provider/pubsub", "dep:linera-alloy-pubsub"]

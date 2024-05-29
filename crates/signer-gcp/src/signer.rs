@@ -1,4 +1,4 @@
-use alloy_consensus::SignableTransaction;
+use linera_alloy_consensus::SignableTransaction;
 use alloy_primitives::{hex, Address, B256};
 use alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
 use async_trait::async_trait;

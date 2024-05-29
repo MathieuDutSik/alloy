@@ -33,14 +33,14 @@ type Result<T> = std::result::Result<T, std::io::Error>;
 struct IpcBackend {
     pub(crate) stream: LocalSocketStream,
 
-    pub(crate) interface: alloy_pubsub::ConnectionInterface,
+    pub(crate) interface: linera_alloy_pubsub::ConnectionInterface,
 }
 
 impl IpcBackend {
     /// Connect to a local socket. Either a unix socket or a windows named pipe.
-    async fn connect(name: Name<'_>) -> Result<alloy_pubsub::ConnectionHandle> {
+    async fn connect(name: Name<'_>) -> Result<linera_alloy_pubsub::ConnectionHandle> {
         let stream = LocalSocketStream::connect(name).await?;
-        let (handle, interface) = alloy_pubsub::ConnectionHandle::new();
+        let (handle, interface) = linera_alloy_pubsub::ConnectionHandle::new();
         let backend = Self { stream, interface };
         backend.spawn();
         Ok(handle)
