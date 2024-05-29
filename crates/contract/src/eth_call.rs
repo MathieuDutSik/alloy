@@ -20,7 +20,7 @@ mod private {
     impl Sealed for () {}
 }
 
-/// An [`alloy_provider::EthCall`] with an abi decoder.
+/// An [`linera_alloy_provider::EthCall`] with an abi decoder.
 #[must_use = "EthCall must be awaited to execute the call"]
 #[derive(Clone, Debug)]
 pub struct EthCall<'req, 'state, 'coder, D, T, N>
@@ -29,7 +29,7 @@ where
     N: Network,
     D: CallDecoder,
 {
-    inner: alloy_provider::EthCall<'req, 'state, T, N>,
+    inner: linera_alloy_provider::EthCall<'req, 'state, T, N>,
 
     decoder: &'coder D,
 }
@@ -42,7 +42,7 @@ where
 {
     /// Create a new [`EthCall`].
     pub const fn new(
-        inner: alloy_provider::EthCall<'req, 'state, T, N>,
+        inner: linera_alloy_provider::EthCall<'req, 'state, T, N>,
         decoder: &'coder D,
     ) -> Self {
         Self { inner, decoder }
@@ -55,7 +55,7 @@ where
     N: Network,
 {
     /// Create a new [`EthCall`].
-    pub const fn new_raw(inner: alloy_provider::EthCall<'req, 'state, T, N>) -> Self {
+    pub const fn new_raw(inner: linera_alloy_provider::EthCall<'req, 'state, T, N>) -> Self {
         Self::new(inner, &RAW_CODER)
     }
 }
@@ -90,13 +90,13 @@ where
     }
 }
 
-impl<'req, 'state, T, N> From<alloy_provider::EthCall<'req, 'state, T, N>>
+impl<'req, 'state, T, N> From<linera_alloy_provider::EthCall<'req, 'state, T, N>>
     for EthCall<'req, 'state, 'static, (), T, N>
 where
     T: Transport + Clone,
     N: Network,
 {
-    fn from(inner: alloy_provider::EthCall<'req, 'state, T, N>) -> Self {
+    fn from(inner: linera_alloy_provider::EthCall<'req, 'state, T, N>) -> Self {
         Self { inner, decoder: &RAW_CODER }
     }
 }
@@ -127,7 +127,7 @@ where
     N: Network,
     D: CallDecoder,
 {
-    inner: <alloy_provider::EthCall<'req, 'state, T, N> as IntoFuture>::IntoFuture,
+    inner: <linera_alloy_provider::EthCall<'req, 'state, T, N> as IntoFuture>::IntoFuture,
     decoder: &'coder D,
 }
 

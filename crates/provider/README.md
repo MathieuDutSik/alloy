@@ -1,4 +1,4 @@
-# alloy-provider
+# linera-alloy-provider
 
 <!-- TODO: links, docs, examples, etc -->
 

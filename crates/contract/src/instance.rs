@@ -3,7 +3,7 @@ use alloy_dyn_abi::DynSolValue;
 use alloy_json_abi::{Function, JsonAbi};
 use alloy_network::{Ethereum, Network};
 use alloy_primitives::{Address, Selector};
-use alloy_provider::Provider;
+use linera_alloy_provider::Provider;
 use linera_alloy_rpc_types::Filter;
 use alloy_sol_types::SolEvent;
 use linera_alloy_transport::Transport;

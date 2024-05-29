@@ -1,5 +1,5 @@
 [package]
-name = "alloy-contract"
+name = "linera-alloy-contract"
 description = "Interact with on-chain contracts"
 
 version.workspace = true
@@ -16,7 +16,7 @@ workspace = true
 
 [dependencies]
 alloy-network.workspace = true
-alloy-provider.workspace = true
+linera-alloy-provider.workspace = true
 linera-alloy-rpc-types.workspace = true
 linera-alloy-transport.workspace = true
 
@@ -35,11 +35,11 @@ linera-alloy-pubsub = { workspace = true, optional = true }
 linera-alloy-rpc-client = { workspace = true, features = ["pubsub", "ws"] }
 linera-alloy-transport-http.workspace = true
 alloy-node-bindings.workspace = true
-alloy-provider = { workspace = true, features = ["anvil"] }
+linera-alloy-provider = { workspace = true, features = ["anvil"] }
 
 reqwest.workspace = true
 tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
 tracing-subscriber.workspace = true
 
 [features]
-pubsub = ["alloy-provider/pubsub", "dep:linera-alloy-pubsub"]
+pubsub = ["linera-alloy-provider/pubsub", "dep:linera-alloy-pubsub"]

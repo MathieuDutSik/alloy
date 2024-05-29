@@ -7,7 +7,7 @@
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
 #[cfg(test)]
-extern crate self as alloy_contract;
+extern crate self as linera_alloy_contract;
 
 mod eth_call;
 pub use eth_call::{CallDecoder, EthCall};
@@ -35,6 +35,6 @@ pub use call::*;
 #[doc(hidden)]
 pub mod private {
     pub use alloy_network::{Ethereum, Network};
-    pub use alloy_provider::Provider;
+    pub use linera_alloy_provider::Provider;
     pub use linera_alloy_transport::Transport;
 }

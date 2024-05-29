@@ -3,7 +3,7 @@ use alloy_dyn_abi::{DynSolValue, JsonAbiExt};
 use alloy_json_abi::Function;
 use alloy_network::{Ethereum, Network, ReceiptResponse, TransactionBuilder};
 use alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
-use alloy_provider::{PendingTransactionBuilder, Provider};
+use linera_alloy_provider::{PendingTransactionBuilder, Provider};
 use linera_alloy_rpc_types::{state::StateOverride, AccessList, BlobTransactionSidecar, BlockId};
 use alloy_sol_types::SolCall;
 use linera_alloy_transport::Transport;
@@ -50,8 +50,8 @@ pub type RawCallBuilder<T, P, N = Ethereum> = CallBuilder<T, P, (), N>;
 /// Using [`sol!`][sol]:
 ///
 /// ```no_run
-/// # async fn test<P: alloy_contract::private::Provider>(provider: P) -> Result<(), Box<dyn std::error::Error>> {
-/// use alloy_contract::SolCallBuilder;
+/// # async fn test<P: linera_alloy_contract::private::Provider>(provider: P) -> Result<(), Box<dyn std::error::Error>> {
+/// use linera_alloy_contract::SolCallBuilder;
 /// use alloy_primitives::{Address, U256};
 /// use alloy_sol_types::sol;
 ///
@@ -86,10 +86,10 @@ pub type RawCallBuilder<T, P, N = Ethereum> = CallBuilder<T, P, (), N>;
 /// Using [`ContractInstance`](crate::ContractInstance):
 ///
 /// ```no_run
-/// # async fn test<P: alloy_contract::private::Provider>(provider: P, dynamic_abi: alloy_json_abi::JsonAbi) -> Result<(), Box<dyn std::error::Error>> {
+/// # async fn test<P: linera_alloy_contract::private::Provider>(provider: P, dynamic_abi: alloy_json_abi::JsonAbi) -> Result<(), Box<dyn std::error::Error>> {
 /// use alloy_primitives::{Address, Bytes, U256};
 /// use alloy_dyn_abi::DynSolValue;
-/// use alloy_contract::{CallBuilder, ContractInstance, DynCallBuilder, Interface, RawCallBuilder};
+/// use linera_alloy_contract::{CallBuilder, ContractInstance, DynCallBuilder, Interface, RawCallBuilder};
 ///
 /// # stringify!(
 /// let dynamic_abi: JsonAbi = ...;
@@ -225,7 +225,7 @@ impl<T: Transport + Clone, P: Provider<T, N>, N: Network> RawCallBuilder<T, P, N
     /// # stringify!(
     /// let provider = ...;
     /// # );
-    /// # let provider = alloy_provider::ProviderBuilder::new().on_anvil();
+    /// # let provider = linera_alloy_provider::ProviderBuilder::new().on_anvil();
     /// let call_builder = MyContract::deploy_builder(&provider)
     ///     .with_sol_decoder::<MyContract::constructorReturnCall>();
     /// let result = call_builder.call().await?;
@@ -537,7 +537,7 @@ impl<T, P, D: CallDecoder, N: Network> std::fmt::Debug for CallBuilder<T, P, D, 
 mod tests {
     use super::*;
     use alloy_primitives::{address, b256, bytes, hex, utils::parse_units, B256};
-    use alloy_provider::{
+    use linera_alloy_provider::{
         layers::AnvilProvider, Provider, ProviderBuilder, RootProvider, WalletProvider,
     };
     use linera_alloy_rpc_types::AccessListItem;

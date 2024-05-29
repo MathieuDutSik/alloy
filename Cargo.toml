@@ -32,14 +32,14 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [workspace.dependencies]
 linera-alloy-consensus = { version = "0.1.0", default-features = false, path = "crates/consensus" }
-alloy-contract = { version = "0.1.0", default-features = false, path = "crates/contract" }
+linera-alloy-contract = { version = "0.1.0", default-features = false, path = "crates/contract" }
 linera-alloy-eips = { version = "0.1.0", default-features = false, path = "crates/eips" }
 alloy-eip7547 = { version = "0.1.0", default-features = false, path = "crates/eip7547" }
 linera-alloy-genesis = { version = "0.1.0", default-features = false, path = "crates/genesis" }
 linera-alloy-json-rpc = { version = "0.1.0", default-features = false, path = "crates/json-rpc" }
 alloy-network = { version = "0.1.0", default-features = false, path = "crates/network" }
 alloy-node-bindings = { version = "0.1.0", default-features = false, path = "crates/node-bindings" }
-alloy-provider = { version = "0.1.0", default-features = false, path = "crates/provider" }
+linera-alloy-provider = { version = "0.1.0", default-features = false, path = "crates/provider" }
 linera-alloy-pubsub = { version = "0.1.0", default-features = false, path = "crates/pubsub" }
 linera-alloy-rpc-client = { version = "0.1.0", default-features = false, path = "crates/rpc-client" }
 linera-alloy-rpc-types-engine = { version = "0.1.0", default-features = false, path = "crates/rpc-types-engine" }

@@ -32,13 +32,13 @@ This repository contains the following crates:
 
 - [`alloy`]: Meta-crate for the entire project, including [`alloy-core`]
 - [`linera-alloy-consensus`] - Ethereum consensus interface
-- [`alloy-contract`] - Interact with on-chain contracts
+- [`linera-alloy-contract`] - Interact with on-chain contracts
 - [`linera-alloy-eips`] - Ethereum Improvement Proposal (EIP) implementations
 - [`linera-alloy-genesis`] - Ethereum genesis file definitions
 - [`linera-alloy-json-rpc`] - Core data types for JSON-RPC 2.0 clients
 - [`alloy-network`] - Network abstraction for RPC types
 - [`alloy-node-bindings`] - Ethereum execution-layer client bindings
-- [`alloy-provider`] - Interface with an Ethereum blockchain
+- [`linera-alloy-provider`] - Interface with an Ethereum blockchain
 - [`linera-alloy-pubsub`] - Ethereum JSON-RPC [publish-subscribe] tower service and type definitions
 - [`linera-alloy-rpc-client`] - Low-level Ethereum JSON-RPC client implementation
 - [`linera-alloy-rpc-types`] - Ethereum JSON-RPC types
@@ -57,13 +57,13 @@ This repository contains the following crates:
 
 [`alloy`]: https://github.com/alloy-rs/alloy/tree/main/crates/alloy
 [`linera-alloy-consensus`]: https://github.com/alloy-rs/alloy/tree/main/crates/consensus
-[`alloy-contract`]: https://github.com/alloy-rs/alloy/tree/main/crates/contract
+[`linera-alloy-contract`]: https://github.com/alloy-rs/alloy/tree/main/crates/contract
 [`linera-alloy-eips`]: https://github.com/alloy-rs/alloy/tree/main/crates/eips
 [`linera-alloy-genesis`]: https://github.com/alloy-rs/alloy/tree/main/crates/genesis
 [`linera-alloy-json-rpc`]: https://github.com/alloy-rs/alloy/tree/main/crates/json-rpc
 [`alloy-network`]: https://github.com/alloy-rs/alloy/tree/main/crates/network
 [`alloy-node-bindings`]: https://github.com/alloy-rs/alloy/tree/main/crates/node-bindings
-[`alloy-provider`]: https://github.com/alloy-rs/alloy/tree/main/crates/provider
+[`linera-alloy-provider`]: https://github.com/alloy-rs/alloy/tree/main/crates/provider
 [`linera-alloy-pubsub`]: https://github.com/alloy-rs/alloy/tree/main/crates/pubsub
 [`linera-alloy-rpc-client`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-client
 [`linera-alloy-rpc-types-engine`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-types-engine

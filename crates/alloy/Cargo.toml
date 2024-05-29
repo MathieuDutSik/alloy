@@ -20,14 +20,14 @@ alloy-core = { workspace = true, default-features = false }
 
 # alloy
 linera-alloy-consensus = { workspace = true, default-features = false, optional = true }
-alloy-contract = { workspace = true, default-features = false, optional = true }
+linera-alloy-contract = { workspace = true, default-features = false, optional = true }
 linera-alloy-eips = { workspace = true, default-features = false, optional = true }
 linera-alloy-genesis = { workspace = true, default-features = false, optional = true }
 alloy-network = { workspace = true, default-features = false, optional = true }
 alloy-node-bindings = { workspace = true, default-features = false, optional = true }
 
 # providers
-alloy-provider = { workspace = true, default-features = false, optional = true }
+linera-alloy-provider = { workspace = true, default-features = false, optional = true }
 
 # pubsub
 linera-alloy-pubsub = { workspace = true, default-features = false, optional = true }
@@ -79,14 +79,14 @@ std = [
 reqwest = [
     "dep:reqwest",
     "linera-alloy-rpc-client?/reqwest",
-    "alloy-provider?/reqwest",
+    "linera-alloy-provider?/reqwest",
     "linera-alloy-transport-http?/reqwest",
     "linera-alloy-transport-http?/reqwest-default-tls",
 ]
 hyper = [
     "dep:hyper",
     "linera-alloy-rpc-client?/hyper",
-    "alloy-provider?/hyper",
+    "linera-alloy-provider?/hyper",
     "linera-alloy-transport-http?/hyper",
 ]
 
@@ -94,23 +94,23 @@ hyper = [
 
 # general
 consensus = ["dep:linera-alloy-consensus"]
-contract = ["dep:alloy-contract", "dyn-abi", "json-abi", "json", "sol-types"]
+contract = ["dep:linera-alloy-contract", "dyn-abi", "json-abi", "json", "sol-types"]
 eips = ["dep:linera-alloy-eips"]
 genesis = ["dep:linera-alloy-genesis"]
 network = ["dep:alloy-network"]
-node-bindings = ["dep:alloy-node-bindings", "alloy-provider?/anvil"]
+node-bindings = ["dep:alloy-node-bindings", "linera-alloy-provider?/anvil"]
 
 # providers
-providers = ["dep:alloy-provider"]
+providers = ["dep:linera-alloy-provider"]
 provider-http = ["providers", "transport-http"]
-provider-ws = ["providers", "alloy-provider?/ws", "transport-ws"]
-provider-ipc = ["providers", "alloy-provider?/ipc", "transport-ipc"]
+provider-ws = ["providers", "linera-alloy-provider?/ws", "transport-ws"]
+provider-ipc = ["providers", "linera-alloy-provider?/ipc", "transport-ipc"]
 
 # pubsub
 pubsub = [
     "dep:linera-alloy-pubsub",
-    "alloy-contract?/pubsub",
-    "alloy-provider?/pubsub",
+    "linera-alloy-contract?/pubsub",
+    "linera-alloy-provider?/pubsub",
     "linera-alloy-rpc-client?/pubsub",
 ]
 

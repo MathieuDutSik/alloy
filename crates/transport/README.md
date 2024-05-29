@@ -10,12 +10,12 @@ futures for simple and batch RPC requests as well as a unified `TransportError`
 type.
 
 Typically, this crate should not be used directly. Most EVM users will want to
-use the [alloy-provider] crate, which provides a high-level API for interacting
+use the [linera-alloy-provider] crate, which provides a high-level API for interacting
 with JSON-RPC servers that provide the standard Ethereum RPC endpoints, or the
 [linera-alloy-rpc-client] crate, which provides a low-level JSON-RPC API without the
 specific Ethereum endpoints.
 
-[alloy-provider]: https://alloy-rs.github.io/alloy/alloy_provider/index.html
+[linera-alloy-provider]: https://alloy-rs.github.io/alloy/linera_alloy_provider/index.html
 [tower `Service`]: https://docs.rs/tower/latest/tower/trait.Service.html
 
 ### Transports

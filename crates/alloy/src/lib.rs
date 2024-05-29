@@ -48,7 +48,7 @@ pub use self::core::rlp;
 macro_rules! sol {
     ($($t:tt)*) => {
         $crate::sol_types::sol! {
-            #![sol(alloy_sol_types = $crate::sol_types, alloy_contract = $crate::contract)]
+            #![sol(alloy_sol_types = $crate::sol_types, linera_alloy_contract = $crate::contract)]
             $($t)*
         }
     };
@@ -64,7 +64,7 @@ use hyper as _;
 
 #[cfg(feature = "contract")]
 #[doc(inline)]
-pub use alloy_contract as contract;
+pub use linera_alloy_contract as contract;
 
 #[cfg(feature = "consensus")]
 #[doc(inline)]
@@ -88,11 +88,11 @@ pub use alloy_node_bindings as node_bindings;
 
 /// Interface with an Ethereum blockchain.
 ///
-/// See [`alloy_provider`] for more details.
+/// See [`linera_alloy_provider`] for more details.
 #[cfg(feature = "providers")]
 pub mod providers {
     #[doc(inline)]
-    pub use alloy_provider::*;
+    pub use linera_alloy_provider::*;
 }
 
 /// Ethereum JSON-RPC publish-subscribe tower service and type definitions.

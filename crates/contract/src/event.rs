@@ -1,7 +1,7 @@
 use crate::Error;
 use alloy_network::Ethereum;
 use alloy_primitives::{Address, LogData};
-use alloy_provider::{FilterPollerBuilder, Network, Provider};
+use linera_alloy_provider::{FilterPollerBuilder, Network, Provider};
 use linera_alloy_rpc_types::{Filter, Log};
 use alloy_sol_types::SolEvent;
 use linera_alloy_transport::{Transport, TransportResult};
@@ -228,7 +228,7 @@ mod tests {
         let _ = tracing_subscriber::fmt::try_init();
 
         let anvil = alloy_node_bindings::Anvil::new().spawn();
-        let provider = alloy_provider::ProviderBuilder::new().on_http(anvil.endpoint_url());
+        let provider = linera_alloy_provider::ProviderBuilder::new().on_http(anvil.endpoint_url());
 
         let contract = MyContract::deploy(&provider).await.unwrap();
 
@@ -283,7 +283,7 @@ mod tests {
 
         #[cfg(feature = "pubsub")]
         {
-            let provider = alloy_provider::ProviderBuilder::new()
+            let provider = linera_alloy_provider::ProviderBuilder::new()
                 .on_builtin(&anvil.ws_endpoint())
                 .await
                 .unwrap();

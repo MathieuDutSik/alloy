@@ -97,7 +97,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # Examples
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     ///
     /// let sub = provider.subscribe_blocks().await?;
@@ -129,7 +129,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # Examples
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     ///
     /// let sub = provider.subscribe_pending_transactions().await?;
@@ -168,7 +168,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # Examples
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     ///
     /// let sub = provider.subscribe_full_pending_transactions().await?;
@@ -203,7 +203,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # Examples
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     /// use alloy_primitives::keccak256;
     /// use linera_alloy_rpc_types::Filter;
@@ -259,7 +259,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// Get the next 5 blocks:
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     ///
     /// let poller = provider.watch_blocks().await?;
@@ -286,7 +286,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// Get the next 5 pending transaction hashes:
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     ///
     /// let poller = provider.watch_pending_transactions().await?;
@@ -317,7 +317,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// Get the next 5 pending transaction bodies:
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     ///
     /// let poller = provider.watch_full_pending_transactions().await?;
@@ -346,7 +346,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// Get the next 5 USDC transfer logs:
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use alloy_primitives::{address, b256};
     /// use linera_alloy_rpc_types::Filter;
     /// use futures::StreamExt;
@@ -454,7 +454,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// See [`PendingTransactionBuilder`](crate::PendingTransactionBuilder) for more examples.
     ///
     /// ```no_run
-    /// # async fn example<N: alloy_network::Network>(provider: impl alloy_provider::Provider, tx: linera_alloy_rpc_types::transaction::TransactionRequest) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example<N: alloy_network::Network>(provider: impl linera_alloy_provider::Provider, tx: linera_alloy_rpc_types::transaction::TransactionRequest) -> Result<(), Box<dyn std::error::Error>> {
     /// let tx_hash = provider.send_transaction(tx)
     ///     .await?
     ///     .with_required_confirmations(2)
@@ -672,7 +672,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// ## Example
     ///
     /// ```
-    /// # use alloy_provider::Provider;
+    /// # use linera_alloy_provider::Provider;
     /// # use linera_alloy_eips::BlockId;
     /// # use linera_alloy_rpc_types::state::StateOverride;
     /// # use linera_alloy_transport::BoxTransport;
@@ -845,7 +845,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # Examples
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use linera_alloy_rpc_types::BlockNumberOrTag;
     ///
     /// // No parameters: `()`
@@ -873,7 +873,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # Examples
     ///
     /// ```no_run
-    /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use linera_alloy_rpc_types::BlockNumberOrTag;
     ///
     /// // No parameters: `()`
