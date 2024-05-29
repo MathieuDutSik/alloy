@@ -2,7 +2,7 @@ use core::fmt;
 
 use crate::{Network, ReceiptResponse};
 use alloy_consensus::TxType;
-use alloy_eips::eip2718::Eip2718Error;
+use linera_alloy_eips::eip2718::Eip2718Error;
 use alloy_rpc_types::{
     AnyTransactionReceipt, Header, Transaction, TransactionRequest, WithOtherFields,
 };

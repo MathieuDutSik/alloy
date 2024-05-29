@@ -21,7 +21,7 @@ alloy-core = { workspace = true, default-features = false }
 # alloy
 alloy-consensus = { workspace = true, default-features = false, optional = true }
 alloy-contract = { workspace = true, default-features = false, optional = true }
-alloy-eips = { workspace = true, default-features = false, optional = true }
+linera-alloy-eips = { workspace = true, default-features = false, optional = true }
 alloy-genesis = { workspace = true, default-features = false, optional = true }
 alloy-network = { workspace = true, default-features = false, optional = true }
 alloy-node-bindings = { workspace = true, default-features = false, optional = true }
@@ -69,7 +69,7 @@ default = ["std", "reqwest"]
 # std
 std = [
     "alloy-core/std",
-    "alloy-eips?/std",
+    "linera-alloy-eips?/std",
     "alloy-genesis?/std",
     "alloy-serde?/std",
     "alloy-consensus?/std",
@@ -95,7 +95,7 @@ hyper = [
 # general
 consensus = ["dep:alloy-consensus"]
 contract = ["dep:alloy-contract", "dyn-abi", "json-abi", "json", "sol-types"]
-eips = ["dep:alloy-eips"]
+eips = ["dep:linera-alloy-eips"]
 genesis = ["dep:alloy-genesis"]
 network = ["dep:alloy-network"]
 node-bindings = ["dep:alloy-node-bindings", "alloy-provider?/anvil"]
@@ -169,12 +169,12 @@ postgres = ["alloy-core/postgres"]
 getrandom = ["alloy-core/getrandom"]
 rand = ["alloy-core/rand"]
 rlp = ["alloy-core/rlp"]
-serde = ["alloy-core/serde", "alloy-eips?/serde", "alloy-serde"]
+serde = ["alloy-core/serde", "linera-alloy-eips?/serde", "alloy-serde"]
 ssz = ["alloy-core/ssz", "alloy-rpc-types?/ssz", "alloy-rpc-types-engine?/ssz"]
 arbitrary = [
     "alloy-core/arbitrary",
     "alloy-consensus?/arbitrary",
-    "alloy-eips?/arbitrary",
+    "linera-alloy-eips?/arbitrary",
     "alloy-rpc-types?/arbitrary",
 ]
 k256 = ["alloy-core/k256", "alloy-consensus?/k256", "alloy-network?/k256"]

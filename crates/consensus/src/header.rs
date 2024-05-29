@@ -1,5 +1,5 @@
 use crate::Sealable;
-use alloy_eips::{
+use linera_alloy_eips::{
     eip1559::{calc_next_block_base_fee, BaseFeeParams},
     eip4844::{calc_blob_gasprice, calc_excess_blob_gas},
 };

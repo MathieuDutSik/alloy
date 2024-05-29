@@ -1,5 +1,5 @@
 use crate::{SignableTransaction, Signed, Transaction, TxType};
-use alloy_eips::eip2930::AccessList;
+use linera_alloy_eips::eip2930::AccessList;
 use alloy_primitives::{keccak256, Bytes, ChainId, Signature, TxKind, U256};
 use alloy_rlp::{length_of_length, BufMut, Decodable, Encodable, Header};
 use core::mem;

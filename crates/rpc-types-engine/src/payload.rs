@@ -1,6 +1,6 @@
 //! Payload types.
 use alloy_consensus::{Blob, Bytes48};
-use alloy_eips::{eip6110::DepositRequest, eip7002::WithdrawalRequest};
+use linera_alloy_eips::{eip6110::DepositRequest, eip7002::WithdrawalRequest};
 use alloy_primitives::{Address, Bloom, Bytes, B256, B64, U256};
 use alloy_rpc_types::{transaction::BlobTransactionSidecar, Withdrawal};
 use serde::{ser::SerializeMap, Deserialize, Deserializer, Serialize, Serializer};
@@ -469,7 +469,7 @@ pub struct BlobsBundleV1 {
 struct BlobsBundleV1Ssz {
     commitments: Vec<alloy_primitives::FixedBytes<48>>,
     proofs: Vec<alloy_primitives::FixedBytes<48>>,
-    blobs: Vec<alloy_primitives::FixedBytes<{ alloy_eips::eip4844::BYTES_PER_BLOB }>>,
+    blobs: Vec<alloy_primitives::FixedBytes<{ linera_alloy_eips::eip4844::BYTES_PER_BLOB }>>,
 }
 
 #[cfg(feature = "ssz")]

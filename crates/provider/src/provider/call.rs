@@ -1,4 +1,4 @@
-use alloy_eips::BlockId;
+use linera_alloy_eips::BlockId;
 use alloy_network::Network;
 use alloy_primitives::Bytes;
 use alloy_rpc_client::{RpcCall, WeakClient};

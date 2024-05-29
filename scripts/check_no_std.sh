@@ -2,7 +2,7 @@
 set -eo pipefail
 
 no_std_packages=(
-    alloy-eips
+    linera-alloy-eips
     alloy-genesis
     alloy-serde
     alloy-consensus

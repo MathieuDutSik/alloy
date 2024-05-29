@@ -7,7 +7,7 @@
 #![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
 use alloy_consensus::TxReceipt;
-use alloy_eips::eip2718::{Eip2718Envelope, Eip2718Error};
+use linera_alloy_eips::eip2718::{Eip2718Envelope, Eip2718Error};
 use alloy_json_rpc::RpcObject;
 use alloy_primitives::Address;
 use core::fmt::{Debug, Display};
@@ -24,7 +24,7 @@ pub use ethereum::{Ethereum, EthereumSigner};
 mod any;
 pub use any::AnyNetwork;
 
-pub use alloy_eips::eip2718;
+pub use linera_alloy_eips::eip2718;
 
 /// A receipt response.
 ///

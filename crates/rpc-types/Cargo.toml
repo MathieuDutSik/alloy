@@ -22,7 +22,7 @@ alloy-serde.workspace = true
 alloy-genesis.workspace = true
 
 alloy-consensus = { workspace = true, features = ["std", "serde"] }
-alloy-eips = { workspace = true, features = ["std", "serde"] }
+linera-alloy-eips = { workspace = true, features = ["std", "serde"] }
 
 itertools.workspace = true
 serde = { workspace = true, features = ["derive"] }
@@ -45,10 +45,10 @@ arbitrary = [
     "dep:proptest-derive",
     "dep:proptest",
     "alloy-primitives/arbitrary",
-    "alloy-eips/arbitrary",
+    "linera-alloy-eips/arbitrary",
 ]
 jsonrpsee-types = ["dep:jsonrpsee-types"]
-ssz = ["alloy-primitives/ssz", "alloy-eips/ssz"]
+ssz = ["alloy-primitives/ssz", "linera-alloy-eips/ssz"]
 k256 = ["alloy-consensus/k256"]
 
 [dev-dependencies]

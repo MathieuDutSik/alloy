@@ -17,7 +17,7 @@ workspace = true
 [dependencies]
 alloy-primitives = { workspace = true, features = ["rlp"] }
 alloy-rlp.workspace = true
-alloy-eips.workspace = true
+linera-alloy-eips.workspace = true
 alloy-serde = { workspace = true, optional = true }
 
 # kzg
@@ -44,19 +44,19 @@ serde_json.workspace = true
 
 [features]
 default = ["std"]
-std = ["alloy-eips/std", "c-kzg?/std"]
+std = ["linera-alloy-eips/std", "c-kzg?/std"]
 k256 = ["alloy-primitives/k256"]
-kzg = ["dep:c-kzg", "alloy-eips/kzg", "std"]
+kzg = ["dep:c-kzg", "linera-alloy-eips/kzg", "std"]
 arbitrary = [
     "std",
     "dep:arbitrary",
     "dep:proptest-derive",
     "dep:proptest",
-    "alloy-eips/arbitrary",
+    "linera-alloy-eips/arbitrary",
 ]
 serde = [
     "dep:serde",
     "alloy-primitives/serde",
     "dep:alloy-serde",
-    "alloy-eips/serde",
+    "linera-alloy-eips/serde",
 ]

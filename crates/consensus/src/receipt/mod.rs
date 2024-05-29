@@ -34,7 +34,7 @@ pub trait TxReceipt<T = Log> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_eips::eip2718::Encodable2718;
+    use linera_alloy_eips::eip2718::Encodable2718;
     use alloy_primitives::{address, b256, bytes, hex, LogData};
     use alloy_rlp::{Decodable, Encodable};
 

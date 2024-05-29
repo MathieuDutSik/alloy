@@ -1,5 +1,5 @@
 use crate::header::Header;
-use alloy_eips::eip4844::{Blob, BlobTransactionSidecar, Bytes48};
+use linera_alloy_eips::eip4844::{Blob, BlobTransactionSidecar, Bytes48};
 use alloy_primitives::{Bytes, B256};
 use serde::{Deserialize, Serialize};
 use serde_with::{serde_as, DisplayFromStr};

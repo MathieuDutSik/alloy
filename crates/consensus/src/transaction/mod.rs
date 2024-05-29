@@ -16,7 +16,7 @@ pub use eip2930::TxEip2930;
 /// [EIP-4844] constants, helpers, and types.
 pub mod eip4844;
 
-pub use alloy_eips::eip4844::{
+pub use linera_alloy_eips::eip4844::{
     builder::{SidecarBuilder, SidecarCoder, SimpleCoder},
     utils as eip4844_utils, Blob, BlobTransactionSidecar, Bytes48,
 };

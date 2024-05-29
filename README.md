@@ -33,7 +33,7 @@ This repository contains the following crates:
 - [`alloy`]: Meta-crate for the entire project, including [`alloy-core`]
 - [`alloy-consensus`] - Ethereum consensus interface
 - [`alloy-contract`] - Interact with on-chain contracts
-- [`alloy-eips`] - Ethereum Improvement Proposal (EIP) implementations
+- [`linera-alloy-eips`] - Ethereum Improvement Proposal (EIP) implementations
 - [`alloy-genesis`] - Ethereum genesis file definitions
 - [`alloy-json-rpc`] - Core data types for JSON-RPC 2.0 clients
 - [`alloy-network`] - Network abstraction for RPC types
@@ -58,7 +58,7 @@ This repository contains the following crates:
 [`alloy`]: https://github.com/alloy-rs/alloy/tree/main/crates/alloy
 [`alloy-consensus`]: https://github.com/alloy-rs/alloy/tree/main/crates/consensus
 [`alloy-contract`]: https://github.com/alloy-rs/alloy/tree/main/crates/contract
-[`alloy-eips`]: https://github.com/alloy-rs/alloy/tree/main/crates/eips
+[`linera-alloy-eips`]: https://github.com/alloy-rs/alloy/tree/main/crates/eips
 [`alloy-genesis`]: https://github.com/alloy-rs/alloy/tree/main/crates/genesis
 [`alloy-json-rpc`]: https://github.com/alloy-rs/alloy/tree/main/crates/json-rpc
 [`alloy-network`]: https://github.com/alloy-rs/alloy/tree/main/crates/network
@@ -118,7 +118,7 @@ Because these crates are primarily network-focused, we do not intend to support
 
 The following crates support `no_std`:
 
-- alloy-eips
+- linera-alloy-eips
 - alloy-genesis
 - alloy-serde
 - alloy-consensus

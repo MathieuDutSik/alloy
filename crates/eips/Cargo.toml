@@ -1,5 +1,5 @@
 [package]
-name = "alloy-eips"
+name = "linera-alloy-eips"
 description = "Ethereum Improvement Proprosal (EIP) implementations"
 
 version.workspace = true

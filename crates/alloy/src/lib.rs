@@ -72,7 +72,7 @@ pub use alloy_consensus as consensus;
 
 #[cfg(feature = "eips")]
 #[doc(inline)]
-pub use alloy_eips as eips;
+pub use linera_alloy_eips as eips;
 
 #[cfg(feature = "network")]
 #[doc(inline)]

@@ -9,7 +9,7 @@ use alloy_primitives::{Address, Bytes, TxKind, B256, U256};
 use serde::{Deserialize, Serialize};
 
 pub use alloy_consensus::BlobTransactionSidecar;
-pub use alloy_eips::eip2930::{AccessList, AccessListItem, AccessListWithGasUsed};
+pub use linera_alloy_eips::eip2930::{AccessList, AccessListItem, AccessListWithGasUsed};
 
 mod common;
 pub use common::TransactionInfo;

@@ -32,13 +32,13 @@ pub use transaction::{
     TxEip4844WithSidecar, TxEnvelope, TxLegacy, TxType, TypedTransaction,
 };
 
-pub use alloy_eips::eip4844::{
+pub use linera_alloy_eips::eip4844::{
     builder::{SidecarBuilder, SidecarCoder, SimpleCoder},
     utils, Blob, BlobTransactionSidecar, Bytes48,
 };
 
 #[cfg(feature = "kzg")]
-pub use alloy_eips::eip4844::env_settings::EnvKzgSettings;
+pub use linera_alloy_eips::eip4844::env_settings::EnvKzgSettings;
 
 mod sealed;
 pub use sealed::{Sealable, Sealed};

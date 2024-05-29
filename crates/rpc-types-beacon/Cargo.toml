@@ -14,7 +14,7 @@ workspace = true
 
 [dependencies]
 # ethereum
-alloy-eips = { workspace = true, features = ["serde"] }
+linera-alloy-eips = { workspace = true, features = ["serde"] }
 alloy-rpc-types-engine.workspace = true
 alloy-primitives.workspace = true
 

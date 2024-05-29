@@ -24,10 +24,10 @@ pub use self::{
 };
 
 #[doc(inline)]
-pub use alloy_eips::eip6110::DepositRequest as DepositRequestV1;
+pub use linera_alloy_eips::eip6110::DepositRequest as DepositRequestV1;
 
 #[doc(inline)]
-pub use alloy_eips::eip7002::WithdrawalRequest as WithdrawalRequestV1;
+pub use linera_alloy_eips::eip7002::WithdrawalRequest as WithdrawalRequestV1;
 
 /// The list of all supported Engine capabilities available over the engine endpoint.
 pub const CAPABILITIES: [&str; 12] = [

@@ -1,4 +1,4 @@
-# alloy-eips
+# linera-alloy-eips
 
 Ethereum Improvement Proprosal (EIP) implementations.
 

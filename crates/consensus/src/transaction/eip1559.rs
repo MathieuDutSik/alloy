@@ -1,5 +1,5 @@
 use crate::{SignableTransaction, Signed, Transaction, TxType};
-use alloy_eips::eip2930::AccessList;
+use linera_alloy_eips::eip2930::AccessList;
 use alloy_primitives::{keccak256, Bytes, ChainId, Signature, TxKind, U256};
 use alloy_rlp::{BufMut, Decodable, Encodable, Header};
 use core::mem;
@@ -343,7 +343,7 @@ impl Decodable for TxEip1559 {
 mod tests {
     use super::TxEip1559;
     use crate::SignableTransaction;
-    use alloy_eips::eip2930::AccessList;
+    use linera_alloy_eips::eip2930::AccessList;
     use alloy_primitives::{address, b256, hex, Address, Signature, B256, U256};
 
     #[test]

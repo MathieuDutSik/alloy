@@ -1,7 +1,7 @@
 use core::fmt;
 
 use crate::{Signed, TxEip1559, TxEip2930, TxLegacy};
-use alloy_eips::eip2718::{Decodable2718, Eip2718Error, Encodable2718};
+use linera_alloy_eips::eip2718::{Decodable2718, Eip2718Error, Encodable2718};
 use alloy_primitives::B256;
 use alloy_rlp::{Decodable, Encodable, Header};
 
@@ -300,7 +300,7 @@ impl Encodable2718 for TxEnvelope {
 mod tests {
     use super::*;
     use crate::transaction::SignableTransaction;
-    use alloy_eips::eip2930::{AccessList, AccessListItem};
+    use linera_alloy_eips::eip2930::{AccessList, AccessListItem};
     use alloy_primitives::{hex, Address, Bytes, Signature, TxKind, U256};
     use std::{fs, path::PathBuf, vec};
 

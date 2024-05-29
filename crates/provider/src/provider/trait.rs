@@ -5,7 +5,7 @@ use crate::{
     EthCall, PendingTransaction, PendingTransactionBuilder, PendingTransactionConfig, RootProvider,
     RpcWithBlock, SendableTx,
 };
-use alloy_eips::eip2718::Encodable2718;
+use linera_alloy_eips::eip2718::Encodable2718;
 use alloy_json_rpc::{RpcError, RpcParam, RpcReturn};
 use alloy_network::{Ethereum, Network};
 use alloy_primitives::{
@@ -673,7 +673,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     ///
     /// ```
     /// # use alloy_provider::Provider;
-    /// # use alloy_eips::BlockId;
+    /// # use linera_alloy_eips::BlockId;
     /// # use alloy_rpc_types::state::StateOverride;
     /// # use alloy_transport::BoxTransport;
     /// # async fn example<P: Provider<BoxTransport>>(

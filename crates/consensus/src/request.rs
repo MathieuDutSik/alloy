@@ -1,4 +1,4 @@
-use alloy_eips::{
+use linera_alloy_eips::{
     eip6110::DepositRequest,
     eip7002::WithdrawalRequest,
     eip7685::{Decodable7685, Eip7685Error, Encodable7685},
@@ -84,7 +84,7 @@ impl Encodable7685 for Request {
 }
 
 impl Decodable7685 for Request {
-    fn typed_decode(ty: u8, buf: &mut &[u8]) -> Result<Self, alloy_eips::eip7685::Eip7685Error> {
+    fn typed_decode(ty: u8, buf: &mut &[u8]) -> Result<Self, linera_alloy_eips::eip7685::Eip7685Error> {
         Ok(match ty {
             0 => Self::DepositRequest(DepositRequest::decode(buf)?),
             1 => Self::WithdrawalRequest(WithdrawalRequest::decode(buf)?),

@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-eips.workspace = true
+linera-alloy-eips.workspace = true
 alloy-consensus.workspace = true
 alloy-json-rpc.workspace = true
 alloy-network.workspace = true
