@@ -1,4 +1,4 @@
-# alloy-signer-aws
+# linera-alloy-signer-aws
 
 Ethereum [AWS KMS] signer.
 

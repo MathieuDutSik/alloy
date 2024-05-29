@@ -1,5 +1,5 @@
 [package]
-name = "alloy-signer-aws"
+name = "linera-alloy-signer-aws"
 description = "Ethereum AWS KMS signer"
 
 version.workspace = true
@@ -18,7 +18,7 @@ workspace = true
 linera-alloy-consensus = { workspace = true, features = ["std"] }
 linera-alloy-network.workspace = true
 alloy-primitives.workspace = true
-alloy-signer.workspace = true
+linera-alloy-signer.workspace = true
 
 async-trait.workspace = true
 aws-sdk-kms = { version = "1", default-features = false }
@@ -32,4 +32,4 @@ tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
 aws-config = { version = "1", default-features = false }
 
 [features]
-eip712 = ["alloy-signer/eip712"]
+eip712 = ["linera-alloy-signer/eip712"]

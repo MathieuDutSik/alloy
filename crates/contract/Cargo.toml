@@ -34,7 +34,7 @@ linera-alloy-pubsub = { workspace = true, optional = true }
 [dev-dependencies]
 linera-alloy-rpc-client = { workspace = true, features = ["pubsub", "ws"] }
 linera-alloy-transport-http.workspace = true
-alloy-node-bindings.workspace = true
+linera-alloy-node-bindings.workspace = true
 linera-alloy-provider = { workspace = true, features = ["anvil"] }
 
 reqwest.workspace = true

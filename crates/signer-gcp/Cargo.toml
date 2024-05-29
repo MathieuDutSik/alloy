@@ -1,5 +1,5 @@
 [package]
-name = "alloy-signer-gcp"
+name = "linera-alloy-signer-gcp"
 description = "Ethereum GCP KMS signer"
 
 version.workspace = true
@@ -18,7 +18,7 @@ workspace = true
 linera-alloy-consensus = { workspace = true, features = ["std"] }
 linera-alloy-network.workspace = true
 alloy-primitives.workspace = true
-alloy-signer.workspace = true
+linera-alloy-signer.workspace = true
 
 async-trait.workspace = true
 gcloud-sdk = { version = "0.24", features = ["google-cloud-kms-v1"] }
@@ -31,4 +31,4 @@ tracing.workspace = true
 tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
 
 [features]
-eip712 = ["alloy-signer/eip712"]
+eip712 = ["linera-alloy-signer/eip712"]

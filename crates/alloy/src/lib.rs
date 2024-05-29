@@ -84,7 +84,7 @@ pub use linera_alloy_genesis as genesis;
 
 #[cfg(feature = "node-bindings")]
 #[doc(inline)]
-pub use alloy_node_bindings as node_bindings;
+pub use linera_alloy_node_bindings as node_bindings;
 
 /// Interface with an Ethereum blockchain.
 ///
@@ -151,31 +151,31 @@ pub use linera_alloy_serde as serde;
 
 /// Ethereum signer abstraction and implementations.
 ///
-/// See [`alloy_signer`] for more details.
+/// See [`linera_alloy_signer`] for more details.
 #[cfg(feature = "signers")]
 pub mod signers {
     #[doc(inline)]
-    pub use alloy_signer::*;
+    pub use linera_alloy_signer::*;
 
     #[cfg(feature = "signer-aws")]
     #[doc(inline)]
-    pub use alloy_signer_aws as aws;
+    pub use linera_alloy_signer_aws as aws;
 
     #[cfg(feature = "signer-gcp")]
     #[doc(inline)]
-    pub use alloy_signer_gcp as gcp;
+    pub use linera_alloy_signer_gcp as gcp;
 
     #[cfg(feature = "signer-ledger")]
     #[doc(inline)]
-    pub use alloy_signer_ledger as ledger;
+    pub use linera_alloy_signer_ledger as ledger;
 
     #[cfg(feature = "signer-trezor")]
     #[doc(inline)]
-    pub use alloy_signer_trezor as trezor;
+    pub use linera_alloy_signer_trezor as trezor;
 
     #[cfg(feature = "signer-wallet")]
     #[doc(inline)]
-    pub use alloy_signer_wallet as wallet;
+    pub use linera_alloy_signer_wallet as wallet;
 }
 
 /// Low-level Ethereum JSON-RPC transport abstraction and implementations.

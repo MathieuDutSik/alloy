@@ -29,7 +29,7 @@ macro_rules! sign_transaction_with_chain_id {
     ($signer:expr, $tx:expr, $sign:expr) => {{
         if let Some(chain_id) = $signer.chain_id() {
             if !$tx.set_chain_id_checked(chain_id) {
-                return Err(alloy_signer::Error::TransactionChainIdMismatch {
+                return Err(linera_alloy_signer::Error::TransactionChainIdMismatch {
                     signer: chain_id,
                     // we can only end up here if the tx has a chain id
                     tx: $tx.chain_id().unwrap(),
@@ -37,7 +37,7 @@ macro_rules! sign_transaction_with_chain_id {
             }
         }
 
-        let mut sig = $sign.map_err(alloy_signer::Error::other)?;
+        let mut sig = $sign.map_err(linera_alloy_signer::Error::other)?;
 
         if $tx.use_eip155() {
             if let Some(chain_id) = $signer.chain_id().or_else(|| $tx.chain_id()) {

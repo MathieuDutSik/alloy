@@ -1,7 +1,7 @@
 use crate::{Network, NetworkSigner, TxSigner};
 use linera_alloy_consensus::{SignableTransaction, TxEnvelope, TypedTransaction};
 use alloy_primitives::Address;
-use alloy_signer::Signature;
+use linera_alloy_signer::Signature;
 use async_trait::async_trait;
 use std::{collections::BTreeMap, sync::Arc};
 
@@ -84,10 +84,10 @@ impl EthereumSigner {
         &self,
         sender: Address,
         tx: &mut dyn SignableTransaction<Signature>,
-    ) -> alloy_signer::Result<Signature> {
+    ) -> linera_alloy_signer::Result<Signature> {
         self.signer_by_address(sender)
             .ok_or_else(|| {
-                alloy_signer::Error::other(format!("Missing signing credential for {}", sender))
+                linera_alloy_signer::Error::other(format!("Missing signing credential for {}", sender))
             })?
             .sign_transaction(tx)
             .await
@@ -116,7 +116,7 @@ where
         &self,
         sender: Address,
         tx: TypedTransaction,
-    ) -> alloy_signer::Result<TxEnvelope> {
+    ) -> linera_alloy_signer::Result<TxEnvelope> {
         match tx {
             TypedTransaction::Legacy(mut t) => {
                 let sig = self.sign_transaction_inner(sender, &mut t).await?;

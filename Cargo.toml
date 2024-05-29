@@ -38,7 +38,7 @@ linera-alloy-eip7547 = { version = "0.1.0", default-features = false, path = "cr
 linera-alloy-genesis = { version = "0.1.0", default-features = false, path = "crates/genesis" }
 linera-alloy-json-rpc = { version = "0.1.0", default-features = false, path = "crates/json-rpc" }
 linera-alloy-network = { version = "0.1.0", default-features = false, path = "crates/network" }
-alloy-node-bindings = { version = "0.1.0", default-features = false, path = "crates/node-bindings" }
+linera-alloy-node-bindings = { version = "0.1.0", default-features = false, path = "crates/node-bindings" }
 linera-alloy-provider = { version = "0.1.0", default-features = false, path = "crates/provider" }
 linera-alloy-pubsub = { version = "0.1.0", default-features = false, path = "crates/pubsub" }
 linera-alloy-rpc-client = { version = "0.1.0", default-features = false, path = "crates/rpc-client" }
@@ -48,12 +48,12 @@ linera-alloy-rpc-types-beacon = { version = "0.1.0", default-features = false, p
 linera-alloy-rpc-types-trace = { version = "0.1.0", default-features = false, path = "crates/rpc-types-trace" }
 linera-alloy-rpc-types = { version = "0.1.0", default-features = false, path = "crates/rpc-types" }
 linera-alloy-serde = { version = "0.1.0", default-features = false, path = "crates/serde" }
-alloy-signer = { version = "0.1.0", default-features = false, path = "crates/signer" }
-alloy-signer-aws = { version = "0.1.0", default-features = false, path = "crates/signer-aws" }
-alloy-signer-gcp = { version = "0.1.0", default-features = false, path = "crates/signer-gcp" }
-alloy-signer-ledger = { version = "0.1.0", default-features = false, path = "crates/signer-ledger" }
-alloy-signer-trezor = { version = "0.1.0", default-features = false, path = "crates/signer-trezor" }
-alloy-signer-wallet = { version = "0.1.0", default-features = false, path = "crates/signer-wallet" }
+linera-alloy-signer = { version = "0.1.0", default-features = false, path = "crates/signer" }
+linera-alloy-signer-aws = { version = "0.1.0", default-features = false, path = "crates/signer-aws" }
+linera-alloy-signer-gcp = { version = "0.1.0", default-features = false, path = "crates/signer-gcp" }
+linera-alloy-signer-ledger = { version = "0.1.0", default-features = false, path = "crates/signer-ledger" }
+linera-alloy-signer-trezor = { version = "0.1.0", default-features = false, path = "crates/signer-trezor" }
+linera-alloy-signer-wallet = { version = "0.1.0", default-features = false, path = "crates/signer-wallet" }
 linera-alloy-transport = { version = "0.1.0", default-features = false, path = "crates/transport" }
 linera-alloy-transport-http = { version = "0.1.0", default-features = false, path = "crates/transport-http" }
 linera-alloy-transport-ipc = { version = "0.1.0", default-features = false, path = "crates/transport-ipc" }

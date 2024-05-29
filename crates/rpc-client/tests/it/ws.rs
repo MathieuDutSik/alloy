@@ -1,4 +1,4 @@
-use alloy_node_bindings::Anvil;
+use linera_alloy_node_bindings::Anvil;
 use alloy_primitives::U64;
 use linera_alloy_rpc_client::{ClientBuilder, RpcCall};
 use linera_alloy_transport_ws::WsConnect;

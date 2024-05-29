@@ -9,7 +9,7 @@
 use linera_alloy_consensus::SignableTransaction;
 use linera_alloy_network::{TxSigner, TxSignerSync};
 use alloy_primitives::{Address, ChainId, Signature, B256};
-use alloy_signer::{sign_transaction_with_chain_id, Result, Signer, SignerSync};
+use linera_alloy_signer::{sign_transaction_with_chain_id, Result, Signer, SignerSync};
 use async_trait::async_trait;
 use k256::ecdsa::{self, signature::hazmat::PrehashSigner, RecoveryId};
 use std::fmt;
@@ -52,9 +52,9 @@ pub type YubiWallet = Wallet<yubihsm::ecdsa::Signer<k256::Secp256k1>>;
 /// prefix the message being hashed with the `Ethereum Signed Message` domain separator.
 ///
 /// ```
-/// use alloy_signer::{Signer, SignerSync};
+/// use linera_alloy_signer::{Signer, SignerSync};
 ///
-/// let wallet = alloy_signer_wallet::LocalWallet::random();
+/// let wallet = linera_alloy_signer_wallet::LocalWallet::random();
 ///
 /// // Optionally, the wallet's chain id can be set, in order to use EIP-155
 /// // replay protection with different chains
@@ -173,7 +173,7 @@ where
     async fn sign_transaction(
         &self,
         tx: &mut dyn SignableTransaction<Signature>,
-    ) -> alloy_signer::Result<Signature> {
+    ) -> linera_alloy_signer::Result<Signature> {
         sign_transaction_with_chain_id!(self, tx, self.sign_hash_sync(&tx.signature_hash()))
     }
 }
@@ -189,7 +189,7 @@ where
     fn sign_transaction_sync(
         &self,
         tx: &mut dyn SignableTransaction<Signature>,
-    ) -> alloy_signer::Result<Signature> {
+    ) -> linera_alloy_signer::Result<Signature> {
         sign_transaction_with_chain_id!(self, tx, self.sign_hash_sync(&tx.signature_hash()))
     }
 }
@@ -271,7 +271,7 @@ mod test {
         // Errors on mismatch.
         tx.chain_id = Some(2);
         let error = sign_tx_test(&mut tx, Some(1)).await.unwrap_err();
-        let expected_error = alloy_signer::Error::TransactionChainIdMismatch { signer: 1, tx: 2 };
+        let expected_error = linera_alloy_signer::Error::TransactionChainIdMismatch { signer: 1, tx: 2 };
         assert_eq!(error.to_string(), expected_error.to_string());
     }
 }

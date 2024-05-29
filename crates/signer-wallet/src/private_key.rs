@@ -2,7 +2,7 @@
 
 use super::{Wallet, WalletError};
 use alloy_primitives::{hex, B256};
-use alloy_signer::utils::secret_key_to_address;
+use linera_alloy_signer::utils::secret_key_to_address;
 use k256::{
     ecdsa::{self, SigningKey},
     FieldBytes, NonZeroScalar, SecretKey as K256SecretKey,

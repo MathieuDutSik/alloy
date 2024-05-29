@@ -1,6 +1,6 @@
 use linera_alloy_consensus::SignableTransaction;
 use alloy_primitives::{hex, Address, B256};
-use alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
+use linera_alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
 use async_trait::async_trait;
 use gcloud_sdk::{
     google::cloud::kms::{
@@ -71,8 +71,8 @@ impl KeySpecifier {
 /// # Examples
 ///
 /// ```no_run
-/// use alloy_signer::Signer;
-/// use alloy_signer_gcp::{GcpKeyRingRef, GcpSigner, KeySpecifier};
+/// use linera_alloy_signer::Signer;
+/// use linera_alloy_signer_gcp::{GcpKeyRingRef, GcpSigner, KeySpecifier};
 /// use gcloud_sdk::{
 ///     google::cloud::kms::v1::key_management_service_client::KeyManagementServiceClient,
 ///     GoogleApi,
@@ -167,7 +167,7 @@ impl Signer for GcpSigner {
     #[instrument(err)]
     #[allow(clippy::blocks_in_conditions)]
     async fn sign_hash(&self, hash: &B256) -> Result<Signature> {
-        self.sign_digest_inner(hash).await.map_err(alloy_signer::Error::other)
+        self.sign_digest_inner(hash).await.map_err(linera_alloy_signer::Error::other)
     }
 
     #[inline]
@@ -199,7 +199,7 @@ impl GcpSigner {
         let key_name = key_specifier.0;
         let resp = request_get_pubkey(&client, &key_name).await?;
         let pubkey = decode_pubkey(resp)?;
-        let address = alloy_signer::utils::public_key_to_address(&pubkey);
+        let address = linera_alloy_signer::utils::public_key_to_address(&pubkey);
         debug!(?pubkey, %address, "instantiated GCP signer");
         Ok(Self { client, key_name, chain_id, pubkey, address })
     }

@@ -252,7 +252,7 @@ mod test {
     #[test]
     #[cfg(feature = "ipc")]
     fn test_parsing_ipc() {
-        use alloy_node_bindings::Anvil;
+        use linera_alloy_node_bindings::Anvil;
 
         // Spawn an Anvil instance to create an IPC socket, as it's different from a normal file.
         let temp_dir = tempfile::tempdir().unwrap();

@@ -1,4 +1,4 @@
-# alloy-signer-gcp
+# linera-alloy-signer-gcp
 
 Ethereum [GCP KMS] signer.
 

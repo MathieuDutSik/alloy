@@ -128,7 +128,7 @@ pub enum AnvilError {
 /// # Example
 ///
 /// ```no_run
-/// use alloy_node_bindings::Anvil;
+/// use linera_alloy_node_bindings::Anvil;
 ///
 /// let port = 8545u16;
 /// let url = format!("http://localhost:{}", port).to_string();
@@ -163,7 +163,7 @@ impl Anvil {
     /// # Example
     ///
     /// ```
-    /// # use alloy_node_bindings::Anvil;
+    /// # use linera_alloy_node_bindings::Anvil;
     /// fn a() {
     ///  let anvil = Anvil::default().spawn();
     ///
@@ -179,7 +179,7 @@ impl Anvil {
     /// # Example
     ///
     /// ```
-    /// # use alloy_node_bindings::Anvil;
+    /// # use linera_alloy_node_bindings::Anvil;
     /// fn a() {
     ///  let anvil = Anvil::at("~/.foundry/bin/anvil").spawn();
     ///

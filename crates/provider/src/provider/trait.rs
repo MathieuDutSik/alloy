@@ -931,7 +931,7 @@ mod tests {
     use super::*;
     use crate::{ProviderBuilder, WalletProvider};
     use linera_alloy_network::TransactionBuilder;
-    use alloy_node_bindings::Anvil;
+    use linera_alloy_node_bindings::Anvil;
     use alloy_primitives::{address, b256, bytes};
     use linera_alloy_rpc_types::request::TransactionRequest;
     use alloy_sol_types::SolValue;

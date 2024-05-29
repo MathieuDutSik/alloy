@@ -1,5 +1,5 @@
 [package]
-name = "alloy-node-bindings"
+name = "linera-alloy-node-bindings"
 description = "Ethereum execution-layer client bindings"
 
 version.workspace = true

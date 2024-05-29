@@ -1,5 +1,5 @@
 [package]
-name = "alloy-signer-wallet"
+name = "linera-alloy-signer-wallet"
 description = "sepc256k1 ECDSA and YubiHSM signer implementations"
 
 version.workspace = true
@@ -18,7 +18,7 @@ workspace = true
 linera-alloy-consensus = { workspace = true, features = ["std"] }
 linera-alloy-network.workspace = true
 alloy-primitives.workspace = true
-alloy-signer.workspace = true
+linera-alloy-signer.workspace = true
 
 k256.workspace = true
 rand.workspace = true
@@ -62,4 +62,4 @@ mnemonic = ["dep:coins-bip32", "dep:coins-bip39"]
 mnemonic-all-languages = ["mnemonic", "coins-bip39?/all-langs"]
 yubihsm = ["dep:yubihsm", "dep:elliptic-curve"]
 
-eip712 = ["alloy-signer/eip712"]
+eip712 = ["linera-alloy-signer/eip712"]

@@ -72,7 +72,7 @@ mod tests {
     use crate::ProviderBuilder;
 
     use super::*;
-    use alloy_node_bindings::Geth;
+    use linera_alloy_node_bindings::Geth;
 
     #[tokio::test]
     async fn test_txpool_content() {

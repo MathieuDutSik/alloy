@@ -393,7 +393,7 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
     /// given function is used to configure the anvil instance.
     pub fn on_anvil_with_config(
         self,
-        f: impl FnOnce(alloy_node_bindings::Anvil) -> alloy_node_bindings::Anvil,
+        f: impl FnOnce(linera_alloy_node_bindings::Anvil) -> linera_alloy_node_bindings::Anvil,
     ) -> F::Provider
     where
         F: TxFiller<Ethereum>
@@ -418,7 +418,7 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
     /// use in tests.
     pub fn on_anvil_with_signer_and_config(
         self,
-        f: impl FnOnce(alloy_node_bindings::Anvil) -> alloy_node_bindings::Anvil,
+        f: impl FnOnce(linera_alloy_node_bindings::Anvil) -> linera_alloy_node_bindings::Anvil,
     ) -> <JoinFill<F, SignerFiller<linera_alloy_network::EthereumSigner>> as ProviderLayer<
         L::Provider,
         linera_alloy_transport_http::Http<reqwest::Client>,
@@ -437,7 +437,7 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
         let anvil_layer = crate::layers::AnvilLayer::from(f(Default::default()));
         let url = anvil_layer.endpoint_url();
 
-        let wallet = alloy_signer_wallet::Wallet::from(anvil_layer.instance().keys()[0].clone());
+        let wallet = linera_alloy_signer_wallet::Wallet::from(anvil_layer.instance().keys()[0].clone());
 
         let signer = crate::network::EthereumSigner::from(wallet);
 

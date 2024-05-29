@@ -1,7 +1,7 @@
 use super::types::{DerivationType, TrezorError};
 use linera_alloy_consensus::{SignableTransaction, TxEip1559};
 use alloy_primitives::{hex, Address, ChainId, Parity, TxKind, B256, U256};
-use alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
+use linera_alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
 use async_trait::async_trait;
 use std::fmt;
 use trezor_client::client::Trezor;
@@ -38,14 +38,14 @@ impl fmt::Debug for TrezorSigner {
 impl Signer for TrezorSigner {
     #[inline]
     async fn sign_hash(&self, _hash: &B256) -> Result<Signature> {
-        Err(alloy_signer::Error::UnsupportedOperation(
-            alloy_signer::UnsupportedSignerOperation::SignHash,
+        Err(linera_alloy_signer::Error::UnsupportedOperation(
+            linera_alloy_signer::UnsupportedSignerOperation::SignHash,
         ))
     }
 
     #[inline]
     async fn sign_message(&self, message: &[u8]) -> Result<Signature> {
-        self.sign_message_inner(message).await.map_err(alloy_signer::Error::other)
+        self.sign_message_inner(message).await.map_err(linera_alloy_signer::Error::other)
     }
 
     #[inline]

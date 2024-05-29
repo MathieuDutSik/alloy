@@ -1,4 +1,4 @@
-# alloy-signer-trezor
+# linera-alloy-signer-trezor
 
 Ethereum [Trezor] signer.
 

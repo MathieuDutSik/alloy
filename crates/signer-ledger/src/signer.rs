@@ -3,7 +3,7 @@
 use crate::types::{DerivationType, LedgerError, INS, P1, P1_FIRST, P2};
 use linera_alloy_consensus::SignableTransaction;
 use alloy_primitives::{hex, Address, ChainId, B256};
-use alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
+use linera_alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
 use async_trait::async_trait;
 use coins_ledger::{
     common::{APDUCommand, APDUData},
@@ -50,8 +50,8 @@ impl linera_alloy_network::TxSigner<Signature> for LedgerSigner {
 #[cfg_attr(not(target_arch = "wasm32"), async_trait)]
 impl Signer for LedgerSigner {
     async fn sign_hash(&self, _hash: &B256) -> Result<Signature> {
-        Err(alloy_signer::Error::UnsupportedOperation(
-            alloy_signer::UnsupportedSignerOperation::SignHash,
+        Err(linera_alloy_signer::Error::UnsupportedOperation(
+            linera_alloy_signer::UnsupportedSignerOperation::SignHash,
         ))
     }
 
@@ -63,7 +63,7 @@ impl Signer for LedgerSigner {
 
         self.sign_payload(INS::SIGN_PERSONAL_MESSAGE, &payload)
             .await
-            .map_err(alloy_signer::Error::other)
+            .map_err(linera_alloy_signer::Error::other)
     }
 
     #[cfg(feature = "eip712")]
@@ -75,7 +75,7 @@ impl Signer for LedgerSigner {
     ) -> Result<Signature> {
         self.sign_typed_data_(&payload.eip712_hash_struct(), domain)
             .await
-            .map_err(alloy_signer::Error::other)
+            .map_err(linera_alloy_signer::Error::other)
     }
 
     #[cfg(feature = "eip712")]
@@ -83,7 +83,7 @@ impl Signer for LedgerSigner {
     async fn sign_dynamic_typed_data(&self, payload: &TypedData) -> Result<Signature> {
         self.sign_typed_data_(&payload.hash_struct()?, &payload.domain)
             .await
-            .map_err(alloy_signer::Error::other)
+            .map_err(linera_alloy_signer::Error::other)
     }
 
     #[inline]
@@ -109,7 +109,7 @@ impl LedgerSigner {
     ///
     /// ```
     /// # async fn foo() -> Result<(), Box<dyn std::error::Error>> {
-    /// use alloy_signer_ledger::{HDPath, Ledger};
+    /// use linera_alloy_signer_ledger::{HDPath, Ledger};
     ///
     /// let ledger = Ledger::new(HDPath::LedgerLive(0), Some(1)).await?;
     /// # Ok(())

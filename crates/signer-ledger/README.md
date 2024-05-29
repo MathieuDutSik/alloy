@@ -1,4 +1,4 @@
-# alloy-signer-ledger
+# linera-alloy-signer-ledger
 
 Ethereum [Ledger] signer.
 

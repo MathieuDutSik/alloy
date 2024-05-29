@@ -37,19 +37,19 @@ This repository contains the following crates:
 - [`linera-alloy-genesis`] - Ethereum genesis file definitions
 - [`linera-alloy-json-rpc`] - Core data types for JSON-RPC 2.0 clients
 - [`linera-alloy-network`] - Network abstraction for RPC types
-- [`alloy-node-bindings`] - Ethereum execution-layer client bindings
+- [`linera-alloy-node-bindings`] - Ethereum execution-layer client bindings
 - [`linera-alloy-provider`] - Interface with an Ethereum blockchain
 - [`linera-alloy-pubsub`] - Ethereum JSON-RPC [publish-subscribe] tower service and type definitions
 - [`linera-alloy-rpc-client`] - Low-level Ethereum JSON-RPC client implementation
 - [`linera-alloy-rpc-types`] - Ethereum JSON-RPC types
   - [`linera-alloy-rpc-types-engine`] - Ethereum execution-consensus layer (engine) API RPC types
   - [`linera-alloy-rpc-types-trace`] - Ethereum RPC trace types
-- [`alloy-signer`] - Ethereum signer abstraction
-  - [`alloy-signer-aws`] - [AWS KMS] signer implementation
-  - [`alloy-signer-gcp`] - [GCP KMS] signer implementation
-  - [`alloy-signer-ledger`] - [Ledger] signer implementation
-  - [`alloy-signer-trezor`] - [Trezor] signer implementation
-  - [`alloy-signer-wallet`] - Local wallet (Keystore/Mnemonic/Yubihsm) signer implementation
+- [`linera-alloy-signer`] - Ethereum signer abstraction
+  - [`linera-alloy-signer-aws`] - [AWS KMS] signer implementation
+  - [`linera-alloy-signer-gcp`] - [GCP KMS] signer implementation
+  - [`linera-alloy-signer-ledger`] - [Ledger] signer implementation
+  - [`linera-alloy-signer-trezor`] - [Trezor] signer implementation
+  - [`linera-alloy-signer-wallet`] - Local wallet (Keystore/Mnemonic/Yubihsm) signer implementation
 - [`linera-alloy-transport`] - Low-level Ethereum JSON-RPC transport abstraction
   - [`linera-alloy-transport-http`] - HTTP transport implementation
   - [`linera-alloy-transport-ipc`] - IPC transport implementation
@@ -62,19 +62,19 @@ This repository contains the following crates:
 [`linera-alloy-genesis`]: https://github.com/alloy-rs/alloy/tree/main/crates/genesis
 [`linera-alloy-json-rpc`]: https://github.com/alloy-rs/alloy/tree/main/crates/json-rpc
 [`linera-alloy-network`]: https://github.com/alloy-rs/alloy/tree/main/crates/network
-[`alloy-node-bindings`]: https://github.com/alloy-rs/alloy/tree/main/crates/node-bindings
+[`linera-alloy-node-bindings`]: https://github.com/alloy-rs/alloy/tree/main/crates/node-bindings
 [`linera-alloy-provider`]: https://github.com/alloy-rs/alloy/tree/main/crates/provider
 [`linera-alloy-pubsub`]: https://github.com/alloy-rs/alloy/tree/main/crates/pubsub
 [`linera-alloy-rpc-client`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-client
 [`linera-alloy-rpc-types-engine`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-types-engine
 [`linera-alloy-rpc-types-trace`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-types-trace
 [`linera-alloy-rpc-types`]: https://github.com/alloy-rs/alloy/tree/main/crates/rpc-types
-[`alloy-signer`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer
-[`alloy-signer-aws`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-aws
-[`alloy-signer-gcp`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-gcp
-[`alloy-signer-ledger`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-ledger
-[`alloy-signer-trezor`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-trezor
-[`alloy-signer-wallet`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-wallet
+[`linera-alloy-signer`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer
+[`linera-alloy-signer-aws`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-aws
+[`linera-alloy-signer-gcp`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-gcp
+[`linera-alloy-signer-ledger`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-ledger
+[`linera-alloy-signer-trezor`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-trezor
+[`linera-alloy-signer-wallet`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-wallet
 [`linera-alloy-transport`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport
 [`linera-alloy-transport-http`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-http
 [`linera-alloy-transport-ipc`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-ipc

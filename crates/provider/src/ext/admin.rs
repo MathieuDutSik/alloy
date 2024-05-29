@@ -71,7 +71,7 @@ mod test {
     use crate::ProviderBuilder;
 
     use super::*;
-    use alloy_node_bindings::Geth;
+    use linera_alloy_node_bindings::Geth;
     use tempfile::TempDir;
 
     #[tokio::test]

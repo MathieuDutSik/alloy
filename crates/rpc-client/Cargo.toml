@@ -43,7 +43,7 @@ linera-alloy-transport-ipc = { workspace = true, optional = true }
 
 [dev-dependencies]
 alloy-primitives.workspace = true
-alloy-node-bindings.workspace = true
+linera-alloy-node-bindings.workspace = true
 linera-alloy-transport-ipc = { workspace = true, features = ["mock"] }
 linera-alloy-transport-ws.workspace = true
 

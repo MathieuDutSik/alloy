@@ -1,5 +1,5 @@
 [package]
-name = "alloy-signer-ledger"
+name = "linera-alloy-signer-ledger"
 description = "Ethereum Ledger signer"
 
 version.workspace = true
@@ -17,7 +17,7 @@ workspace = true
 [dependencies]
 linera-alloy-consensus = { workspace = true, features = ["std"] }
 alloy-primitives.workspace = true
-alloy-signer.workspace = true
+linera-alloy-signer.workspace = true
 
 async-trait.workspace = true
 coins-ledger = { version = "0.10", default-features = false }
@@ -39,7 +39,7 @@ serial_test.workspace = true
 tracing-subscriber.workspace = true
 
 [features]
-eip712 = ["alloy-signer/eip712", "dep:alloy-sol-types", "dep:alloy-dyn-abi"]
+eip712 = ["linera-alloy-signer/eip712", "dep:alloy-sol-types", "dep:alloy-dyn-abi"]
 
 # WASM support
 browser = ["coins-ledger/browser"]

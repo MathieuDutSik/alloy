@@ -25,7 +25,7 @@ pub enum TransactionBuilderError<N: Network> {
 
     /// Signer error.
     #[error(transparent)]
-    Signer(#[from] alloy_signer::Error),
+    Signer(#[from] linera_alloy_signer::Error),
 
     /// A custom error.
     #[error("{0}")]

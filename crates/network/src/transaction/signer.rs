@@ -36,13 +36,13 @@ pub trait NetworkSigner<N: Network>: std::fmt::Debug + Send + Sync {
         &self,
         sender: Address,
         tx: N::UnsignedTx,
-    ) -> alloy_signer::Result<N::TxEnvelope>;
+    ) -> linera_alloy_signer::Result<N::TxEnvelope>;
 
     /// Asynchronously sign an unsigned transaction.
     fn sign_transaction(
         &self,
         tx: N::UnsignedTx,
-    ) -> impl_future!(<Output = alloy_signer::Result<N::TxEnvelope>>) {
+    ) -> impl_future!(<Output = linera_alloy_signer::Result<N::TxEnvelope>>) {
         self.sign_transaction_from(self.default_signer_address(), tx)
     }
 
@@ -51,9 +51,9 @@ pub trait NetworkSigner<N: Network>: std::fmt::Debug + Send + Sync {
     async fn sign_request(
         &self,
         request: N::TransactionRequest,
-    ) -> alloy_signer::Result<N::TxEnvelope> {
+    ) -> linera_alloy_signer::Result<N::TxEnvelope> {
         let sender = request.from().unwrap_or_else(|| self.default_signer_address());
-        let tx = request.build_unsigned().map_err(|(_, e)| alloy_signer::Error::other(e))?;
+        let tx = request.build_unsigned().map_err(|(_, e)| linera_alloy_signer::Error::other(e))?;
         self.sign_transaction_from(sender, tx).await
     }
 }
@@ -83,7 +83,7 @@ pub trait TxSigner<Signature> {
     async fn sign_transaction(
         &self,
         tx: &mut dyn SignableTransaction<Signature>,
-    ) -> alloy_signer::Result<Signature>;
+    ) -> linera_alloy_signer::Result<Signature>;
 }
 
 /// Synchronous transaction signer,  capable of signing any [`SignableTransaction`] for the given
@@ -110,5 +110,5 @@ pub trait TxSignerSync<Signature> {
     fn sign_transaction_sync(
         &self,
         tx: &mut dyn SignableTransaction<Signature>,
-    ) -> alloy_signer::Result<Signature>;
+    ) -> linera_alloy_signer::Result<Signature>;
 }

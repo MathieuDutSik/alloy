@@ -227,7 +227,7 @@ mod tests {
     async fn event_filters() {
         let _ = tracing_subscriber::fmt::try_init();
 
-        let anvil = alloy_node_bindings::Anvil::new().spawn();
+        let anvil = linera_alloy_node_bindings::Anvil::new().spawn();
         let provider = linera_alloy_provider::ProviderBuilder::new().on_http(anvil.endpoint_url());
 
         let contract = MyContract::deploy(&provider).await.unwrap();

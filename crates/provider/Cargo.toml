@@ -19,8 +19,8 @@ linera-alloy-eips.workspace = true
 linera-alloy-consensus.workspace = true
 linera-alloy-json-rpc.workspace = true
 linera-alloy-network.workspace = true
-alloy-node-bindings = { workspace = true, optional = true }
-alloy-signer-wallet = { workspace = true, optional = true }
+linera-alloy-node-bindings = { workspace = true, optional = true }
+linera-alloy-signer-wallet = { workspace = true, optional = true }
 linera-alloy-rpc-client.workspace = true
 linera-alloy-rpc-types-trace.workspace = true
 linera-alloy-rpc-types.workspace = true
@@ -49,12 +49,12 @@ tracing.workspace = true
 url = { workspace = true, optional = true }
 
 [dev-dependencies]
-alloy-node-bindings.workspace = true
+linera-alloy-node-bindings.workspace = true
 linera-alloy-rpc-client = { workspace = true, features = ["reqwest"] }
 alloy-rlp.workspace = true
 alloy-sol-types.workspace = true
-alloy-signer.workspace = true
-alloy-signer-wallet.workspace = true
+linera-alloy-signer.workspace = true
+linera-alloy-signer-wallet.workspace = true
 linera-alloy-transport-http = { workspace = true, features = ["reqwest"] }
 
 reqwest.workspace = true
@@ -77,5 +77,5 @@ ipc = ["pubsub", "linera-alloy-rpc-client/ipc", "linera-alloy-transport-ipc"]
 reqwest-default-tls = ["linera-alloy-transport-http?/reqwest-default-tls"]
 reqwest-rustls-tls = ["linera-alloy-transport-http?/reqwest-rustls-tls"]
 reqwest-native-tls = ["linera-alloy-transport-http?/reqwest-native-tls"]
-anvil = ["reqwest", "dep:alloy-node-bindings", "dep:alloy-signer-wallet"]
+anvil = ["reqwest", "dep:linera-alloy-node-bindings", "dep:linera-alloy-signer-wallet"]
 engine-api = ["dep:linera-alloy-rpc-types-engine"]
