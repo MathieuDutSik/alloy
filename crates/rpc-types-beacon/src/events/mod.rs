@@ -3,7 +3,7 @@
 //! See also [ethereum-beacon-API eventstream](https://ethereum.github.io/beacon-APIs/#/Events/eventstream)
 
 use alloy_primitives::{Address, Bytes, B256};
-use alloy_rpc_types_engine::PayloadAttributes;
+use linera_alloy_rpc_types_engine::PayloadAttributes;
 use attestation::AttestationData;
 use light_client_finality::LightClientFinalityData;
 use light_client_optimistic::LightClientOptimisticData;

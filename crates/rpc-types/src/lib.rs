@@ -12,7 +12,7 @@
 
 mod eth;
 
-pub use alloy_serde as serde_helpers;
+pub use linera_alloy_serde as serde_helpers;
 pub use eth::*;
 
 mod with_other;

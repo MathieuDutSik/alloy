@@ -1,7 +1,7 @@
 use linera_alloy_eips::BlockId;
 use linera_alloy_json_rpc::{RpcError, RpcParam, RpcReturn};
 use alloy_primitives::B256;
-use alloy_rpc_client::{RpcCall, WeakClient};
+use linera_alloy_rpc_client::{RpcCall, WeakClient};
 use linera_alloy_transport::{Transport, TransportErrorKind, TransportResult};
 use futures::FutureExt;
 use std::{

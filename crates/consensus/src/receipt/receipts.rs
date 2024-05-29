@@ -16,10 +16,10 @@ pub struct Receipt<T = Log> {
     /// If transaction is executed successfully.
     ///
     /// This is the `statusCode`
-    #[cfg_attr(feature = "serde", serde(with = "alloy_serde::quantity_bool"))]
+    #[cfg_attr(feature = "serde", serde(with = "linera_alloy_serde::quantity_bool"))]
     pub status: bool,
     /// Gas used
-    #[cfg_attr(feature = "serde", serde(with = "alloy_serde::u128_via_ruint"))]
+    #[cfg_attr(feature = "serde", serde(with = "linera_alloy_serde::u128_via_ruint"))]
     pub cumulative_gas_used: u128,
     /// Log send from contracts.
     pub logs: Vec<T>,

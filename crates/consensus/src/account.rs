@@ -10,7 +10,7 @@ use alloc::{vec, vec::Vec};
 #[cfg_attr(feature = "serde", serde(rename_all = "camelCase"))]
 pub struct Account {
     /// The account's nonce.
-    #[cfg_attr(feature = "serde", serde(with = "alloy_serde::u64_via_ruint"))]
+    #[cfg_attr(feature = "serde", serde(with = "linera_alloy_serde::u64_via_ruint"))]
     pub nonce: u64,
     /// The account's balance.
     pub balance: U256,

@@ -2,8 +2,8 @@
 //! definitions.
 
 use alloy_primitives::{Address, B256};
-use alloy_rpc_types_engine::PayloadStatusEnum;
-use alloy_serde::u64_via_ruint;
+use linera_alloy_rpc_types_engine::PayloadStatusEnum;
+use linera_alloy_serde::u64_via_ruint;
 use serde::{ser::SerializeMap, Deserialize, Serialize, Serializer};
 use std::fmt;
 

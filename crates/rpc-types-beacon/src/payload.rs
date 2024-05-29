@@ -11,7 +11,7 @@
 use crate::{withdrawals::BeaconWithdrawal, BlsPublicKey};
 use linera_alloy_eips::{eip4895::Withdrawal, eip6110::DepositRequest, eip7002::WithdrawalRequest};
 use alloy_primitives::{Address, Bloom, Bytes, B256, U256};
-use alloy_rpc_types_engine::{
+use linera_alloy_rpc_types_engine::{
     ExecutionPayload, ExecutionPayloadV1, ExecutionPayloadV2, ExecutionPayloadV3,
     ExecutionPayloadV4,
 };
@@ -132,7 +132,7 @@ struct BeaconOptimismPayloadAttributes {
 /// See docs for [beacon_api_payload_attributes].
 pub mod beacon_api_payload_attributes_optimism {
     use super::*;
-    use alloy_rpc_types_engine::{OptimismPayloadAttributes, PayloadAttributes};
+    use linera_alloy_rpc_types_engine::{OptimismPayloadAttributes, PayloadAttributes};
 
     /// Serialize the payload attributes for the beacon API.
     pub fn serialize<S>(
@@ -191,12 +191,12 @@ pub mod beacon_api_payload_attributes_optimism {
 /// A helper module for serializing and deserializing the payload attributes for the beacon API.
 ///
 /// The beacon API encoded object has equivalent fields to the
-/// [PayloadAttributes](alloy_rpc_types_engine::PayloadAttributes) with two differences:
+/// [PayloadAttributes](linera_alloy_rpc_types_engine::PayloadAttributes) with two differences:
 /// 1) `snake_case` identifiers must be used rather than `camelCase`;
 /// 2) integers must be encoded as quoted decimals rather than big-endian hex.
 pub mod beacon_api_payload_attributes {
     use super::*;
-    use alloy_rpc_types_engine::PayloadAttributes;
+    use linera_alloy_rpc_types_engine::PayloadAttributes;
 
     /// Serialize the payload attributes for the beacon API.
     pub fn serialize<S>(

@@ -22,16 +22,16 @@ impl Network for Ethereum {
 
     type Header = linera_alloy_consensus::Header;
 
-    type TransactionRequest = alloy_rpc_types::transaction::TransactionRequest;
+    type TransactionRequest = linera_alloy_rpc_types::transaction::TransactionRequest;
 
-    type TransactionResponse = alloy_rpc_types::Transaction;
+    type TransactionResponse = linera_alloy_rpc_types::Transaction;
 
-    type ReceiptResponse = alloy_rpc_types::TransactionReceipt;
+    type ReceiptResponse = linera_alloy_rpc_types::TransactionReceipt;
 
-    type HeaderResponse = alloy_rpc_types::Header;
+    type HeaderResponse = linera_alloy_rpc_types::Header;
 }
 
-impl ReceiptResponse for alloy_rpc_types::TransactionReceipt {
+impl ReceiptResponse for linera_alloy_rpc_types::TransactionReceipt {
     fn contract_address(&self) -> Option<alloy_primitives::Address> {
         self.contract_address
     }

@@ -3,7 +3,7 @@ use crate::{
 };
 use linera_alloy_consensus::{BlobTransactionSidecar, TxType, TypedTransaction};
 use alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
-use alloy_rpc_types::{request::TransactionRequest, AccessList};
+use linera_alloy_rpc_types::{request::TransactionRequest, AccessList};
 
 impl TransactionBuilder<Ethereum> for TransactionRequest {
     fn chain_id(&self) -> Option<ChainId> {
@@ -184,7 +184,7 @@ mod tests {
     use crate::{TransactionBuilder, TransactionBuilderError};
     use linera_alloy_consensus::{BlobTransactionSidecar, TxEip1559, TxType, TypedTransaction};
     use alloy_primitives::Address;
-    use alloy_rpc_types::{AccessList, TransactionRequest};
+    use linera_alloy_rpc_types::{AccessList, TransactionRequest};
 
     #[test]
     fn from_eip1559_to_tx_req() {

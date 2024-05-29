@@ -7,7 +7,7 @@ use crate::{
 };
 use alloy_chains::NamedChain;
 use alloy_network::{Ethereum, Network};
-use alloy_rpc_client::{BuiltInConnectionString, ClientBuilder, RpcClient};
+use linera_alloy_rpc_client::{BuiltInConnectionString, ClientBuilder, RpcClient};
 use linera_alloy_transport::{BoxTransport, Transport, TransportError, TransportResult};
 use std::marker::PhantomData;
 

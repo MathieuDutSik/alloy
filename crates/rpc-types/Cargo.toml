@@ -1,5 +1,5 @@
 [package]
-name = "alloy-rpc-types"
+name = "linera-alloy-rpc-types"
 description = "Alloy RPC types"
 
 version.workspace = true
@@ -18,7 +18,7 @@ workspace = true
 # ethereum
 alloy-rlp = { workspace = true, features = ["arrayvec", "derive"] }
 alloy-primitives = { workspace = true, features = ["rlp", "serde", "std"] }
-alloy-serde.workspace = true
+linera-alloy-serde.workspace = true
 linera-alloy-genesis.workspace = true
 
 linera-alloy-consensus = { workspace = true, features = ["std", "serde"] }

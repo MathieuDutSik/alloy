@@ -18,7 +18,7 @@ workspace = true
 alloy-primitives = { workspace = true, features = ["rlp"] }
 alloy-rlp.workspace = true
 linera-alloy-eips.workspace = true
-alloy-serde = { workspace = true, optional = true }
+linera-alloy-serde = { workspace = true, optional = true }
 
 # kzg
 c-kzg = { workspace = true, features = ["serde"], optional = true }
@@ -57,6 +57,6 @@ arbitrary = [
 serde = [
     "dep:serde",
     "alloy-primitives/serde",
-    "dep:alloy-serde",
+    "dep:linera-alloy-serde",
     "linera-alloy-eips/serde",
 ]

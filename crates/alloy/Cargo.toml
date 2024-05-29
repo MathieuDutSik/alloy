@@ -34,14 +34,14 @@ linera-alloy-pubsub = { workspace = true, default-features = false, optional = t
 
 # rpc
 linera-alloy-json-rpc = { workspace = true, default-features = false, optional = true }
-alloy-rpc-client = { workspace = true, default-features = false, optional = true }
-alloy-rpc-types-beacon = { workspace = true, default-features = false, optional = true }
-alloy-rpc-types-engine = { workspace = true, default-features = false, optional = true }
-alloy-rpc-types-trace = { workspace = true, default-features = false, optional = true }
-alloy-rpc-types = { workspace = true, default-features = false, optional = true }
+linera-alloy-rpc-client = { workspace = true, default-features = false, optional = true }
+linera-alloy-rpc-types-beacon = { workspace = true, default-features = false, optional = true }
+linera-alloy-rpc-types-engine = { workspace = true, default-features = false, optional = true }
+linera-alloy-rpc-types-trace = { workspace = true, default-features = false, optional = true }
+linera-alloy-rpc-types = { workspace = true, default-features = false, optional = true }
 
 # serde
-alloy-serde = { workspace = true, default-features = false, optional = true }
+linera-alloy-serde = { workspace = true, default-features = false, optional = true }
 
 # signer
 alloy-signer = { workspace = true, default-features = false, optional = true }
@@ -71,21 +71,21 @@ std = [
     "alloy-core/std",
     "linera-alloy-eips?/std",
     "linera-alloy-genesis?/std",
-    "alloy-serde?/std",
+    "linera-alloy-serde?/std",
     "linera-alloy-consensus?/std",
 ]
 
 # configuration
 reqwest = [
     "dep:reqwest",
-    "alloy-rpc-client?/reqwest",
+    "linera-alloy-rpc-client?/reqwest",
     "alloy-provider?/reqwest",
     "linera-alloy-transport-http?/reqwest",
     "linera-alloy-transport-http?/reqwest-default-tls",
 ]
 hyper = [
     "dep:hyper",
-    "alloy-rpc-client?/hyper",
+    "linera-alloy-rpc-client?/hyper",
     "alloy-provider?/hyper",
     "linera-alloy-transport-http?/hyper",
 ]
@@ -111,24 +111,24 @@ pubsub = [
     "dep:linera-alloy-pubsub",
     "alloy-contract?/pubsub",
     "alloy-provider?/pubsub",
-    "alloy-rpc-client?/pubsub",
+    "linera-alloy-rpc-client?/pubsub",
 ]
 
 # rpc
 rpc = []
 json-rpc = ["rpc", "dep:linera-alloy-json-rpc"]
-rpc-client = ["rpc", "dep:alloy-rpc-client"]
-rpc-client-ws = ["rpc", "alloy-rpc-client?/ws"]
-rpc-client-ipc = ["rpc", "alloy-rpc-client?/ipc"]
+rpc-client = ["rpc", "dep:linera-alloy-rpc-client"]
+rpc-client-ws = ["rpc", "linera-alloy-rpc-client?/ws"]
+rpc-client-ipc = ["rpc", "linera-alloy-rpc-client?/ipc"]
 rpc-types = ["rpc"]
-rpc-types-eth = ["rpc-types", "dep:alloy-rpc-types"]
-rpc-types-beacon = ["rpc-types", "dep:alloy-rpc-types-beacon"]
-rpc-types-engine = ["rpc-types", "dep:alloy-rpc-types-engine"]
+rpc-types-eth = ["rpc-types", "dep:linera-alloy-rpc-types"]
+rpc-types-beacon = ["rpc-types", "dep:linera-alloy-rpc-types-beacon"]
+rpc-types-engine = ["rpc-types", "dep:linera-alloy-rpc-types-engine"]
 rpc-types-json = [
-    "alloy-rpc-types?/jsonrpsee-types",
-    "alloy-rpc-types-engine?/jsonrpsee-types",
+    "linera-alloy-rpc-types?/jsonrpsee-types",
+    "linera-alloy-rpc-types-engine?/jsonrpsee-types",
 ]
-rpc-types-trace = ["rpc-types", "dep:alloy-rpc-types-trace"]
+rpc-types-trace = ["rpc-types", "dep:linera-alloy-rpc-types-trace"]
 
 # signers
 signers = ["dep:alloy-signer"]
@@ -169,13 +169,13 @@ postgres = ["alloy-core/postgres"]
 getrandom = ["alloy-core/getrandom"]
 rand = ["alloy-core/rand"]
 rlp = ["alloy-core/rlp"]
-serde = ["alloy-core/serde", "linera-alloy-eips?/serde", "alloy-serde"]
-ssz = ["alloy-core/ssz", "alloy-rpc-types?/ssz", "alloy-rpc-types-engine?/ssz"]
+serde = ["alloy-core/serde", "linera-alloy-eips?/serde", "linera-alloy-serde"]
+ssz = ["alloy-core/ssz", "linera-alloy-rpc-types?/ssz", "linera-alloy-rpc-types-engine?/ssz"]
 arbitrary = [
     "alloy-core/arbitrary",
     "linera-alloy-consensus?/arbitrary",
     "linera-alloy-eips?/arbitrary",
-    "alloy-rpc-types?/arbitrary",
+    "linera-alloy-rpc-types?/arbitrary",
 ]
 k256 = ["alloy-core/k256", "linera-alloy-consensus?/k256", "alloy-network?/k256"]
 kzg = ["linera-alloy-consensus?/kzg"]

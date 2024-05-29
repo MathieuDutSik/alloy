@@ -4,7 +4,7 @@
 //! <https://github.com/otterscan/otterscan/blob/develop/docs/custom-jsonrpc.md>
 
 use alloy_primitives::{Address, Bloom, Bytes, U256};
-use alloy_rpc_types::{Block, Rich, Transaction, TransactionReceipt};
+use linera_alloy_rpc_types::{Block, Rich, Transaction, TransactionReceipt};
 use serde::{Deserialize, Serialize};
 
 /// Operation type enum for `InternalOperation` struct
@@ -112,7 +112,7 @@ pub struct OtsTransactionReceipt {
     #[serde(flatten)]
     pub receipt: TransactionReceipt<OtsReceipt>,
     /// The timestamp of the transaction.
-    #[serde(default, with = "alloy_serde::u64_opt_via_ruint")]
+    #[serde(default, with = "linera_alloy_serde::u64_opt_via_ruint")]
     pub timestamp: Option<u64>,
 }
 
@@ -123,10 +123,10 @@ pub struct OtsReceipt {
     /// If the transaction is executed successfully.
     ///
     /// This is the `statusCode`
-    #[serde(with = "alloy_serde::quantity_bool")]
+    #[serde(with = "linera_alloy_serde::quantity_bool")]
     pub status: bool,
     /// The cumulative gas used.
-    #[serde(with = "alloy_serde::u64_via_ruint")]
+    #[serde(with = "linera_alloy_serde::u64_via_ruint")]
     pub cumulative_gas_used: u64,
     /// The logs sent from contracts.
     ///
@@ -137,7 +137,7 @@ pub struct OtsReceipt {
     /// Note: this is set to null.
     pub logs_bloom: Option<Bloom>,
     /// The transaction type.
-    #[serde(with = "alloy_serde::num::u8_via_ruint")]
+    #[serde(with = "linera_alloy_serde::num::u8_via_ruint")]
     pub r#type: u8,
 }
 

@@ -19,7 +19,7 @@ linera-alloy-consensus = { workspace = true, features = ["std"] }
 linera-alloy-eips = { workspace = true, features = ["serde"] }
 linera-alloy-json-rpc.workspace = true
 alloy-primitives.workspace = true
-alloy-rpc-types.workspace = true
+linera-alloy-rpc-types.workspace = true
 alloy-signer.workspace = true
 alloy-sol-types.workspace = true
 

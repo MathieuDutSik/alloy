@@ -26,7 +26,7 @@ use tower::Service;
 ///
 /// [`Clone`] is not a bound on `Transport`, however, transports generally may
 /// not be used as expected unless they implement `Clone`. For example, only
-/// cloneable transports may be used by the `RpcClient` in `alloy-rpc-client`
+/// cloneable transports may be used by the `RpcClient` in `linera-alloy-rpc-client`
 /// to send RPC requests, and [`BoxTransport`] may only be used to type-erase
 /// Cloneable transports.
 ///

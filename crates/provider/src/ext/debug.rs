@@ -2,8 +2,8 @@
 use crate::Provider;
 use alloy_network::Network;
 use alloy_primitives::{TxHash, B256};
-use alloy_rpc_types::{BlockNumberOrTag, TransactionRequest};
-use alloy_rpc_types_trace::geth::{
+use linera_alloy_rpc_types::{BlockNumberOrTag, TransactionRequest};
+use linera_alloy_rpc_types_trace::geth::{
     GethDebugTracingCallOptions, GethDebugTracingOptions, GethTrace, TraceResult,
 };
 use linera_alloy_transport::{Transport, TransportResult};

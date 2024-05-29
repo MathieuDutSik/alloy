@@ -12,12 +12,12 @@ use alloy_primitives::{
     hex, Address, BlockHash, BlockNumber, Bytes, StorageKey, StorageValue, TxHash, B256, U128,
     U256, U64,
 };
-use alloy_rpc_client::{ClientRef, PollerBuilder, RpcCall, WeakClient};
-use alloy_rpc_types::{
+use linera_alloy_rpc_client::{ClientRef, PollerBuilder, RpcCall, WeakClient};
+use linera_alloy_rpc_types::{
     AccessListWithGasUsed, Block, BlockId, BlockNumberOrTag, EIP1186AccountProofResponse,
     FeeHistory, Filter, FilterChanges, Log, SyncStatus,
 };
-use alloy_rpc_types_trace::parity::{LocalizedTransactionTrace, TraceResults, TraceType};
+use linera_alloy_rpc_types_trace::parity::{LocalizedTransactionTrace, TraceResults, TraceType};
 use linera_alloy_transport::{BoxTransport, Transport, TransportErrorKind, TransportResult};
 use serde_json::value::RawValue;
 use std::borrow::Cow;
@@ -206,7 +206,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
     /// use alloy_primitives::keccak256;
-    /// use alloy_rpc_types::Filter;
+    /// use linera_alloy_rpc_types::Filter;
     ///
     /// let signature = keccak256("Transfer(address,address,uint256)".as_bytes());
     ///
@@ -348,7 +348,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// ```no_run
     /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use alloy_primitives::{address, b256};
-    /// use alloy_rpc_types::Filter;
+    /// use linera_alloy_rpc_types::Filter;
     /// use futures::StreamExt;
     ///
     /// let address = address!("a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48");
@@ -454,7 +454,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// See [`PendingTransactionBuilder`](crate::PendingTransactionBuilder) for more examples.
     ///
     /// ```no_run
-    /// # async fn example<N: alloy_network::Network>(provider: impl alloy_provider::Provider, tx: alloy_rpc_types::transaction::TransactionRequest) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example<N: alloy_network::Network>(provider: impl alloy_provider::Provider, tx: linera_alloy_rpc_types::transaction::TransactionRequest) -> Result<(), Box<dyn std::error::Error>> {
     /// let tx_hash = provider.send_transaction(tx)
     ///     .await?
     ///     .with_required_confirmations(2)
@@ -667,20 +667,20 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// or block ID is provided, the call will be executed on the latest block
     /// with the current state.
     ///
-    /// [`StateOverride`]: alloy_rpc_types::state::StateOverride
+    /// [`StateOverride`]: linera_alloy_rpc_types::state::StateOverride
     ///
     /// ## Example
     ///
     /// ```
     /// # use alloy_provider::Provider;
     /// # use linera_alloy_eips::BlockId;
-    /// # use alloy_rpc_types::state::StateOverride;
+    /// # use linera_alloy_rpc_types::state::StateOverride;
     /// # use linera_alloy_transport::BoxTransport;
     /// # async fn example<P: Provider<BoxTransport>>(
     /// #    provider: P,
     /// #    my_overrides: StateOverride
     /// # ) -> Result<(), Box<dyn std::error::Error>> {
-    /// # let tx = alloy_rpc_types::transaction::TransactionRequest::default();
+    /// # let tx = linera_alloy_rpc_types::transaction::TransactionRequest::default();
     /// // Execute a call on the latest block, with no state overrides
     /// let output = provider.call(&tx).await?;
     /// // Execute a call with a block ID.
@@ -846,7 +846,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     ///
     /// ```no_run
     /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
-    /// use alloy_rpc_types::BlockNumberOrTag;
+    /// use linera_alloy_rpc_types::BlockNumberOrTag;
     ///
     /// // No parameters: `()`
     /// let block_number = provider.raw_request("eth_blockNumber".into(), ()).await?;
@@ -874,7 +874,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     ///
     /// ```no_run
     /// # async fn example(provider: impl alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
-    /// use alloy_rpc_types::BlockNumberOrTag;
+    /// use linera_alloy_rpc_types::BlockNumberOrTag;
     ///
     /// // No parameters: `()`
     /// let params = serde_json::value::to_raw_value(&())?;
@@ -933,7 +933,7 @@ mod tests {
     use alloy_network::TransactionBuilder;
     use alloy_node_bindings::Anvil;
     use alloy_primitives::{address, b256, bytes};
-    use alloy_rpc_types::request::TransactionRequest;
+    use linera_alloy_rpc_types::request::TransactionRequest;
     use alloy_sol_types::SolValue;
 
     fn init_tracing() {
@@ -996,8 +996,8 @@ mod tests {
 
         init_tracing();
         let anvil = Anvil::new().block_time(1).spawn();
-        let ws = alloy_rpc_client::WsConnect::new(anvil.ws_endpoint());
-        let client = alloy_rpc_client::RpcClient::connect_pubsub(ws).await.unwrap();
+        let ws = linera_alloy_rpc_client::WsConnect::new(anvil.ws_endpoint());
+        let client = linera_alloy_rpc_client::RpcClient::connect_pubsub(ws).await.unwrap();
         let provider = RootProvider::<_, Ethereum>::new(client);
 
         let sub = provider.subscribe_blocks().await.unwrap();
@@ -1017,8 +1017,8 @@ mod tests {
 
         init_tracing();
         let anvil = Anvil::new().block_time(1).spawn();
-        let ws = alloy_rpc_client::WsConnect::new(anvil.ws_endpoint());
-        let client = alloy_rpc_client::RpcClient::connect_pubsub(ws).await.unwrap();
+        let ws = linera_alloy_rpc_client::WsConnect::new(anvil.ws_endpoint());
+        let client = linera_alloy_rpc_client::RpcClient::connect_pubsub(ws).await.unwrap();
         let provider = RootProvider::<_, Ethereum>::new(client);
         let provider = provider.boxed();
 
@@ -1039,8 +1039,8 @@ mod tests {
 
         init_tracing();
         let url = "wss://eth-mainnet.g.alchemy.com/v2/viFmeVzhg6bWKVMIWWS8MhmzREB-D4f7";
-        let ws = alloy_rpc_client::WsConnect::new(url);
-        let Ok(client) = alloy_rpc_client::RpcClient::connect_pubsub(ws).await else { return };
+        let ws = linera_alloy_rpc_client::WsConnect::new(url);
+        let Ok(client) = linera_alloy_rpc_client::RpcClient::connect_pubsub(ws).await else { return };
         let provider = RootProvider::<_, Ethereum>::new(client);
         let sub = provider.subscribe_blocks().await.unwrap();
         let mut stream = sub.into_stream().take(1);

@@ -118,7 +118,7 @@ pub mod pubsub {
 pub mod rpc {
     #[cfg(feature = "rpc-client")]
     #[doc(inline)]
-    pub use alloy_rpc_client as client;
+    pub use linera_alloy_rpc_client as client;
 
     #[cfg(feature = "json-rpc")]
     #[doc(inline)]
@@ -129,25 +129,25 @@ pub mod rpc {
     pub mod types {
         #[cfg(feature = "rpc-types-eth")]
         #[doc(inline)]
-        pub use alloy_rpc_types as eth;
+        pub use linera_alloy_rpc_types as eth;
 
         #[cfg(feature = "rpc-types-beacon")]
         #[doc(inline)]
-        pub use alloy_rpc_types_beacon as beacon;
+        pub use linera_alloy_rpc_types_beacon as beacon;
 
         #[cfg(feature = "rpc-types-engine")]
         #[doc(inline)]
-        pub use alloy_rpc_types_engine as engine;
+        pub use linera_alloy_rpc_types_engine as engine;
 
         #[cfg(feature = "rpc-types-trace")]
         #[doc(inline)]
-        pub use alloy_rpc_types_trace as trace;
+        pub use linera_alloy_rpc_types_trace as trace;
     }
 }
 
 #[cfg(feature = "serde")]
 #[doc(inline)]
-pub use alloy_serde as serde;
+pub use linera_alloy_serde as serde;
 
 /// Ethereum signer abstraction and implementations.
 ///

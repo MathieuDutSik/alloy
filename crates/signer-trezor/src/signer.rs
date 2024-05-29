@@ -282,7 +282,7 @@ mod tests {
     use super::*;
     use alloy_network::{EthereumSigner, TransactionBuilder};
     use alloy_primitives::{address, b256};
-    use alloy_rpc_types::{AccessList, AccessListItem, TransactionRequest};
+    use linera_alloy_rpc_types::{AccessList, AccessListItem, TransactionRequest};
 
     #[tokio::test]
     #[ignore]

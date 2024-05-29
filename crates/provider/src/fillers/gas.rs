@@ -8,7 +8,7 @@ use crate::{
 };
 use linera_alloy_json_rpc::RpcError;
 use alloy_network::{Network, TransactionBuilder};
-use alloy_rpc_types::BlockNumberOrTag;
+use linera_alloy_rpc_types::BlockNumberOrTag;
 use linera_alloy_transport::{Transport, TransportResult};
 use futures::FutureExt;
 
@@ -50,7 +50,7 @@ pub enum GasFillable {
 ///
 /// ```
 /// # use alloy_network::{NetworkSigner, EthereumSigner, Ethereum};
-/// # use alloy_rpc_types::TransactionRequest;
+/// # use linera_alloy_rpc_types::TransactionRequest;
 /// # use alloy_provider::{ProviderBuilder, RootProvider, Provider};
 /// # async fn test<S: NetworkSigner<Ethereum> + Clone>(url: url::Url, signer: S) -> Result<(), Box<dyn std::error::Error>> {
 /// let provider = ProviderBuilder::new()
@@ -254,7 +254,7 @@ mod tests {
     use super::*;
     use crate::{ProviderBuilder, WalletProvider};
     use alloy_primitives::{address, U256};
-    use alloy_rpc_types::TransactionRequest;
+    use linera_alloy_rpc_types::TransactionRequest;
 
     #[tokio::test]
     async fn no_gas_price_or_limit() {

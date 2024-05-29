@@ -12,7 +12,7 @@ type.
 Typically, this crate should not be used directly. Most EVM users will want to
 use the [alloy-provider] crate, which provides a high-level API for interacting
 with JSON-RPC servers that provide the standard Ethereum RPC endpoints, or the
-[alloy-rpc-client] crate, which provides a low-level JSON-RPC API without the
+[linera-alloy-rpc-client] crate, which provides a low-level JSON-RPC API without the
 specific Ethereum endpoints.
 
 [alloy-provider]: https://alloy-rs.github.io/alloy/alloy_provider/index.html

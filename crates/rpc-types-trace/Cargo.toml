@@ -1,5 +1,5 @@
 [package]
-name = "alloy-rpc-types-trace"
+name = "linera-alloy-rpc-types-trace"
 description = "Ethereum RPC trace types"
 
 version.workspace = true
@@ -16,8 +16,8 @@ workspace = true
 
 [dependencies]
 alloy-primitives = { workspace = true, features = ["rlp", "serde"] }
-alloy-rpc-types.workspace = true
-alloy-serde.workspace = true
+linera-alloy-rpc-types.workspace = true
+linera-alloy-serde.workspace = true
 
 serde.workspace = true
 serde_json.workspace = true

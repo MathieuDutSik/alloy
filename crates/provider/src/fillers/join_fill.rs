@@ -11,7 +11,7 @@ use futures::try_join;
 /// information by joining two [`TxFiller`]s. This  struct is itself a
 /// [`TxFiller`], and can be nested to compose any number of fill layers.
 ///
-/// [`TransactionRequest`]: alloy_rpc_types::TransactionRequest
+/// [`TransactionRequest`]: linera_alloy_rpc_types::TransactionRequest
 #[derive(Clone, Copy, Debug)]
 pub struct JoinFill<L, R> {
     left: L,

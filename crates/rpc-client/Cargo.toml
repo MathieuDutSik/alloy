@@ -1,5 +1,5 @@
 [package]
-name = "alloy-rpc-client"
+name = "linera-alloy-rpc-client"
 description = "Low-level Ethereum JSON-RPC client implementation"
 
 version.workspace = true

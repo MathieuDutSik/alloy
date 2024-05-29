@@ -21,10 +21,10 @@ linera-alloy-json-rpc.workspace = true
 alloy-network.workspace = true
 alloy-node-bindings = { workspace = true, optional = true }
 alloy-signer-wallet = { workspace = true, optional = true }
-alloy-rpc-client.workspace = true
-alloy-rpc-types-trace.workspace = true
-alloy-rpc-types.workspace = true
-alloy-rpc-types-engine = { workspace = true, optional = true }
+linera-alloy-rpc-client.workspace = true
+linera-alloy-rpc-types-trace.workspace = true
+linera-alloy-rpc-types.workspace = true
+linera-alloy-rpc-types-engine = { workspace = true, optional = true }
 linera-alloy-transport-http = { workspace = true, optional = true }
 linera-alloy-transport-ipc = { workspace = true, optional = true }
 linera-alloy-transport-ws = { workspace = true, optional = true }
@@ -50,7 +50,7 @@ url = { workspace = true, optional = true }
 
 [dev-dependencies]
 alloy-node-bindings.workspace = true
-alloy-rpc-client = { workspace = true, features = ["reqwest"] }
+linera-alloy-rpc-client = { workspace = true, features = ["reqwest"] }
 alloy-rlp.workspace = true
 alloy-sol-types.workspace = true
 alloy-signer.workspace = true
@@ -64,18 +64,18 @@ tempfile.workspace = true
 
 [features]
 default = ["reqwest", "reqwest-default-tls"]
-pubsub = ["alloy-rpc-client/pubsub", "dep:linera-alloy-pubsub"]
+pubsub = ["linera-alloy-rpc-client/pubsub", "dep:linera-alloy-pubsub"]
 reqwest = [
     "dep:reqwest",
     "dep:url",
     "dep:linera-alloy-transport-http",
-    "alloy-rpc-client/reqwest",
+    "linera-alloy-rpc-client/reqwest",
 ]
-hyper = ["dep:linera-alloy-transport-http", "dep:url", "alloy-rpc-client/hyper"]
-ws = ["pubsub", "alloy-rpc-client/ws", "linera-alloy-transport-ws"]
-ipc = ["pubsub", "alloy-rpc-client/ipc", "linera-alloy-transport-ipc"]
+hyper = ["dep:linera-alloy-transport-http", "dep:url", "linera-alloy-rpc-client/hyper"]
+ws = ["pubsub", "linera-alloy-rpc-client/ws", "linera-alloy-transport-ws"]
+ipc = ["pubsub", "linera-alloy-rpc-client/ipc", "linera-alloy-transport-ipc"]
 reqwest-default-tls = ["linera-alloy-transport-http?/reqwest-default-tls"]
 reqwest-rustls-tls = ["linera-alloy-transport-http?/reqwest-rustls-tls"]
 reqwest-native-tls = ["linera-alloy-transport-http?/reqwest-native-tls"]
 anvil = ["reqwest", "dep:alloy-node-bindings", "dep:alloy-signer-wallet"]
-engine-api = ["dep:alloy-rpc-types-engine"]
+engine-api = ["dep:linera-alloy-rpc-types-engine"]

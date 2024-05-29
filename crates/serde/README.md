@@ -1,3 +1,3 @@
-# alloy-serde
+# linera-alloy-serde
 
 Serde related helpers for Alloy.
