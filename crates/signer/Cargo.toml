@@ -29,7 +29,7 @@ alloy-dyn-abi = { workspace = true, optional = true, features = ["std", "eip712"
 
 [dev-dependencies]
 linera-alloy-consensus = { workspace = true, features = ["std"] }
-alloy-network.workspace = true
+linera-alloy-network.workspace = true
 alloy-signer-wallet.workspace = true
 assert_matches.workspace = true
 serde_json.workspace = true

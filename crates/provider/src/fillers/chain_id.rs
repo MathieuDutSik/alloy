@@ -1,6 +1,6 @@
 use std::sync::{Arc, OnceLock};
 
-use alloy_network::{Network, TransactionBuilder};
+use linera_alloy_network::{Network, TransactionBuilder};
 use linera_alloy_transport::TransportResult;
 
 use crate::{
@@ -21,7 +21,7 @@ use crate::{
 /// # Example
 ///
 /// ```
-/// # use alloy_network::{NetworkSigner, EthereumSigner, Ethereum};
+/// # use linera_alloy_network::{NetworkSigner, EthereumSigner, Ethereum};
 /// # use linera_alloy_rpc_types::TransactionRequest;
 /// # use linera_alloy_provider::{ProviderBuilder, RootProvider, Provider};
 /// # async fn test<S: NetworkSigner<Ethereum> + Clone>(url: url::Url, signer: S) -> Result<(), Box<dyn std::error::Error>> {

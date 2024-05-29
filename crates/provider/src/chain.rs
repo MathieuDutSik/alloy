@@ -1,5 +1,5 @@
 use crate::{Provider, RootProvider};
-use alloy_network::{Ethereum, Network};
+use linera_alloy_network::{Ethereum, Network};
 use alloy_primitives::{BlockNumber, U64};
 use linera_alloy_rpc_client::{PollerBuilder, WeakClient};
 use linera_alloy_rpc_types::Block;

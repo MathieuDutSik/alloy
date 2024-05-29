@@ -34,10 +34,10 @@ rustdoc-args = ["--cfg", "docsrs"]
 linera-alloy-consensus = { version = "0.1.0", default-features = false, path = "crates/consensus" }
 linera-alloy-contract = { version = "0.1.0", default-features = false, path = "crates/contract" }
 linera-alloy-eips = { version = "0.1.0", default-features = false, path = "crates/eips" }
-alloy-eip7547 = { version = "0.1.0", default-features = false, path = "crates/eip7547" }
+linera-alloy-eip7547 = { version = "0.1.0", default-features = false, path = "crates/eip7547" }
 linera-alloy-genesis = { version = "0.1.0", default-features = false, path = "crates/genesis" }
 linera-alloy-json-rpc = { version = "0.1.0", default-features = false, path = "crates/json-rpc" }
-alloy-network = { version = "0.1.0", default-features = false, path = "crates/network" }
+linera-alloy-network = { version = "0.1.0", default-features = false, path = "crates/network" }
 alloy-node-bindings = { version = "0.1.0", default-features = false, path = "crates/node-bindings" }
 linera-alloy-provider = { version = "0.1.0", default-features = false, path = "crates/provider" }
 linera-alloy-pubsub = { version = "0.1.0", default-features = false, path = "crates/pubsub" }

@@ -32,7 +32,7 @@ pub struct LedgerSigner {
 
 #[cfg_attr(target_arch = "wasm32", async_trait(?Send))]
 #[cfg_attr(not(target_arch = "wasm32"), async_trait)]
-impl alloy_network::TxSigner<Signature> for LedgerSigner {
+impl linera_alloy_network::TxSigner<Signature> for LedgerSigner {
     fn address(&self) -> Address {
         self.address
     }
@@ -298,7 +298,7 @@ impl LedgerSigner {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_network::TxSigner;
+    use linera_alloy_network::TxSigner;
     use alloy_primitives::{address, bytes, U256};
     use alloy_rlp::Decodable;
     use serial_test::serial;

@@ -1,6 +1,6 @@
 //! This module extends the Ethereum JSON-RPC provider with the Admin namespace's RPC methods.
 use crate::Provider;
-use alloy_network::Network;
+use linera_alloy_network::Network;
 use linera_alloy_rpc_types::admin::{NodeInfo, PeerInfo};
 use linera_alloy_transport::{Transport, TransportResult};
 

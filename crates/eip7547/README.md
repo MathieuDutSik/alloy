@@ -1,4 +1,4 @@
-# alloy-eip7547
+# linera-alloy-eip7547
 
 Includes the EIP-7547 engine types.
 

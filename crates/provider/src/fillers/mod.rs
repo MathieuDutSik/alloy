@@ -25,7 +25,7 @@ use crate::{
     provider::SendableTx, PendingTransactionBuilder, Provider, ProviderLayer, RootProvider,
 };
 use linera_alloy_json_rpc::RpcError;
-use alloy_network::{Ethereum, Network};
+use linera_alloy_network::{Ethereum, Network};
 use linera_alloy_transport::{Transport, TransportResult};
 use async_trait::async_trait;
 use futures_utils_wasm::impl_future;

@@ -2,7 +2,7 @@ use crate::{
     chain::ChainStreamPoller,
     heart::{Heartbeat, HeartbeatHandle},
 };
-use alloy_network::{Ethereum, Network};
+use linera_alloy_network::{Ethereum, Network};
 use linera_alloy_rpc_client::{BuiltInConnectionString, ClientBuilder, ClientRef, RpcClient, WeakClient};
 use linera_alloy_transport::{BoxTransport, BoxTransportConnect, Transport, TransportError};
 use std::{

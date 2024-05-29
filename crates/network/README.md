@@ -1,4 +1,4 @@
-# alloy-networks
+# linera-alloy-networks
 
 Ethereum blockchain RPC behavior abstraction.
 

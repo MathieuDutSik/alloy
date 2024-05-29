@@ -1,5 +1,5 @@
 [package]
-name = "alloy-eip7547"
+name = "linera-alloy-eip7547"
 description = "EIP-7547: Inclusion Lists types"
 
 version.workspace = true

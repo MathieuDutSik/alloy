@@ -1,5 +1,5 @@
 use crate::Error;
-use alloy_network::Ethereum;
+use linera_alloy_network::Ethereum;
 use alloy_primitives::{Address, LogData};
 use linera_alloy_provider::{FilterPollerBuilder, Network, Provider};
 use linera_alloy_rpc_types::{Filter, Log};

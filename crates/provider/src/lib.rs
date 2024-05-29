@@ -11,7 +11,7 @@
 /// reqwest client.
 ///
 /// [`Http`]: linera_alloy_transport_http::Http
-pub type ReqwestProvider<N = alloy_network::Ethereum> =
+pub type ReqwestProvider<N = linera_alloy_network::Ethereum> =
     crate::RootProvider<linera_alloy_transport_http::Http<reqwest::Client>, N>;
 
 #[cfg(feature = "hyper")]
@@ -19,7 +19,7 @@ pub type ReqwestProvider<N = alloy_network::Ethereum> =
 /// client.
 ///
 /// [`Http`]: linera_alloy_transport_http::Http
-pub type HyperProvider<N = alloy_network::Ethereum> =
+pub type HyperProvider<N = linera_alloy_network::Ethereum> =
     crate::RootProvider<linera_alloy_transport_http::Http<linera_alloy_transport_http::HyperClient>, N>;
 
 #[macro_use]
@@ -47,4 +47,4 @@ pub use provider::{
 pub mod utils;
 
 #[doc(no_inline)]
-pub use alloy_network::{self as network, Network};
+pub use linera_alloy_network::{self as network, Network};

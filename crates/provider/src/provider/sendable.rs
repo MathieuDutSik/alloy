@@ -1,4 +1,4 @@
-use alloy_network::Network;
+use linera_alloy_network::Network;
 
 /// A transaction that can be sent. This is either a builder or an envelope.
 ///

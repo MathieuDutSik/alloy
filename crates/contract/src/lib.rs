@@ -34,7 +34,7 @@ pub use call::*;
 // NOTE: please avoid changing the API of this module due to its use in the `sol!` macro.
 #[doc(hidden)]
 pub mod private {
-    pub use alloy_network::{Ethereum, Network};
+    pub use linera_alloy_network::{Ethereum, Network};
     pub use linera_alloy_provider::Provider;
     pub use linera_alloy_transport::Transport;
 }

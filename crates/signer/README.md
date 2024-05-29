@@ -42,7 +42,7 @@ Sign a transaction:
 use linera_alloy_consensus::TxLegacy;
 use alloy_primitives::{U256, address, bytes};
 use alloy_signer::{Signer, SignerSync};
-use alloy_network::{TxSignerSync};
+use linera_alloy_network::{TxSignerSync};
 
 // Instantiate a signer.
 let signer = "dcf2cbdd171a21c480aa7f53d77f31bb102282b3ff099c78e3118b37348c72f7"

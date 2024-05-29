@@ -76,7 +76,7 @@ pub use linera_alloy_eips as eips;
 
 #[cfg(feature = "network")]
 #[doc(inline)]
-pub use alloy_network as network;
+pub use linera_alloy_network as network;
 
 #[cfg(feature = "genesis")]
 #[doc(inline)]

@@ -23,7 +23,7 @@ linera-alloy-consensus = { workspace = true, default-features = false, optional 
 linera-alloy-contract = { workspace = true, default-features = false, optional = true }
 linera-alloy-eips = { workspace = true, default-features = false, optional = true }
 linera-alloy-genesis = { workspace = true, default-features = false, optional = true }
-alloy-network = { workspace = true, default-features = false, optional = true }
+linera-alloy-network = { workspace = true, default-features = false, optional = true }
 alloy-node-bindings = { workspace = true, default-features = false, optional = true }
 
 # providers
@@ -97,7 +97,7 @@ consensus = ["dep:linera-alloy-consensus"]
 contract = ["dep:linera-alloy-contract", "dyn-abi", "json-abi", "json", "sol-types"]
 eips = ["dep:linera-alloy-eips"]
 genesis = ["dep:linera-alloy-genesis"]
-network = ["dep:alloy-network"]
+network = ["dep:linera-alloy-network"]
 node-bindings = ["dep:alloy-node-bindings", "linera-alloy-provider?/anvil"]
 
 # providers
@@ -177,7 +177,7 @@ arbitrary = [
     "linera-alloy-eips?/arbitrary",
     "linera-alloy-rpc-types?/arbitrary",
 ]
-k256 = ["alloy-core/k256", "linera-alloy-consensus?/k256", "alloy-network?/k256"]
+k256 = ["alloy-core/k256", "linera-alloy-consensus?/k256", "linera-alloy-network?/k256"]
 kzg = ["linera-alloy-consensus?/kzg"]
 eip712 = [
     "alloy-core/eip712",

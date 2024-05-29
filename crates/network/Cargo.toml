@@ -1,5 +1,5 @@
 [package]
-name = "alloy-network"
+name = "linera-alloy-network"
 description = "Ethereum blockchain RPC behavior abstraction"
 
 version.workspace = true

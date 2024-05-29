@@ -6,7 +6,7 @@ use crate::{
     Provider, RootProvider,
 };
 use alloy_chains::NamedChain;
-use alloy_network::{Ethereum, Network};
+use linera_alloy_network::{Ethereum, Network};
 use linera_alloy_rpc_client::{BuiltInConnectionString, ClientBuilder, RpcClient};
 use linera_alloy_transport::{BoxTransport, Transport, TransportError, TransportResult};
 use std::marker::PhantomData;
@@ -371,7 +371,7 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
     /// use in tests.
     pub fn on_anvil_with_signer(
         self,
-    ) -> <JoinFill<F, SignerFiller<alloy_network::EthereumSigner>> as ProviderLayer<
+    ) -> <JoinFill<F, SignerFiller<linera_alloy_network::EthereumSigner>> as ProviderLayer<
         L::Provider,
         linera_alloy_transport_http::Http<reqwest::Client>,
     >>::Provider
@@ -419,7 +419,7 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
     pub fn on_anvil_with_signer_and_config(
         self,
         f: impl FnOnce(alloy_node_bindings::Anvil) -> alloy_node_bindings::Anvil,
-    ) -> <JoinFill<F, SignerFiller<alloy_network::EthereumSigner>> as ProviderLayer<
+    ) -> <JoinFill<F, SignerFiller<linera_alloy_network::EthereumSigner>> as ProviderLayer<
         L::Provider,
         linera_alloy_transport_http::Http<reqwest::Client>,
     >>::Provider

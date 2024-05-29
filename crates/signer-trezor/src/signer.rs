@@ -66,7 +66,7 @@ impl Signer for TrezorSigner {
 
 #[cfg_attr(target_arch = "wasm32", async_trait(?Send))]
 #[cfg_attr(not(target_arch = "wasm32"), async_trait)]
-impl alloy_network::TxSigner<Signature> for TrezorSigner {
+impl linera_alloy_network::TxSigner<Signature> for TrezorSigner {
     fn address(&self) -> Address {
         self.address
     }
@@ -280,7 +280,7 @@ fn signature_from_trezor(x: trezor_client::client::Signature) -> Result<Signatur
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_network::{EthereumSigner, TransactionBuilder};
+    use linera_alloy_network::{EthereumSigner, TransactionBuilder};
     use alloy_primitives::{address, b256};
     use linera_alloy_rpc_types::{AccessList, AccessListItem, TransactionRequest};
 

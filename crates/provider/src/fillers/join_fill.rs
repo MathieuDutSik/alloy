@@ -3,7 +3,7 @@ use crate::{
     provider::SendableTx,
     Provider, ProviderLayer,
 };
-use alloy_network::Network;
+use linera_alloy_network::Network;
 use linera_alloy_transport::{Transport, TransportResult};
 use futures::try_join;
 

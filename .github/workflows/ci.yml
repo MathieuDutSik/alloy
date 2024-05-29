@@ -96,7 +96,7 @@ jobs:
           cargo hack build --workspace --target wasm32-unknown-unknown \
             --exclude linera-alloy-contract \
             --exclude alloy-internal-test-utils \
-            --exclude alloy-network \
+            --exclude linera-alloy-network \
             --exclude alloy-node-bindings \
             --exclude linera-alloy-provider \
             --exclude alloy-signer \

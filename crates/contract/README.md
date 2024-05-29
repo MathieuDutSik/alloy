@@ -15,7 +15,7 @@ that returns a `CallBuilder` for that function. See its documentation for more d
 ```rust,no_run
 # async fn test() -> Result<(), Box<dyn std::error::Error>> {
 use linera_alloy_contract::SolCallBuilder;
-use alloy_network::Ethereum;
+use linera_alloy_network::Ethereum;
 use alloy_primitives::{Address, U256};
 use linera_alloy_provider::ProviderBuilder;
 use alloy_sol_types::sol;

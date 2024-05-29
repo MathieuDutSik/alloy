@@ -95,7 +95,7 @@ pub enum AwsSignerError {
 
 #[cfg_attr(target_arch = "wasm32", async_trait(?Send))]
 #[cfg_attr(not(target_arch = "wasm32"), async_trait)]
-impl alloy_network::TxSigner<Signature> for AwsSigner {
+impl linera_alloy_network::TxSigner<Signature> for AwsSigner {
     fn address(&self) -> Address {
         self.address
     }

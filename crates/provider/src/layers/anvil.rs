@@ -1,4 +1,4 @@
-use alloy_network::Ethereum;
+use linera_alloy_network::Ethereum;
 use alloy_node_bindings::{Anvil, AnvilInstance};
 use linera_alloy_transport::Transport;
 use reqwest::Url;

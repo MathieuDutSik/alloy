@@ -36,7 +36,7 @@ This repository contains the following crates:
 - [`linera-alloy-eips`] - Ethereum Improvement Proposal (EIP) implementations
 - [`linera-alloy-genesis`] - Ethereum genesis file definitions
 - [`linera-alloy-json-rpc`] - Core data types for JSON-RPC 2.0 clients
-- [`alloy-network`] - Network abstraction for RPC types
+- [`linera-alloy-network`] - Network abstraction for RPC types
 - [`alloy-node-bindings`] - Ethereum execution-layer client bindings
 - [`linera-alloy-provider`] - Interface with an Ethereum blockchain
 - [`linera-alloy-pubsub`] - Ethereum JSON-RPC [publish-subscribe] tower service and type definitions
@@ -61,7 +61,7 @@ This repository contains the following crates:
 [`linera-alloy-eips`]: https://github.com/alloy-rs/alloy/tree/main/crates/eips
 [`linera-alloy-genesis`]: https://github.com/alloy-rs/alloy/tree/main/crates/genesis
 [`linera-alloy-json-rpc`]: https://github.com/alloy-rs/alloy/tree/main/crates/json-rpc
-[`alloy-network`]: https://github.com/alloy-rs/alloy/tree/main/crates/network
+[`linera-alloy-network`]: https://github.com/alloy-rs/alloy/tree/main/crates/network
 [`alloy-node-bindings`]: https://github.com/alloy-rs/alloy/tree/main/crates/node-bindings
 [`linera-alloy-provider`]: https://github.com/alloy-rs/alloy/tree/main/crates/provider
 [`linera-alloy-pubsub`]: https://github.com/alloy-rs/alloy/tree/main/crates/pubsub

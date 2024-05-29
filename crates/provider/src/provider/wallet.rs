@@ -2,7 +2,7 @@ use crate::{
     fillers::{FillProvider, JoinFill, SignerFiller, TxFiller},
     Provider,
 };
-use alloy_network::{Ethereum, Network, NetworkSigner};
+use linera_alloy_network::{Ethereum, Network, NetworkSigner};
 use alloy_primitives::Address;
 use linera_alloy_transport::Transport;
 

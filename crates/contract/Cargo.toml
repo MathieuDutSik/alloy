@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-network.workspace = true
+linera-alloy-network.workspace = true
 linera-alloy-provider.workspace = true
 linera-alloy-rpc-types.workspace = true
 linera-alloy-transport.workspace = true

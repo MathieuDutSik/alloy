@@ -1,5 +1,5 @@
 use alloy_chains::NamedChain;
-use alloy_network::Ethereum;
+use linera_alloy_network::Ethereum;
 use linera_alloy_transport::Transport;
 use std::time::Duration;
 

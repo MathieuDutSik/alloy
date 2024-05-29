@@ -2,7 +2,7 @@ use std::{future::IntoFuture, marker::PhantomData};
 
 use alloy_dyn_abi::{DynSolValue, FunctionExt};
 use alloy_json_abi::Function;
-use alloy_network::Network;
+use linera_alloy_network::Network;
 use alloy_primitives::Bytes;
 use linera_alloy_rpc_types::{state::StateOverride, BlockId};
 use alloy_sol_types::SolCall;

@@ -7,7 +7,7 @@ use crate::{
 };
 use linera_alloy_eips::eip2718::Encodable2718;
 use linera_alloy_json_rpc::{RpcError, RpcParam, RpcReturn};
-use alloy_network::{Ethereum, Network};
+use linera_alloy_network::{Ethereum, Network};
 use alloy_primitives::{
     hex, Address, BlockHash, BlockNumber, Bytes, StorageKey, StorageValue, TxHash, B256, U128,
     U256, U64,
@@ -454,7 +454,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// See [`PendingTransactionBuilder`](crate::PendingTransactionBuilder) for more examples.
     ///
     /// ```no_run
-    /// # async fn example<N: alloy_network::Network>(provider: impl linera_alloy_provider::Provider, tx: linera_alloy_rpc_types::transaction::TransactionRequest) -> Result<(), Box<dyn std::error::Error>> {
+    /// # async fn example<N: linera_alloy_network::Network>(provider: impl linera_alloy_provider::Provider, tx: linera_alloy_rpc_types::transaction::TransactionRequest) -> Result<(), Box<dyn std::error::Error>> {
     /// let tx_hash = provider.send_transaction(tx)
     ///     .await?
     ///     .with_required_confirmations(2)
@@ -486,7 +486,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     ) -> TransportResult<PendingTransactionBuilder<'_, T, N>> {
         match tx {
             SendableTx::Builder(mut tx) => {
-                alloy_network::TransactionBuilder::prep_for_submission(&mut tx);
+                linera_alloy_network::TransactionBuilder::prep_for_submission(&mut tx);
                 let tx_hash = self.client().request("eth_sendTransaction", (tx,)).await?;
                 Ok(PendingTransactionBuilder::new(self.root(), tx_hash))
             }
@@ -930,7 +930,7 @@ impl<T: Transport + Clone, N: Network> Provider<T, N> for RootProvider<T, N> {
 mod tests {
     use super::*;
     use crate::{ProviderBuilder, WalletProvider};
-    use alloy_network::TransactionBuilder;
+    use linera_alloy_network::TransactionBuilder;
     use alloy_node_bindings::Anvil;
     use alloy_primitives::{address, b256, bytes};
     use linera_alloy_rpc_types::request::TransactionRequest;
