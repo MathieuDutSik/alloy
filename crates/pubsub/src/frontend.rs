@@ -1,5 +1,5 @@
 use crate::{ix::PubSubInstruction, managers::InFlight, RawSubscription};
-use alloy_json_rpc::{RequestPacket, Response, ResponsePacket, SerializedRequest};
+use linera_alloy_json_rpc::{RequestPacket, Response, ResponsePacket, SerializedRequest};
 use alloy_primitives::U256;
 use alloy_transport::{TransportError, TransportErrorKind, TransportFut, TransportResult};
 use futures::{future::try_join_all, FutureExt, TryFutureExt};

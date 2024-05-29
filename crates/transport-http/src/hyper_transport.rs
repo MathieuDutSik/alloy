@@ -1,5 +1,5 @@
 use crate::{Http, HttpConnect};
-use alloy_json_rpc::{RequestPacket, ResponsePacket};
+use linera_alloy_json_rpc::{RequestPacket, ResponsePacket};
 use alloy_transport::{
     utils::guess_local_url, TransportConnect, TransportError, TransportErrorKind, TransportFut,
 };

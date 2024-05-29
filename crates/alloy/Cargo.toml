@@ -33,7 +33,7 @@ alloy-provider = { workspace = true, default-features = false, optional = true }
 linera-alloy-pubsub = { workspace = true, default-features = false, optional = true }
 
 # rpc
-alloy-json-rpc = { workspace = true, default-features = false, optional = true }
+linera-alloy-json-rpc = { workspace = true, default-features = false, optional = true }
 alloy-rpc-client = { workspace = true, default-features = false, optional = true }
 alloy-rpc-types-beacon = { workspace = true, default-features = false, optional = true }
 alloy-rpc-types-engine = { workspace = true, default-features = false, optional = true }
@@ -116,7 +116,7 @@ pubsub = [
 
 # rpc
 rpc = []
-json-rpc = ["rpc", "dep:alloy-json-rpc"]
+json-rpc = ["rpc", "dep:linera-alloy-json-rpc"]
 rpc-client = ["rpc", "dep:alloy-rpc-client"]
 rpc-client-ws = ["rpc", "alloy-rpc-client?/ws"]
 rpc-client-ipc = ["rpc", "alloy-rpc-client?/ipc"]

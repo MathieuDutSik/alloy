@@ -1,5 +1,5 @@
 use crate::{managers::ActiveSubscription, RawSubscription};
-use alloy_json_rpc::{EthNotification, SerializedRequest};
+use linera_alloy_json_rpc::{EthNotification, SerializedRequest};
 use alloy_primitives::{B256, U256};
 use bimap::BiBTreeMap;
 

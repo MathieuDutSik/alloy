@@ -1,4 +1,4 @@
-# alloy-json-rpc
+# linera-alloy-json-rpc
 
 Core types for JSON-RPC2.0 clients.
 

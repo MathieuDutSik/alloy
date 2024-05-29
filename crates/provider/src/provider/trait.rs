@@ -6,7 +6,7 @@ use crate::{
     RpcWithBlock, SendableTx,
 };
 use linera_alloy_eips::eip2718::Encodable2718;
-use alloy_json_rpc::{RpcError, RpcParam, RpcReturn};
+use linera_alloy_json_rpc::{RpcError, RpcParam, RpcReturn};
 use alloy_network::{Ethereum, Network};
 use alloy_primitives::{
     hex, Address, BlockHash, BlockNumber, Bytes, StorageKey, StorageValue, TxHash, B256, U128,
@@ -984,7 +984,7 @@ mod tests {
         let provider = ProviderBuilder::new().on_anvil_with_config(|a| a.block_time(1));
 
         let err = provider.subscribe_blocks().await.unwrap_err();
-        let alloy_json_rpc::RpcError::Transport(TransportErrorKind::PubsubUnavailable) = err else {
+        let linera_alloy_json_rpc::RpcError::Transport(TransportErrorKind::PubsubUnavailable) = err else {
             panic!("{err:?}");
         };
     }

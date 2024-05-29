@@ -1,5 +1,5 @@
 use crate::{client::RpcClientInner, ClientRef};
-use alloy_json_rpc::{
+use linera_alloy_json_rpc::{
     transform_response, try_deserialize_ok, Id, Request, RequestPacket, ResponsePacket, RpcParam,
     RpcReturn, SerializedRequest,
 };

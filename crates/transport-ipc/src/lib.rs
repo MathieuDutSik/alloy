@@ -125,7 +125,7 @@ impl<T: AsyncRead> From<T> for ReadJsonStream<T> {
 }
 
 impl<T: AsyncRead> futures::stream::Stream for ReadJsonStream<T> {
-    type Item = alloy_json_rpc::PubSubItem;
+    type Item = linera_alloy_json_rpc::PubSubItem;
 
     fn poll_next(
         self: std::pin::Pin<&mut Self>,

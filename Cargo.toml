@@ -36,7 +36,7 @@ alloy-contract = { version = "0.1.0", default-features = false, path = "crates/c
 linera-alloy-eips = { version = "0.1.0", default-features = false, path = "crates/eips" }
 alloy-eip7547 = { version = "0.1.0", default-features = false, path = "crates/eip7547" }
 linera-alloy-genesis = { version = "0.1.0", default-features = false, path = "crates/genesis" }
-alloy-json-rpc = { version = "0.1.0", default-features = false, path = "crates/json-rpc" }
+linera-alloy-json-rpc = { version = "0.1.0", default-features = false, path = "crates/json-rpc" }
 alloy-network = { version = "0.1.0", default-features = false, path = "crates/network" }
 alloy-node-bindings = { version = "0.1.0", default-features = false, path = "crates/node-bindings" }
 alloy-provider = { version = "0.1.0", default-features = false, path = "crates/provider" }

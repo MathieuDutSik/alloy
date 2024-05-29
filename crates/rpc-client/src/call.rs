@@ -1,4 +1,4 @@
-use alloy_json_rpc::{
+use linera_alloy_json_rpc::{
     transform_response, try_deserialize_ok, Request, RequestPacket, ResponsePacket, RpcParam,
     RpcResult, RpcReturn,
 };

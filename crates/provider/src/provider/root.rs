@@ -78,7 +78,7 @@ impl<T: Transport + Clone, N: Network> RootProvider<T, N> {
 
     /// Gets the subscription corresponding to the given RPC subscription ID.
     #[cfg(feature = "pubsub")]
-    pub async fn get_subscription<R: alloy_json_rpc::RpcReturn>(
+    pub async fn get_subscription<R: linera_alloy_json_rpc::RpcReturn>(
         &self,
         id: alloy_primitives::U256,
     ) -> alloy_transport::TransportResult<Subscription<R>> {

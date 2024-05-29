@@ -1,6 +1,6 @@
 //! Mock IPC server.
 
-use alloy_json_rpc::Response;
+use linera_alloy_json_rpc::Response;
 use interprocess::local_socket::tokio::prelude::*;
 use serde::Serialize;
 use std::{collections::VecDeque, path::PathBuf};

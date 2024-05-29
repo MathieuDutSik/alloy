@@ -23,7 +23,7 @@ pub use error::{TransportError, TransportResult};
 mod r#trait;
 pub use r#trait::Transport;
 
-pub use alloy_json_rpc::{RpcError, RpcResult};
+pub use linera_alloy_json_rpc::{RpcError, RpcResult};
 pub use futures_utils_wasm::{impl_future, BoxFuture};
 
 /// Misc. utilities for building transports.
@@ -33,7 +33,7 @@ pub mod utils;
 pub type Pbf<'a, T, E> = futures_utils_wasm::BoxFuture<'a, Result<T, E>>;
 
 /// Future for transport-level requests.
-pub type TransportFut<'a, T = alloy_json_rpc::ResponsePacket, E = TransportError> = Pbf<'a, T, E>;
+pub type TransportFut<'a, T = linera_alloy_json_rpc::ResponsePacket, E = TransportError> = Pbf<'a, T, E>;
 
 /// Future for RPC-level requests.
 pub type RpcFut<'a, T> = futures_utils_wasm::BoxFuture<'a, TransportResult<T>>;

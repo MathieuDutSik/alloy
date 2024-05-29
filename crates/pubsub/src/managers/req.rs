@@ -1,5 +1,5 @@
 use crate::managers::InFlight;
-use alloy_json_rpc::{Id, Response};
+use linera_alloy_json_rpc::{Id, Response};
 use alloy_primitives::U256;
 use std::collections::BTreeMap;
 

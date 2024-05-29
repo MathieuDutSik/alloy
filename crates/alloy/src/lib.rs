@@ -122,7 +122,7 @@ pub mod rpc {
 
     #[cfg(feature = "json-rpc")]
     #[doc(inline)]
-    pub use alloy_json_rpc as json_rpc;
+    pub use linera_alloy_json_rpc as json_rpc;
 
     /// Ethereum JSON-RPC type definitions.
     #[cfg(feature = "rpc-types")]

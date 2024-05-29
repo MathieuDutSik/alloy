@@ -17,7 +17,7 @@ workspace = true
 [dependencies]
 linera-alloy-eips.workspace = true
 linera-alloy-consensus.workspace = true
-alloy-json-rpc.workspace = true
+linera-alloy-json-rpc.workspace = true
 alloy-network.workspace = true
 alloy-node-bindings = { workspace = true, optional = true }
 alloy-signer-wallet = { workspace = true, optional = true }

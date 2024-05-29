@@ -1,5 +1,5 @@
 [package]
-name = "alloy-json-rpc"
+name = "linera-alloy-json-rpc"
 description = "Core types for JSON-RPC2.0 clients"
 
 version.workspace = true

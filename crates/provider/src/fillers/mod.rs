@@ -24,7 +24,7 @@ pub use join_fill::JoinFill;
 use crate::{
     provider::SendableTx, PendingTransactionBuilder, Provider, ProviderLayer, RootProvider,
 };
-use alloy_json_rpc::RpcError;
+use linera_alloy_json_rpc::RpcError;
 use alloy_network::{Ethereum, Network};
 use alloy_transport::{Transport, TransportResult};
 use async_trait::async_trait;

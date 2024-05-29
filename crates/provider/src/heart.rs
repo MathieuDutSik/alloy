@@ -1,7 +1,7 @@
 //! Block heartbeat and pending transaction watcher.
 
 use crate::{Provider, RootProvider};
-use alloy_json_rpc::RpcError;
+use linera_alloy_json_rpc::RpcError;
 use alloy_network::Network;
 use alloy_primitives::B256;
 use alloy_rpc_types::Block;

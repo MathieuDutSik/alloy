@@ -1,5 +1,5 @@
 use crate::{provider::SendableTx, Provider};
-use alloy_json_rpc::RpcError;
+use linera_alloy_json_rpc::RpcError;
 use alloy_network::{Network, NetworkSigner, TransactionBuilder};
 use alloy_transport::{Transport, TransportResult};
 

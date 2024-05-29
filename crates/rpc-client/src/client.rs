@@ -1,5 +1,5 @@
 use crate::{poller::PollerBuilder, BatchRequest, ClientBuilder, RpcCall};
-use alloy_json_rpc::{Id, Request, RpcParam, RpcReturn};
+use linera_alloy_json_rpc::{Id, Request, RpcParam, RpcReturn};
 use alloy_transport::{BoxTransport, Transport};
 use alloy_transport_http::Http;
 use std::{

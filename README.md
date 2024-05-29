@@ -35,7 +35,7 @@ This repository contains the following crates:
 - [`alloy-contract`] - Interact with on-chain contracts
 - [`linera-alloy-eips`] - Ethereum Improvement Proposal (EIP) implementations
 - [`linera-alloy-genesis`] - Ethereum genesis file definitions
-- [`alloy-json-rpc`] - Core data types for JSON-RPC 2.0 clients
+- [`linera-alloy-json-rpc`] - Core data types for JSON-RPC 2.0 clients
 - [`alloy-network`] - Network abstraction for RPC types
 - [`alloy-node-bindings`] - Ethereum execution-layer client bindings
 - [`alloy-provider`] - Interface with an Ethereum blockchain
@@ -60,7 +60,7 @@ This repository contains the following crates:
 [`alloy-contract`]: https://github.com/alloy-rs/alloy/tree/main/crates/contract
 [`linera-alloy-eips`]: https://github.com/alloy-rs/alloy/tree/main/crates/eips
 [`linera-alloy-genesis`]: https://github.com/alloy-rs/alloy/tree/main/crates/genesis
-[`alloy-json-rpc`]: https://github.com/alloy-rs/alloy/tree/main/crates/json-rpc
+[`linera-alloy-json-rpc`]: https://github.com/alloy-rs/alloy/tree/main/crates/json-rpc
 [`alloy-network`]: https://github.com/alloy-rs/alloy/tree/main/crates/network
 [`alloy-node-bindings`]: https://github.com/alloy-rs/alloy/tree/main/crates/node-bindings
 [`alloy-provider`]: https://github.com/alloy-rs/alloy/tree/main/crates/provider

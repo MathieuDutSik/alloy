@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-json-rpc = { workspace = true, optional = true }
+linera-alloy-json-rpc = { workspace = true, optional = true }
 alloy-transport.workspace = true
 
 url.workspace = true
@@ -32,12 +32,12 @@ hyper-util = { workspace = true, features = ["full"], optional = true }
 
 [features]
 default = ["reqwest", "reqwest-default-tls"]
-reqwest = ["dep:reqwest", "dep:alloy-json-rpc", "dep:serde_json", "dep:tower", "dep:tracing"]
+reqwest = ["dep:reqwest", "dep:linera-alloy-json-rpc", "dep:serde_json", "dep:tower", "dep:tracing"]
 hyper = [
     "dep:hyper",
     "dep:hyper-util",
     "dep:http-body-util",
-    "dep:alloy-json-rpc",
+    "dep:linera-alloy-json-rpc",
     "dep:serde_json",
     "dep:tower",
     "dep:tracing"
