@@ -18,7 +18,7 @@ workspace = true
 alloy-network.workspace = true
 alloy-provider.workspace = true
 alloy-rpc-types.workspace = true
-alloy-transport.workspace = true
+linera-alloy-transport.workspace = true
 
 alloy-dyn-abi = { workspace = true, features = ["std"] }
 alloy-json-abi.workspace = true
@@ -33,7 +33,7 @@ linera-alloy-pubsub = { workspace = true, optional = true }
 
 [dev-dependencies]
 alloy-rpc-client = { workspace = true, features = ["pubsub", "ws"] }
-alloy-transport-http.workspace = true
+linera-alloy-transport-http.workspace = true
 alloy-node-bindings.workspace = true
 alloy-provider = { workspace = true, features = ["anvil"] }
 

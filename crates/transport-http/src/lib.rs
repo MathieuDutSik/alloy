@@ -27,7 +27,7 @@ pub use hyper;
 #[cfg(all(not(target_arch = "wasm32"), feature = "hyper"))]
 pub use hyper_util;
 
-use alloy_transport::utils::guess_local_url;
+use linera_alloy_transport::utils::guess_local_url;
 use core::{marker::PhantomData, str::FromStr};
 use url::Url;
 
@@ -66,7 +66,7 @@ impl<T> FromStr for HttpConnect<T> {
 /// connect. It implements `Service<Box<RawValue>>`, and therefore
 /// [`Transport`].
 ///
-/// [`Transport`]: alloy_transport::Transport
+/// [`Transport`]: linera_alloy_transport::Transport
 ///
 /// Currently supported clients are:
 #[cfg_attr(feature = "reqwest", doc = " - [`reqwest`](::reqwest::Client)")]

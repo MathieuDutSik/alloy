@@ -47,13 +47,13 @@ macro_rules! impl_connect {
 
             async fn connect(
                 &self,
-            ) -> Result<linera_alloy_pubsub::ConnectionHandle, alloy_transport::TransportError> {
+            ) -> Result<linera_alloy_pubsub::ConnectionHandle, linera_alloy_transport::TransportError> {
                 let $inner = &self.inner;
                 let inner = $map;
-                let name = to_name(inner).map_err(alloy_transport::TransportErrorKind::custom)?;
+                let name = to_name(inner).map_err(linera_alloy_transport::TransportErrorKind::custom)?;
                 crate::IpcBackend::connect(name)
                     .await
-                    .map_err(alloy_transport::TransportErrorKind::custom)
+                    .map_err(linera_alloy_transport::TransportErrorKind::custom)
             }
         }
     };

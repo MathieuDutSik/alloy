@@ -1,6 +1,6 @@
 use alloy_chains::NamedChain;
 use alloy_network::Ethereum;
-use alloy_transport::Transport;
+use linera_alloy_transport::Transport;
 use std::time::Duration;
 
 use crate::{Provider, ProviderLayer};

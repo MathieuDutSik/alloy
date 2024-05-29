@@ -3,7 +3,7 @@ use alloy_network::{Ethereum, Network};
 use alloy_primitives::{BlockNumber, U64};
 use alloy_rpc_client::{PollerBuilder, WeakClient};
 use alloy_rpc_types::Block;
-use alloy_transport::{RpcError, Transport};
+use linera_alloy_transport::{RpcError, Transport};
 use async_stream::stream;
 use futures::{Stream, StreamExt};
 use lru::LruCache;

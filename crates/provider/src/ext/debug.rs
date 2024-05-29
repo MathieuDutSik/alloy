@@ -6,7 +6,7 @@ use alloy_rpc_types::{BlockNumberOrTag, TransactionRequest};
 use alloy_rpc_types_trace::geth::{
     GethDebugTracingCallOptions, GethDebugTracingOptions, GethTrace, TraceResult,
 };
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 
 /// Debug namespace rpc interface that gives access to several non-standard RPC methods.
 #[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]

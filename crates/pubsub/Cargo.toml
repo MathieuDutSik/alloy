@@ -17,7 +17,7 @@ workspace = true
 [dependencies]
 linera-alloy-json-rpc.workspace = true
 alloy-primitives.workspace = true
-alloy-transport.workspace = true
+linera-alloy-transport.workspace = true
 
 bimap.workspace = true
 futures.workspace = true

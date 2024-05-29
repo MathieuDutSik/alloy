@@ -3,7 +3,7 @@ use alloy_network::Network;
 use alloy_primitives::Bytes;
 use alloy_rpc_client::{RpcCall, WeakClient};
 use alloy_rpc_types::state::StateOverride;
-use alloy_transport::{Transport, TransportErrorKind, TransportResult};
+use linera_alloy_transport::{Transport, TransportErrorKind, TransportResult};
 use futures::FutureExt;
 use serde::ser::SerializeSeq;
 use std::{future::Future, task::Poll};

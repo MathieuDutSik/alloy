@@ -1,3 +1,3 @@
-# alloy-transport-ws
+# linera-alloy-transport-ws
 
 Websocket transport implementation.

@@ -1,6 +1,6 @@
 use alloy_network::Ethereum;
 use alloy_node_bindings::{Anvil, AnvilInstance};
-use alloy_transport::Transport;
+use linera_alloy_transport::Transport;
 use reqwest::Url;
 use std::{
     marker::PhantomData,

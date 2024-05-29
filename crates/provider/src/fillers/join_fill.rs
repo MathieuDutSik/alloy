@@ -4,7 +4,7 @@ use crate::{
     Provider, ProviderLayer,
 };
 use alloy_network::Network;
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 use futures::try_join;
 
 /// A layer that can fill in a [`TransactionRequest`] with additional
@@ -126,7 +126,7 @@ where
     L: TxFiller<N>,
     R: TxFiller<N>,
     P: Provider<T, N>,
-    T: alloy_transport::Transport + Clone,
+    T: linera_alloy_transport::Transport + Clone,
     N: Network,
 {
     type Provider = FillProvider<Self, P, T, N>;

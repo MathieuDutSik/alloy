@@ -1,7 +1,7 @@
 use std::str::FromStr;
 
 use linera_alloy_json_rpc::RpcError;
-use alloy_transport::{BoxTransport, BoxTransportConnect, TransportError, TransportErrorKind};
+use linera_alloy_transport::{BoxTransport, BoxTransportConnect, TransportError, TransportErrorKind};
 
 #[cfg(feature = "pubsub")]
 use linera_alloy_pubsub::PubSubConnect;
@@ -15,7 +15,7 @@ pub enum BuiltInConnectionString {
     Http(url::Url),
     /// WebSocket transport.
     #[cfg(feature = "ws")]
-    Ws(url::Url, Option<alloy_transport::Authorization>),
+    Ws(url::Url, Option<linera_alloy_transport::Authorization>),
     /// IPC transport.
     #[cfg(feature = "ipc")]
     Ipc(std::path::PathBuf),
@@ -25,9 +25,9 @@ impl BoxTransportConnect for BuiltInConnectionString {
     fn is_local(&self) -> bool {
         match self {
             #[cfg(any(feature = "reqwest", feature = "hyper"))]
-            Self::Http(url) => alloy_transport::utils::guess_local_url(url),
+            Self::Http(url) => linera_alloy_transport::utils::guess_local_url(url),
             #[cfg(feature = "ws")]
-            Self::Ws(url, _) => alloy_transport::utils::guess_local_url(url),
+            Self::Ws(url, _) => linera_alloy_transport::utils::guess_local_url(url),
             #[cfg(feature = "ipc")]
             Self::Ipc(_) => true,
             #[cfg(not(any(
@@ -42,7 +42,7 @@ impl BoxTransportConnect for BuiltInConnectionString {
 
     fn get_boxed_transport<'a: 'b, 'b>(
         &'a self,
-    ) -> alloy_transport::Pbf<'b, BoxTransport, TransportError> {
+    ) -> linera_alloy_transport::Pbf<'b, BoxTransport, TransportError> {
         Box::pin(self.connect_boxed())
     }
 }
@@ -63,8 +63,8 @@ impl BuiltInConnectionString {
             #[cfg(all(not(feature = "hyper"), feature = "reqwest"))]
             Self::Http(url) => {
                 Ok(
-                    alloy_transport::Transport::boxed(
-                        alloy_transport_http::Http::<reqwest::Client>::new(url.clone())
+                    linera_alloy_transport::Transport::boxed(
+                        linera_alloy_transport_http::Http::<reqwest::Client>::new(url.clone())
                     )
                 )
             },
@@ -77,23 +77,23 @@ impl BuiltInConnectionString {
 
             #[cfg(all(not(target_arch = "wasm32"), feature = "ws"))]
             Self::Ws(url, Some(auth)) => {
-                alloy_transport_ws::WsConnect::with_auth(url.clone(), Some(auth.clone()))
+                linera_alloy_transport_ws::WsConnect::with_auth(url.clone(), Some(auth.clone()))
                     .into_service()
                     .await
-                    .map(alloy_transport::Transport::boxed)
+                    .map(linera_alloy_transport::Transport::boxed)
             }
 
             #[cfg(feature = "ws")]
-            Self::Ws(url, _) => alloy_transport_ws::WsConnect::new(url.clone())
+            Self::Ws(url, _) => linera_alloy_transport_ws::WsConnect::new(url.clone())
                 .into_service()
                 .await
-                .map(alloy_transport::Transport::boxed),
+                .map(linera_alloy_transport::Transport::boxed),
 
             #[cfg(feature = "ipc")]
-            Self::Ipc(path) => alloy_transport_ipc::IpcConnect::new(path.to_owned())
+            Self::Ipc(path) => linera_alloy_transport_ipc::IpcConnect::new(path.to_owned())
                 .into_service()
                 .await
-                .map(alloy_transport::Transport::boxed),
+                .map(linera_alloy_transport::Transport::boxed),
 
             #[cfg(not(any(feature = "reqwest", feature = "hyper", feature = "ws", feature = "ipc")))]
             _ => Err(TransportErrorKind::custom_str(
@@ -139,7 +139,7 @@ impl BuiltInConnectionString {
             return Err(TransportErrorKind::custom_str(&msg));
         }
 
-        let auth = alloy_transport::Authorization::extract_from_url(&url);
+        let auth = linera_alloy_transport::Authorization::extract_from_url(&url);
 
         Ok(Self::Ws(url, auth))
     }
@@ -225,7 +225,7 @@ mod test {
     #[test]
     #[cfg(feature = "ws")]
     fn test_parsing_ws() {
-        use alloy_transport::Authorization;
+        use linera_alloy_transport::Authorization;
 
         assert_eq!(
             BuiltInConnectionString::from_str("ws://localhost:8545").unwrap(),

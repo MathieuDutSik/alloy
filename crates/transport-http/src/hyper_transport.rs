@@ -1,6 +1,6 @@
 use crate::{Http, HttpConnect};
 use linera_alloy_json_rpc::{RequestPacket, ResponsePacket};
-use alloy_transport::{
+use linera_alloy_transport::{
     utils::guess_local_url, TransportConnect, TransportError, TransportErrorKind, TransportFut,
 };
 use http_body_util::{BodyExt, Full};
@@ -34,7 +34,7 @@ impl TransportConnect for HyperConnect {
 
     fn get_transport<'a: 'b, 'b>(
         &'a self,
-    ) -> alloy_transport::Pbf<'b, Self::Transport, TransportError> {
+    ) -> linera_alloy_transport::Pbf<'b, Self::Transport, TransportError> {
         let executor = hyper_util::rt::TokioExecutor::new();
 
         let client = hyper_util::client::legacy::Client::builder(executor).build_http();

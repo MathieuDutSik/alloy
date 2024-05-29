@@ -5,7 +5,7 @@ use crate::{
 };
 use alloy_network::{Network, TransactionBuilder};
 use alloy_primitives::Address;
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 use dashmap::DashMap;
 use std::sync::Arc;
 use tokio::sync::Mutex;

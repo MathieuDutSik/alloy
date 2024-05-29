@@ -1,7 +1,7 @@
 use std::sync::{Arc, OnceLock};
 
 use alloy_network::{Network, TransactionBuilder};
-use alloy_transport::TransportResult;
+use linera_alloy_transport::TransportResult;
 
 use crate::{
     fillers::{FillerControlFlow, TxFiller},
@@ -70,7 +70,7 @@ impl<N: Network> TxFiller<N> for ChainIdFiller {
     ) -> TransportResult<Self::Fillable>
     where
         P: crate::Provider<T, N>,
-        T: alloy_transport::Transport + Clone,
+        T: linera_alloy_transport::Transport + Clone,
     {
         match self.0.get().copied() {
             Some(chain_id) => Ok(chain_id),

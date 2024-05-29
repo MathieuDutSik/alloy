@@ -2,7 +2,7 @@ use linera_alloy_json_rpc::{
     transform_response, try_deserialize_ok, Request, RequestPacket, ResponsePacket, RpcParam,
     RpcResult, RpcReturn,
 };
-use alloy_transport::{RpcFut, Transport, TransportError, TransportResult};
+use linera_alloy_transport::{RpcFut, Transport, TransportError, TransportResult};
 use core::panic;
 use serde_json::value::RawValue;
 use std::{

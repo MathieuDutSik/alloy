@@ -6,7 +6,7 @@ use alloy_network::Network;
 use alloy_primitives::Bytes;
 use alloy_rpc_types::{state::StateOverride, BlockId};
 use alloy_sol_types::SolCall;
-use alloy_transport::Transport;
+use linera_alloy_transport::Transport;
 
 use crate::{Error, Result};
 

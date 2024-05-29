@@ -6,7 +6,7 @@ use alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
 use alloy_provider::{PendingTransactionBuilder, Provider};
 use alloy_rpc_types::{state::StateOverride, AccessList, BlobTransactionSidecar, BlockId};
 use alloy_sol_types::SolCall;
-use alloy_transport::Transport;
+use linera_alloy_transport::Transport;
 use std::{
     future::{Future, IntoFuture},
     marker::PhantomData,
@@ -542,7 +542,7 @@ mod tests {
     };
     use alloy_rpc_types::AccessListItem;
     use alloy_sol_types::sol;
-    use alloy_transport_http::Http;
+    use linera_alloy_transport_http::Http;
     use reqwest::Client;
 
     #[test]

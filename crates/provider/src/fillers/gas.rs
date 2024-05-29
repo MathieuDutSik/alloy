@@ -9,7 +9,7 @@ use crate::{
 use linera_alloy_json_rpc::RpcError;
 use alloy_network::{Network, TransactionBuilder};
 use alloy_rpc_types::BlockNumberOrTag;
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 use futures::FutureExt;
 
 /// An enum over the different types of gas fillable.

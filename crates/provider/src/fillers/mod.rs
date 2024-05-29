@@ -26,7 +26,7 @@ use crate::{
 };
 use linera_alloy_json_rpc::RpcError;
 use alloy_network::{Ethereum, Network};
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 use async_trait::async_trait;
 use futures_utils_wasm::impl_future;
 use std::marker::PhantomData;

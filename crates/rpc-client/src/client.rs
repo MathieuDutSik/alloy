@@ -1,7 +1,7 @@
 use crate::{poller::PollerBuilder, BatchRequest, ClientBuilder, RpcCall};
 use linera_alloy_json_rpc::{Id, Request, RpcParam, RpcReturn};
-use alloy_transport::{BoxTransport, Transport};
-use alloy_transport_http::Http;
+use linera_alloy_transport::{BoxTransport, Transport};
+use linera_alloy_transport_http::Http;
 use std::{
     borrow::Cow,
     ops::Deref,
@@ -296,7 +296,7 @@ impl<T: Transport + Clone> RpcClientInner<T> {
 mod pubsub_impl {
     use super::*;
     use linera_alloy_pubsub::{PubSubConnect, PubSubFrontend, RawSubscription, Subscription};
-    use alloy_transport::TransportResult;
+    use linera_alloy_transport::TransportResult;
 
     impl RpcClientInner<PubSubFrontend> {
         /// Get a [`RawSubscription`] for the given subscription ID.

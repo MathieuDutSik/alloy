@@ -16,8 +16,8 @@ workspace = true
 
 [dependencies]
 linera-alloy-json-rpc.workspace = true
-alloy-transport-http.workspace = true
-alloy-transport.workspace = true
+linera-alloy-transport-http.workspace = true
+linera-alloy-transport.workspace = true
 
 futures.workspace = true
 pin-project.workspace = true
@@ -30,7 +30,7 @@ tracing.workspace = true
 
 alloy-primitives = { workspace = true, optional = true }
 linera-alloy-pubsub = { workspace = true, optional = true }
-alloy-transport-ws = { workspace = true, optional = true }
+linera-alloy-transport-ws = { workspace = true, optional = true }
 
 reqwest = { workspace = true, optional = true }
 
@@ -39,21 +39,21 @@ hyper-util = { workspace = true, optional = true }
 url = { workspace = true, optional = true }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-alloy-transport-ipc = { workspace = true, optional = true }
+linera-alloy-transport-ipc = { workspace = true, optional = true }
 
 [dev-dependencies]
 alloy-primitives.workspace = true
 alloy-node-bindings.workspace = true
-alloy-transport-ipc = { workspace = true, features = ["mock"] }
-alloy-transport-ws.workspace = true
+linera-alloy-transport-ipc = { workspace = true, features = ["mock"] }
+linera-alloy-transport-ws.workspace = true
 
 tempfile = "3"
 futures-util.workspace = true
 
 [features]
 default = ["reqwest"]
-reqwest = ["dep:url", "dep:reqwest", "alloy-transport-http/reqwest"]
-hyper = ["dep:url", "dep:hyper-util", "alloy-transport-http/hyper"]
+reqwest = ["dep:url", "dep:reqwest", "linera-alloy-transport-http/reqwest"]
+hyper = ["dep:url", "dep:hyper-util", "linera-alloy-transport-http/hyper"]
 pubsub = ["dep:linera-alloy-pubsub", "dep:alloy-primitives"]
-ws = ["pubsub", "dep:alloy-transport-ws", "dep:url"]
-ipc = ["pubsub", "dep:alloy-transport-ipc"]
+ws = ["pubsub", "dep:linera-alloy-transport-ws", "dep:url"]
+ipc = ["pubsub", "dep:linera-alloy-transport-ipc"]

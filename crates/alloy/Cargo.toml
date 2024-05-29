@@ -52,10 +52,10 @@ alloy-signer-trezor = { workspace = true, default-features = false, optional = t
 alloy-signer-wallet = { workspace = true, default-features = false, optional = true }
 
 # transport
-alloy-transport = { workspace = true, default-features = false, optional = true }
-alloy-transport-http = { workspace = true, default-features = false, optional = true }
-alloy-transport-ipc = { workspace = true, default-features = false, optional = true }
-alloy-transport-ws = { workspace = true, default-features = false, optional = true }
+linera-alloy-transport = { workspace = true, default-features = false, optional = true }
+linera-alloy-transport-http = { workspace = true, default-features = false, optional = true }
+linera-alloy-transport-ipc = { workspace = true, default-features = false, optional = true }
+linera-alloy-transport-ws = { workspace = true, default-features = false, optional = true }
 
 # optional
 reqwest = { workspace = true, optional = true }
@@ -80,14 +80,14 @@ reqwest = [
     "dep:reqwest",
     "alloy-rpc-client?/reqwest",
     "alloy-provider?/reqwest",
-    "alloy-transport-http?/reqwest",
-    "alloy-transport-http?/reqwest-default-tls",
+    "linera-alloy-transport-http?/reqwest",
+    "linera-alloy-transport-http?/reqwest-default-tls",
 ]
 hyper = [
     "dep:hyper",
     "alloy-rpc-client?/hyper",
     "alloy-provider?/hyper",
-    "alloy-transport-http?/hyper",
+    "linera-alloy-transport-http?/hyper",
 ]
 
 # ---------------------------------------- Main re-exports --------------------------------------- #
@@ -148,11 +148,11 @@ signer-mnemonic-all-languages = [
 signer-yubihsm = ["signer-wallet", "alloy-signer-wallet?/yubihsm"]
 
 # transports
-transports = ["dep:alloy-transport"]
-transport-http = ["transports", "dep:alloy-transport-http"]
-transport-ipc = ["transports", "pubsub", "dep:alloy-transport-ipc"]
-transport-ipc-mock = ["alloy-transport-ipc?/mock"]
-transport-ws = ["transports", "pubsub", "dep:alloy-transport-ws"]
+transports = ["dep:linera-alloy-transport"]
+transport-http = ["transports", "dep:linera-alloy-transport-http"]
+transport-ipc = ["transports", "pubsub", "dep:linera-alloy-transport-ipc"]
+transport-ipc-mock = ["linera-alloy-transport-ipc?/mock"]
+transport-ws = ["transports", "pubsub", "dep:linera-alloy-transport-ws"]
 
 # ---------------------------------------- Core re-exports --------------------------------------- #
 

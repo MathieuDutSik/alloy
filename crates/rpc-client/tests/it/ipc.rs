@@ -1,7 +1,7 @@
 use alloy_node_bindings::Geth;
 use alloy_primitives::U64;
 use alloy_rpc_client::{ClientBuilder, RpcCall};
-use alloy_transport_ipc::IpcConnect;
+use linera_alloy_transport_ipc::IpcConnect;
 
 #[tokio::test]
 async fn it_makes_a_request() {

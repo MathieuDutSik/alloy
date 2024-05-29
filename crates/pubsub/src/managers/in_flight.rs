@@ -1,6 +1,6 @@
 use linera_alloy_json_rpc::{Response, ResponsePayload, SerializedRequest};
 use alloy_primitives::U256;
-use alloy_transport::{TransportError, TransportResult};
+use linera_alloy_transport::{TransportError, TransportResult};
 use std::fmt;
 use tokio::sync::oneshot;
 

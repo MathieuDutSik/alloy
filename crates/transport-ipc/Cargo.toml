@@ -1,5 +1,5 @@
 [package]
-name = "alloy-transport-ipc"
+name = "linera-alloy-transport-ipc"
 description = "IPC transport implementation"
 
 version.workspace = true
@@ -16,7 +16,7 @@ workspace = true
 
 [dependencies]
 linera-alloy-json-rpc.workspace = true
-alloy-transport.workspace = true
+linera-alloy-transport.workspace = true
 linera-alloy-pubsub.workspace = true
 
 futures.workspace = true

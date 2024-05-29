@@ -2,7 +2,7 @@
 use crate::Provider;
 use alloy_network::Network;
 use alloy_rpc_types::admin::{NodeInfo, PeerInfo};
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 
 /// Admin namespace rpc interface that gives access to several non-standard RPC methods.
 #[cfg_attr(target_arch = "wasm32", async_trait::async_trait(?Send))]

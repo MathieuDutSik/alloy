@@ -3,7 +3,7 @@ use crate::Provider;
 use alloy_network::{Ethereum, Network};
 use alloy_primitives::Address;
 use alloy_rpc_types::txpool::{TxpoolContent, TxpoolContentFrom, TxpoolInspect, TxpoolStatus};
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 
 /// Geth only Txpool namespace rpc interface.
 #[allow(unused, unreachable_pub)]

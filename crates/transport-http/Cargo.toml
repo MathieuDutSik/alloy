@@ -1,5 +1,5 @@
 [package]
-name = "alloy-transport-http"
+name = "linera-alloy-transport-http"
 description = "HTTP transport implementation"
 
 version.workspace = true
@@ -16,7 +16,7 @@ workspace = true
 
 [dependencies]
 linera-alloy-json-rpc = { workspace = true, optional = true }
-alloy-transport.workspace = true
+linera-alloy-transport.workspace = true
 
 url.workspace = true
 serde_json = { workspace = true, optional = true }

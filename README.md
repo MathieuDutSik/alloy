@@ -50,10 +50,10 @@ This repository contains the following crates:
   - [`alloy-signer-ledger`] - [Ledger] signer implementation
   - [`alloy-signer-trezor`] - [Trezor] signer implementation
   - [`alloy-signer-wallet`] - Local wallet (Keystore/Mnemonic/Yubihsm) signer implementation
-- [`alloy-transport`] - Low-level Ethereum JSON-RPC transport abstraction
-  - [`alloy-transport-http`] - HTTP transport implementation
-  - [`alloy-transport-ipc`] - IPC transport implementation
-  - [`alloy-transport-ws`] - WS transport implementation
+- [`linera-alloy-transport`] - Low-level Ethereum JSON-RPC transport abstraction
+  - [`linera-alloy-transport-http`] - HTTP transport implementation
+  - [`linera-alloy-transport-ipc`] - IPC transport implementation
+  - [`linera-alloy-transport-ws`] - WS transport implementation
 
 [`alloy`]: https://github.com/alloy-rs/alloy/tree/main/crates/alloy
 [`linera-alloy-consensus`]: https://github.com/alloy-rs/alloy/tree/main/crates/consensus
@@ -75,10 +75,10 @@ This repository contains the following crates:
 [`alloy-signer-ledger`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-ledger
 [`alloy-signer-trezor`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-trezor
 [`alloy-signer-wallet`]: https://github.com/alloy-rs/alloy/tree/main/crates/signer-wallet
-[`alloy-transport`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport
-[`alloy-transport-http`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-http
-[`alloy-transport-ipc`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-ipc
-[`alloy-transport-ws`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-ws
+[`linera-alloy-transport`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport
+[`linera-alloy-transport-http`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-http
+[`linera-alloy-transport-ipc`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-ipc
+[`linera-alloy-transport-ws`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-ws
 [`alloy-core`]: https://docs.rs/alloy-core
 [publish-subscribe]: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 [AWS KMS]: https://aws.amazon.com/kms

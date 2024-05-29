@@ -4,7 +4,7 @@ use crate::{
 };
 use alloy_network::{Ethereum, Network};
 use alloy_rpc_client::{BuiltInConnectionString, ClientBuilder, ClientRef, RpcClient, WeakClient};
-use alloy_transport::{BoxTransport, BoxTransportConnect, Transport, TransportError};
+use linera_alloy_transport::{BoxTransport, BoxTransportConnect, Transport, TransportError};
 use std::{
     fmt,
     marker::PhantomData,
@@ -12,7 +12,7 @@ use std::{
 };
 
 #[cfg(feature = "reqwest")]
-use alloy_transport_http::Http;
+use linera_alloy_transport_http::Http;
 
 #[cfg(feature = "pubsub")]
 use linera_alloy_pubsub::{PubSubFrontend, Subscription};
@@ -81,25 +81,25 @@ impl<T: Transport + Clone, N: Network> RootProvider<T, N> {
     pub async fn get_subscription<R: linera_alloy_json_rpc::RpcReturn>(
         &self,
         id: alloy_primitives::U256,
-    ) -> alloy_transport::TransportResult<Subscription<R>> {
+    ) -> linera_alloy_transport::TransportResult<Subscription<R>> {
         self.pubsub_frontend()?.get_subscription(id).await.map(Subscription::from)
     }
 
     /// Unsubscribes from the subscription corresponding to the given RPC subscription ID.
     #[cfg(feature = "pubsub")]
-    pub fn unsubscribe(&self, id: alloy_primitives::U256) -> alloy_transport::TransportResult<()> {
+    pub fn unsubscribe(&self, id: alloy_primitives::U256) -> linera_alloy_transport::TransportResult<()> {
         self.pubsub_frontend()?.unsubscribe(id)
     }
 
     #[cfg(feature = "pubsub")]
-    pub(crate) fn pubsub_frontend(&self) -> alloy_transport::TransportResult<&PubSubFrontend> {
+    pub(crate) fn pubsub_frontend(&self) -> linera_alloy_transport::TransportResult<&PubSubFrontend> {
         let t = self.transport() as &dyn std::any::Any;
         t.downcast_ref::<PubSubFrontend>()
             .or_else(|| {
                 t.downcast_ref::<BoxTransport>()
                     .and_then(|t| t.as_any().downcast_ref::<PubSubFrontend>())
             })
-            .ok_or_else(alloy_transport::TransportErrorKind::pubsub_unavailable)
+            .ok_or_else(linera_alloy_transport::TransportErrorKind::pubsub_unavailable)
     }
 
     #[cfg(feature = "pubsub")]

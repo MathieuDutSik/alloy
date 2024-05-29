@@ -8,7 +8,7 @@ use crate::{
 use alloy_chains::NamedChain;
 use alloy_network::{Ethereum, Network};
 use alloy_rpc_client::{BuiltInConnectionString, ClientBuilder, RpcClient};
-use alloy_transport::{BoxTransport, Transport, TransportError, TransportResult};
+use linera_alloy_transport::{BoxTransport, Transport, TransportError, TransportResult};
 use std::marker::PhantomData;
 
 /// The recommended filler.
@@ -277,7 +277,7 @@ impl<L, F, N> ProviderBuilder<L, F, N> {
     #[cfg(feature = "ws")]
     pub async fn on_ws(
         self,
-        connect: alloy_transport_ws::WsConnect,
+        connect: linera_alloy_transport_ws::WsConnect,
     ) -> Result<F::Provider, TransportError>
     where
         L: ProviderLayer<
@@ -296,10 +296,10 @@ impl<L, F, N> ProviderBuilder<L, F, N> {
     #[cfg(feature = "ipc")]
     pub async fn on_ipc<T>(
         self,
-        connect: alloy_transport_ipc::IpcConnect<T>,
+        connect: linera_alloy_transport_ipc::IpcConnect<T>,
     ) -> Result<F::Provider, TransportError>
     where
-        alloy_transport_ipc::IpcConnect<T>: linera_alloy_pubsub::PubSubConnect,
+        linera_alloy_transport_ipc::IpcConnect<T>: linera_alloy_pubsub::PubSubConnect,
         L: ProviderLayer<
             RootProvider<linera_alloy_pubsub::PubSubFrontend, N>,
             linera_alloy_pubsub::PubSubFrontend,
@@ -316,8 +316,8 @@ impl<L, F, N> ProviderBuilder<L, F, N> {
     #[cfg(any(test, feature = "reqwest"))]
     pub fn on_http(self, url: reqwest::Url) -> F::Provider
     where
-        L: ProviderLayer<crate::ReqwestProvider<N>, alloy_transport_http::Http<reqwest::Client>, N>,
-        F: TxFiller<N> + ProviderLayer<L::Provider, alloy_transport_http::Http<reqwest::Client>, N>,
+        L: ProviderLayer<crate::ReqwestProvider<N>, linera_alloy_transport_http::Http<reqwest::Client>, N>,
+        F: TxFiller<N> + ProviderLayer<L::Provider, linera_alloy_transport_http::Http<reqwest::Client>, N>,
         N: Network,
     {
         let client = ClientBuilder::default().http(url);
@@ -330,13 +330,13 @@ impl<L, F, N> ProviderBuilder<L, F, N> {
     where
         L: ProviderLayer<
             crate::HyperProvider<N>,
-            alloy_transport_http::Http<alloy_transport_http::HyperClient>,
+            linera_alloy_transport_http::Http<linera_alloy_transport_http::HyperClient>,
             N,
         >,
         F: TxFiller<N>
             + ProviderLayer<
                 L::Provider,
-                alloy_transport_http::Http<alloy_transport_http::HyperClient>,
+                linera_alloy_transport_http::Http<linera_alloy_transport_http::HyperClient>,
                 N,
             >,
         N: Network,
@@ -354,13 +354,13 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
     pub fn on_anvil(self) -> F::Provider
     where
         F: TxFiller<Ethereum>
-            + ProviderLayer<L::Provider, alloy_transport_http::Http<reqwest::Client>, Ethereum>,
+            + ProviderLayer<L::Provider, linera_alloy_transport_http::Http<reqwest::Client>, Ethereum>,
         L: crate::builder::ProviderLayer<
             crate::layers::AnvilProvider<
-                crate::provider::RootProvider<alloy_transport_http::Http<reqwest::Client>>,
-                alloy_transport_http::Http<reqwest::Client>,
+                crate::provider::RootProvider<linera_alloy_transport_http::Http<reqwest::Client>>,
+                linera_alloy_transport_http::Http<reqwest::Client>,
             >,
-            alloy_transport_http::Http<reqwest::Client>,
+            linera_alloy_transport_http::Http<reqwest::Client>,
         >,
     {
         self.on_anvil_with_config(std::convert::identity)
@@ -373,17 +373,17 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
         self,
     ) -> <JoinFill<F, SignerFiller<alloy_network::EthereumSigner>> as ProviderLayer<
         L::Provider,
-        alloy_transport_http::Http<reqwest::Client>,
+        linera_alloy_transport_http::Http<reqwest::Client>,
     >>::Provider
     where
         F: TxFiller<Ethereum>
-            + ProviderLayer<L::Provider, alloy_transport_http::Http<reqwest::Client>, Ethereum>,
+            + ProviderLayer<L::Provider, linera_alloy_transport_http::Http<reqwest::Client>, Ethereum>,
         L: crate::builder::ProviderLayer<
             crate::layers::AnvilProvider<
-                crate::provider::RootProvider<alloy_transport_http::Http<reqwest::Client>>,
-                alloy_transport_http::Http<reqwest::Client>,
+                crate::provider::RootProvider<linera_alloy_transport_http::Http<reqwest::Client>>,
+                linera_alloy_transport_http::Http<reqwest::Client>,
             >,
-            alloy_transport_http::Http<reqwest::Client>,
+            linera_alloy_transport_http::Http<reqwest::Client>,
         >,
     {
         self.on_anvil_with_signer_and_config(std::convert::identity)
@@ -397,13 +397,13 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
     ) -> F::Provider
     where
         F: TxFiller<Ethereum>
-            + ProviderLayer<L::Provider, alloy_transport_http::Http<reqwest::Client>, Ethereum>,
+            + ProviderLayer<L::Provider, linera_alloy_transport_http::Http<reqwest::Client>, Ethereum>,
         L: crate::builder::ProviderLayer<
             crate::layers::AnvilProvider<
-                crate::provider::RootProvider<alloy_transport_http::Http<reqwest::Client>>,
-                alloy_transport_http::Http<reqwest::Client>,
+                crate::provider::RootProvider<linera_alloy_transport_http::Http<reqwest::Client>>,
+                linera_alloy_transport_http::Http<reqwest::Client>,
             >,
-            alloy_transport_http::Http<reqwest::Client>,
+            linera_alloy_transport_http::Http<reqwest::Client>,
         >,
     {
         let anvil_layer = crate::layers::AnvilLayer::from(f(Default::default()));
@@ -421,17 +421,17 @@ impl<L, F> ProviderBuilder<L, F, Ethereum> {
         f: impl FnOnce(alloy_node_bindings::Anvil) -> alloy_node_bindings::Anvil,
     ) -> <JoinFill<F, SignerFiller<alloy_network::EthereumSigner>> as ProviderLayer<
         L::Provider,
-        alloy_transport_http::Http<reqwest::Client>,
+        linera_alloy_transport_http::Http<reqwest::Client>,
     >>::Provider
     where
         F: TxFiller<Ethereum>
-            + ProviderLayer<L::Provider, alloy_transport_http::Http<reqwest::Client>, Ethereum>,
+            + ProviderLayer<L::Provider, linera_alloy_transport_http::Http<reqwest::Client>, Ethereum>,
         L: crate::builder::ProviderLayer<
             crate::layers::AnvilProvider<
-                crate::provider::RootProvider<alloy_transport_http::Http<reqwest::Client>>,
-                alloy_transport_http::Http<reqwest::Client>,
+                crate::provider::RootProvider<linera_alloy_transport_http::Http<reqwest::Client>>,
+                linera_alloy_transport_http::Http<reqwest::Client>,
             >,
-            alloy_transport_http::Http<reqwest::Client>,
+            linera_alloy_transport_http::Http<reqwest::Client>,
         >,
     {
         let anvil_layer = crate::layers::AnvilLayer::from(f(Default::default()));

@@ -1,6 +1,6 @@
 use crate::WeakClient;
 use linera_alloy_json_rpc::{RpcError, RpcParam, RpcReturn};
-use alloy_transport::{utils::Spawnable, Transport};
+use linera_alloy_transport::{utils::Spawnable, Transport};
 use futures::{Stream, StreamExt};
 use serde::Serialize;
 use serde_json::value::RawValue;
@@ -39,7 +39,7 @@ const MAX_RETRIES: usize = 3;
 /// Poll `eth_blockNumber` every 5 seconds:
 ///
 /// ```no_run
-/// # async fn example<T: alloy_transport::Transport + Clone>(client: alloy_rpc_client::RpcClient<T>) -> Result<(), Box<dyn std::error::Error>> {
+/// # async fn example<T: linera_alloy_transport::Transport + Clone>(client: alloy_rpc_client::RpcClient<T>) -> Result<(), Box<dyn std::error::Error>> {
 /// use alloy_primitives::U64;
 /// use alloy_rpc_client::PollerBuilder;
 /// use futures_util::StreamExt;

@@ -36,5 +36,5 @@ pub use call::*;
 pub mod private {
     pub use alloy_network::{Ethereum, Network};
     pub use alloy_provider::Provider;
-    pub use alloy_transport::Transport;
+    pub use linera_alloy_transport::Transport;
 }

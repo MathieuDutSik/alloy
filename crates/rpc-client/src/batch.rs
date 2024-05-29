@@ -3,7 +3,7 @@ use linera_alloy_json_rpc::{
     transform_response, try_deserialize_ok, Id, Request, RequestPacket, ResponsePacket, RpcParam,
     RpcReturn, SerializedRequest,
 };
-use alloy_transport::{Transport, TransportError, TransportErrorKind, TransportResult};
+use linera_alloy_transport::{Transport, TransportError, TransportErrorKind, TransportResult};
 use futures::channel::oneshot;
 use serde_json::value::RawValue;
 use std::{

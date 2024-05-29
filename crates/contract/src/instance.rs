@@ -6,7 +6,7 @@ use alloy_primitives::{Address, Selector};
 use alloy_provider::Provider;
 use alloy_rpc_types::Filter;
 use alloy_sol_types::SolEvent;
-use alloy_transport::Transport;
+use linera_alloy_transport::Transport;
 use std::marker::PhantomData;
 
 /// A handle to an Ethereum contract at a specific address.

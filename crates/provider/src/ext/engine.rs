@@ -5,7 +5,7 @@ use alloy_rpc_types_engine::{
     ExecutionPayloadV2, ExecutionPayloadV3, ForkchoiceState, ForkchoiceUpdated, PayloadAttributes,
     PayloadId, PayloadStatus,
 };
-use alloy_transport::{Transport, TransportResult};
+use linera_alloy_transport::{Transport, TransportResult};
 
 use crate::Provider;
 

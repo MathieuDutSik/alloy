@@ -5,7 +5,7 @@ use linera_alloy_json_rpc::RpcError;
 use alloy_network::Network;
 use alloy_primitives::B256;
 use alloy_rpc_types::Block;
-use alloy_transport::{utils::Spawnable, Transport, TransportErrorKind, TransportResult};
+use linera_alloy_transport::{utils::Spawnable, Transport, TransportErrorKind, TransportResult};
 use futures::{stream::StreamExt, FutureExt, Stream};
 use std::{
     collections::{BTreeMap, HashMap},

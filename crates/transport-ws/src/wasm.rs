@@ -1,6 +1,6 @@
 use super::WsBackend;
 use linera_alloy_pubsub::PubSubConnect;
-use alloy_transport::{utils::Spawnable, TransportErrorKind, TransportResult};
+use linera_alloy_transport::{utils::Spawnable, TransportErrorKind, TransportResult};
 use futures::{
     sink::SinkExt,
     stream::{Fuse, StreamExt},
@@ -17,7 +17,7 @@ pub struct WsConnect {
 
 impl PubSubConnect for WsConnect {
     fn is_local(&self) -> bool {
-        alloy_transport::utils::guess_local_url(&self.url)
+        linera_alloy_transport::utils::guess_local_url(&self.url)
     }
 
     async fn connect(&self) -> TransportResult<linera_alloy_pubsub::ConnectionHandle> {

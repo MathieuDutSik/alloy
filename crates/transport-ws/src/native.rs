@@ -1,6 +1,6 @@
 use crate::WsBackend;
 use linera_alloy_pubsub::PubSubConnect;
-use alloy_transport::{utils::Spawnable, Authorization, TransportErrorKind, TransportResult};
+use linera_alloy_transport::{utils::Spawnable, Authorization, TransportErrorKind, TransportResult};
 use futures::{SinkExt, StreamExt};
 use serde_json::value::RawValue;
 use std::time::Duration;
@@ -52,7 +52,7 @@ impl IntoClientRequest for WsConnect {
 
 impl PubSubConnect for WsConnect {
     fn is_local(&self) -> bool {
-        alloy_transport::utils::guess_local_url(&self.url)
+        linera_alloy_transport::utils::guess_local_url(&self.url)
     }
 
     async fn connect(&self) -> TransportResult<linera_alloy_pubsub::ConnectionHandle> {

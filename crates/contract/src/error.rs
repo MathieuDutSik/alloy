@@ -1,6 +1,6 @@
 use alloy_dyn_abi::Error as AbiError;
 use alloy_primitives::Selector;
-use alloy_transport::TransportError;
+use linera_alloy_transport::TransportError;
 use thiserror::Error;
 
 /// Dynamic contract result type.

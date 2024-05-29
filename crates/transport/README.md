@@ -1,4 +1,4 @@
-# alloy-transport
+# linera-alloy-transport
 
 <!-- TODO: More links and real doctests -->
 
@@ -22,12 +22,12 @@ specific Ethereum endpoints.
 
 Alloy maintains the following transports:
 
-- [alloy-transport-http]: JSON-RPC via HTTP.
-- [alloy-transport-ws]: JSON-RPC via Websocket, supports pubsub via
+- [linera-alloy-transport-http]: JSON-RPC via HTTP.
+- [linera-alloy-transport-ws]: JSON-RPC via Websocket, supports pubsub via
     [linera-alloy-pubsub].
-- [alloy-transport-ipc]: JSON-RPC via IPC, supports pubsub via [linera-alloy-pubsub].
+- [linera-alloy-transport-ipc]: JSON-RPC via IPC, supports pubsub via [linera-alloy-pubsub].
 
-[alloy-transport-http]: https://alloy-rs.github.io/alloy/alloy_transport_http/index.html
-[alloy-transport-ws]: https://alloy-rs.github.io/alloy/alloy_transport_ws/index.html
-[alloy-transport-ipc]: https://alloy-rs.github.io/alloy/alloy_transport_ipc/index.html
+[linera-alloy-transport-http]: https://alloy-rs.github.io/alloy/linera_alloy_transport_http/index.html
+[linera-alloy-transport-ws]: https://alloy-rs.github.io/alloy/linera_alloy_transport_ws/index.html
+[linera-alloy-transport-ipc]: https://alloy-rs.github.io/alloy/linera_alloy_transport_ipc/index.html
 [linera-alloy-pubsub]: https://alloy-rs.github.io/alloy/linera_alloy_pubsub/index.html

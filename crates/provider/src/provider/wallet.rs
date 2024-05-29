@@ -4,7 +4,7 @@ use crate::{
 };
 use alloy_network::{Ethereum, Network, NetworkSigner};
 use alloy_primitives::Address;
-use alloy_transport::Transport;
+use linera_alloy_transport::Transport;
 
 /// Trait for Providers, Fill stacks, etc, which contain [`NetworkSigner`].
 pub trait WalletProvider<N: Network = Ethereum> {

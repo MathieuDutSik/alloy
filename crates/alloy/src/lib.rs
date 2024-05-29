@@ -183,7 +183,7 @@ pub mod signers {
 /// You will likely not need to use this module;
 /// see the [`providers`] module for high-level usage of transports.
 ///
-/// See [`alloy_transport`] for more details.
+/// See [`linera_alloy_transport`] for more details.
 #[doc = "\n"] // Empty doc line `///` gets deleted by rustfmt.
 #[cfg_attr(feature = "providers", doc = "[`providers`]: crate::providers")]
 #[cfg_attr(
@@ -193,17 +193,17 @@ pub mod signers {
 #[cfg(feature = "transports")]
 pub mod transports {
     #[doc(inline)]
-    pub use alloy_transport::*;
+    pub use linera_alloy_transport::*;
 
     #[cfg(feature = "transport-http")]
     #[doc(inline)]
-    pub use alloy_transport_http as http;
+    pub use linera_alloy_transport_http as http;
 
     #[cfg(feature = "transport-ipc")]
     #[doc(inline)]
-    pub use alloy_transport_ipc as ipc;
+    pub use linera_alloy_transport_ipc as ipc;
 
     #[cfg(feature = "transport-ws")]
     #[doc(inline)]
-    pub use alloy_transport_ws as ws;
+    pub use linera_alloy_transport_ws as ws;
 }

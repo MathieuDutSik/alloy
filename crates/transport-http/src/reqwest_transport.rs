@@ -1,6 +1,6 @@
 use crate::{Http, HttpConnect};
 use linera_alloy_json_rpc::{RequestPacket, ResponsePacket};
-use alloy_transport::{
+use linera_alloy_transport::{
     utils::guess_local_url, TransportConnect, TransportError, TransportErrorKind, TransportFut,
 };
 use std::task;
@@ -26,7 +26,7 @@ impl TransportConnect for ReqwestConnect {
 
     fn get_transport<'a: 'b, 'b>(
         &'a self,
-    ) -> alloy_transport::Pbf<'b, Self::Transport, TransportError> {
+    ) -> linera_alloy_transport::Pbf<'b, Self::Transport, TransportError> {
         Box::pin(async move { Ok(Http::with_client(Client::new(), self.url.clone())) })
     }
 }

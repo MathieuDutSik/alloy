@@ -14,7 +14,7 @@ use tokio::io::{AsyncReadExt, AsyncWriteExt};
 /// ## Example:
 ///
 /// ```
-/// use alloy_transport_ipc::MockIpcServer;
+/// use linera_alloy_transport_ipc::MockIpcServer;
 /// # fn main() -> Result<(), Box<dyn std::error::Error>> {
 /// // Instantiate a new mock server.
 /// let mut server = MockIpcServer::new();

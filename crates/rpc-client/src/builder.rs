@@ -1,5 +1,5 @@
 use crate::RpcClient;
-use alloy_transport::{
+use linera_alloy_transport::{
     BoxTransport, BoxTransportConnect, Transport, TransportConnect, TransportResult,
 };
 use tower::{
@@ -51,10 +51,10 @@ impl<L> ClientBuilder<L> {
     #[cfg(feature = "reqwest")]
     pub fn http(self, url: url::Url) -> RpcClient<L::Service>
     where
-        L: Layer<alloy_transport_http::Http<reqwest::Client>>,
+        L: Layer<linera_alloy_transport_http::Http<reqwest::Client>>,
         L::Service: Transport,
     {
-        let transport = alloy_transport_http::Http::new(url);
+        let transport = linera_alloy_transport_http::Http::new(url);
         let is_local = transport.guess_local();
 
         self.transport(transport, is_local)
@@ -64,12 +64,12 @@ impl<L> ClientBuilder<L> {
     #[cfg(all(not(target_arch = "wasm32"), feature = "hyper"))]
     pub fn hyper_http(self, url: url::Url) -> RpcClient<L::Service>
     where
-        L: Layer<alloy_transport_http::Http<alloy_transport_http::HyperClient>>,
+        L: Layer<linera_alloy_transport_http::Http<linera_alloy_transport_http::HyperClient>>,
         L::Service: Transport,
     {
         let executor = hyper_util::rt::TokioExecutor::new();
         let client = hyper_util::client::legacy::Client::builder(executor).build_http();
-        let transport = alloy_transport_http::Http::with_client(client, url);
+        let transport = linera_alloy_transport_http::Http::with_client(client, url);
         let is_local = transport.guess_local();
 
         self.transport(transport, is_local)
@@ -94,7 +94,7 @@ impl<L> ClientBuilder<L> {
     #[cfg(feature = "ws")]
     pub async fn ws(
         self,
-        ws_connect: alloy_transport_ws::WsConnect,
+        ws_connect: linera_alloy_transport_ws::WsConnect,
     ) -> TransportResult<RpcClient<L::Service>>
     where
         L: Layer<linera_alloy_pubsub::PubSubFrontend>,
@@ -108,10 +108,10 @@ impl<L> ClientBuilder<L> {
     #[cfg(feature = "ipc")]
     pub async fn ipc<T>(
         self,
-        ipc_connect: alloy_transport_ipc::IpcConnect<T>,
+        ipc_connect: linera_alloy_transport_ipc::IpcConnect<T>,
     ) -> TransportResult<RpcClient<L::Service>>
     where
-        alloy_transport_ipc::IpcConnect<T>: linera_alloy_pubsub::PubSubConnect,
+        linera_alloy_transport_ipc::IpcConnect<T>: linera_alloy_pubsub::PubSubConnect,
         L: Layer<linera_alloy_pubsub::PubSubFrontend>,
         L::Service: Transport,
     {

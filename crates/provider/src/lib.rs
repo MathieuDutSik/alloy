@@ -10,17 +10,17 @@
 /// Type alias for a [`RootProvider`] using the [`Http`] transport and a
 /// reqwest client.
 ///
-/// [`Http`]: alloy_transport_http::Http
+/// [`Http`]: linera_alloy_transport_http::Http
 pub type ReqwestProvider<N = alloy_network::Ethereum> =
-    crate::RootProvider<alloy_transport_http::Http<reqwest::Client>, N>;
+    crate::RootProvider<linera_alloy_transport_http::Http<reqwest::Client>, N>;
 
 #[cfg(feature = "hyper")]
 /// Type alias for a [`RootProvider`] using the [`Http`] transport and a hyper
 /// client.
 ///
-/// [`Http`]: alloy_transport_http::Http
+/// [`Http`]: linera_alloy_transport_http::Http
 pub type HyperProvider<N = alloy_network::Ethereum> =
-    crate::RootProvider<alloy_transport_http::Http<alloy_transport_http::HyperClient>, N>;
+    crate::RootProvider<linera_alloy_transport_http::Http<linera_alloy_transport_http::HyperClient>, N>;
 
 #[macro_use]
 extern crate tracing;

@@ -18,7 +18,7 @@ use alloy_rpc_types::{
     FeeHistory, Filter, FilterChanges, Log, SyncStatus,
 };
 use alloy_rpc_types_trace::parity::{LocalizedTransactionTrace, TraceResults, TraceType};
-use alloy_transport::{BoxTransport, Transport, TransportErrorKind, TransportResult};
+use linera_alloy_transport::{BoxTransport, Transport, TransportErrorKind, TransportResult};
 use serde_json::value::RawValue;
 use std::borrow::Cow;
 
@@ -675,7 +675,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// # use alloy_provider::Provider;
     /// # use linera_alloy_eips::BlockId;
     /// # use alloy_rpc_types::state::StateOverride;
-    /// # use alloy_transport::BoxTransport;
+    /// # use linera_alloy_transport::BoxTransport;
     /// # async fn example<P: Provider<BoxTransport>>(
     /// #    provider: P,
     /// #    my_overrides: StateOverride
@@ -948,7 +948,7 @@ mod tests {
 
         // These blocks are not necessary.
         {
-            let refdyn = &provider as &dyn Provider<alloy_transport_http::Http<reqwest::Client>, _>;
+            let refdyn = &provider as &dyn Provider<linera_alloy_transport_http::Http<reqwest::Client>, _>;
             let num = refdyn.get_block_number().await.unwrap();
             assert_eq!(0, num);
         }
@@ -962,7 +962,7 @@ mod tests {
 
         // Note the `Http` arg, vs no arg (defaulting to `BoxedTransport`) below.
         {
-            let refdyn = &provider as &dyn Provider<alloy_transport_http::Http<reqwest::Client>, _>;
+            let refdyn = &provider as &dyn Provider<linera_alloy_transport_http::Http<reqwest::Client>, _>;
             let num = refdyn.get_block_number().await.unwrap();
             assert_eq!(0, num);
         }

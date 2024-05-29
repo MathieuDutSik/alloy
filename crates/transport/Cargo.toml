@@ -1,5 +1,5 @@
 [package]
-name = "alloy-transport"
+name = "linera-alloy-transport"
 description = "Low-level Ethereum JSON-RPC transport abstraction"
 
 version.workspace = true
