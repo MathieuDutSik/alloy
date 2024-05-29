@@ -1,7 +1,7 @@
 //! Utilities for launching a go-ethereum dev-mode instance.
 
 use crate::unused_port;
-use alloy_genesis::{CliqueConfig, Genesis};
+use linera_alloy_genesis::{CliqueConfig, Genesis};
 use alloy_primitives::{hex, Address, B256};
 use k256::ecdsa::SigningKey;
 use std::{

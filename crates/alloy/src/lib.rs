@@ -80,7 +80,7 @@ pub use alloy_network as network;
 
 #[cfg(feature = "genesis")]
 #[doc(inline)]
-pub use alloy_genesis as genesis;
+pub use linera_alloy_genesis as genesis;
 
 #[cfg(feature = "node-bindings")]
 #[doc(inline)]

@@ -1,5 +1,5 @@
 [package]
-name = "alloy-genesis"
+name = "linera-alloy-genesis"
 description = "Ethereum genesis file definitions"
 
 version.workspace = true

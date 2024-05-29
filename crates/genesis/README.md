@@ -1,4 +1,4 @@
-# alloy-genesis
+# linera-alloy-genesis
 
 Ethereum genesis file definitions.
 

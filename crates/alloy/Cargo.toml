@@ -22,7 +22,7 @@ alloy-core = { workspace = true, default-features = false }
 alloy-consensus = { workspace = true, default-features = false, optional = true }
 alloy-contract = { workspace = true, default-features = false, optional = true }
 linera-alloy-eips = { workspace = true, default-features = false, optional = true }
-alloy-genesis = { workspace = true, default-features = false, optional = true }
+linera-alloy-genesis = { workspace = true, default-features = false, optional = true }
 alloy-network = { workspace = true, default-features = false, optional = true }
 alloy-node-bindings = { workspace = true, default-features = false, optional = true }
 
@@ -70,7 +70,7 @@ default = ["std", "reqwest"]
 std = [
     "alloy-core/std",
     "linera-alloy-eips?/std",
-    "alloy-genesis?/std",
+    "linera-alloy-genesis?/std",
     "alloy-serde?/std",
     "alloy-consensus?/std",
 ]
@@ -96,7 +96,7 @@ hyper = [
 consensus = ["dep:alloy-consensus"]
 contract = ["dep:alloy-contract", "dyn-abi", "json-abi", "json", "sol-types"]
 eips = ["dep:linera-alloy-eips"]
-genesis = ["dep:alloy-genesis"]
+genesis = ["dep:linera-alloy-genesis"]
 network = ["dep:alloy-network"]
 node-bindings = ["dep:alloy-node-bindings", "alloy-provider?/anvil"]
 
