@@ -48,7 +48,6 @@ pub use self::core::rlp;
 macro_rules! sol {
     ($($t:tt)*) => {
         $crate::sol_types::sol! {
-            #![sol(linera_alloy_sol_types = $crate::sol_types, linera_alloy_contract = $crate::contract)]
             $($t)*
         }
     };
