@@ -61,11 +61,11 @@ linera-alloy-transport-ws = { version = "0.1.0", default-features = false, path 
 
 test-utils = { version = "0.1.0", default-features = false, path = "crates/internal-test-utils", package = "alloy-internal-test-utils" }
 
-linera-alloy-core = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/core", rev = "a8c8718e9b75a7fa4d28ed4f46c36206e1d1e6b0", default-features = false }
-linera-alloy-dyn-abi = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/dyn-abi", rev = "a8c8718e9b75a7fa4d28ed4f46c36206e1d1e6b0", default-features = false }
-linera-alloy-json-abi = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/json-abi", rev = "a8c8718e9b75a7fa4d28ed4f46c36206e1d1e6b0", default-features = false }
-linera-alloy-primitives = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/primitives", rev = "a8c8718e9b75a7fa4d28ed4f46c36206e1d1e6b0", default-features = false }
-linera-alloy-sol-types = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/sol-types", rev = "a8c8718e9b75a7fa4d28ed4f46c36206e1d1e6b0", default-features = false }
+linera-alloy-core = { version = "0.7.4", default-features = false }
+linera-alloy-dyn-abi = { version = "0.7.4", default-features = false }
+linera-alloy-json-abi = { version = "0.7.4", default-features = false }
+linera-alloy-primitives = { version = "0.7.4", default-features = false }
+linera-alloy-sol-types = { version = "0.7.4", default-features = false }
 
 alloy-rlp = { version = "0.3", default-features = false }
 
