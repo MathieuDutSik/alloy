@@ -1,4 +1,4 @@
-use alloy_primitives::B256;
+use linera_alloy_primitives::B256;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 /// A consensus hashable item, with its memoized hash.

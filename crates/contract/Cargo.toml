@@ -20,10 +20,10 @@ linera-alloy-provider.workspace = true
 linera-alloy-rpc-types.workspace = true
 linera-alloy-transport.workspace = true
 
-alloy-dyn-abi = { workspace = true, features = ["std"] }
-alloy-json-abi.workspace = true
-alloy-primitives.workspace = true
-alloy-sol-types.workspace = true
+linera-alloy-dyn-abi = { workspace = true, features = ["std"] }
+linera-alloy-json-abi.workspace = true
+linera-alloy-primitives.workspace = true
+linera-alloy-sol-types.workspace = true
 
 futures-util.workspace = true
 futures.workspace = true

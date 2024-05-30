@@ -1,4 +1,4 @@
-use alloy_primitives::{Bloom, Log};
+use linera_alloy_primitives::{Bloom, Log};
 
 mod any;
 pub use any::AnyReceiptEnvelope;
@@ -35,7 +35,7 @@ pub trait TxReceipt<T = Log> {
 mod tests {
     use super::*;
     use linera_alloy_eips::eip2718::Encodable2718;
-    use alloy_primitives::{address, b256, bytes, hex, LogData};
+    use linera_alloy_primitives::{address, b256, bytes, hex, LogData};
     use alloy_rlp::{Decodable, Encodable};
 
     // Test vector from: https://eips.ethereum.org/EIPS/eip-2481

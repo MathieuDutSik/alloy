@@ -1,7 +1,7 @@
 //! [`k256`] wallet implementation.
 
 use super::{Wallet, WalletError};
-use alloy_primitives::{hex, B256};
+use linera_alloy_primitives::{hex, B256};
 use linera_alloy_signer::utils::secret_key_to_address;
 use k256::{
     ecdsa::{self, SigningKey},
@@ -176,7 +176,7 @@ impl FromStr for Wallet<SigningKey> {
 mod tests {
     use super::*;
     use crate::{LocalWallet, SignerSync};
-    use alloy_primitives::{address, b256};
+    use linera_alloy_primitives::{address, b256};
 
     #[cfg(feature = "keystore")]
     use tempfile::tempdir;
@@ -248,7 +248,7 @@ mod tests {
     #[test]
     fn signs_msg() {
         let message = "Some data";
-        let hash = alloy_primitives::utils::eip191_hash_message(message);
+        let hash = linera_alloy_primitives::utils::eip191_hash_message(message);
         let key = Wallet::<SigningKey>::random_with(&mut rand::thread_rng());
         let address = key.address;
 
@@ -267,9 +267,9 @@ mod tests {
     #[test]
     #[cfg(feature = "eip712")]
     fn typed_data() {
-        use alloy_dyn_abi::eip712::TypedData;
-        use alloy_primitives::{keccak256, Address, I256, U256};
-        use alloy_sol_types::{eip712_domain, sol, SolStruct};
+        use linera_alloy_dyn_abi::eip712::TypedData;
+        use linera_alloy_primitives::{keccak256, Address, I256, U256};
+        use linera_alloy_sol_types::{eip712_domain, sol, SolStruct};
         use serde::Serialize;
 
         sol! {

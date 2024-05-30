@@ -13,7 +13,7 @@ extern crate alloc;
 
 use alloc::{collections::BTreeMap, string::String};
 
-use alloy_primitives::{Address, Bytes, B256, U256};
+use linera_alloy_primitives::{Address, Bytes, B256, U256};
 use linera_alloy_serde::{
     num::{u128_opt_via_ruint, u128_via_ruint, u64_opt_via_ruint, u64_via_ruint},
     storage::deserialize_storage_map,
@@ -566,7 +566,7 @@ pub struct ParliaConfig {
 mod tests {
     use super::*;
     use alloc::vec;
-    use alloy_primitives::hex;
+    use linera_alloy_primitives::hex;
     use core::str::FromStr;
 
     #[test]

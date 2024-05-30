@@ -8,7 +8,7 @@
 
 use linera_alloy_consensus::SignableTransaction;
 use linera_alloy_network::{TxSigner, TxSignerSync};
-use alloy_primitives::{Address, ChainId, Signature, B256};
+use linera_alloy_primitives::{Address, ChainId, Signature, B256};
 use linera_alloy_signer::{sign_transaction_with_chain_id, Result, Signer, SignerSync};
 use async_trait::async_trait;
 use k256::ecdsa::{self, signature::hazmat::PrehashSigner, RecoveryId};
@@ -48,7 +48,7 @@ pub type YubiWallet = Wallet<yubihsm::ecdsa::Signer<k256::Secp256k1>>;
 ///
 /// The wallet can be used to produce ECDSA [`Signature`] objects, which can be
 /// then verified. Note that this uses
-/// [`eip191_hash_message`](alloy_primitives::eip191_hash_message) under the hood which will
+/// [`eip191_hash_message`](linera_alloy_primitives::eip191_hash_message) under the hood which will
 /// prefix the message being hashed with the `Ethereum Signed Message` domain separator.
 ///
 /// ```
@@ -198,7 +198,7 @@ where
 mod test {
     use super::*;
     use linera_alloy_consensus::TxLegacy;
-    use alloy_primitives::{address, U256};
+    use linera_alloy_primitives::{address, U256};
 
     #[tokio::test]
     async fn signs_tx() {

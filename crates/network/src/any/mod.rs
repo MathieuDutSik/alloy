@@ -77,7 +77,7 @@ impl Network for AnyNetwork {
 }
 
 impl ReceiptResponse for AnyTransactionReceipt {
-    fn contract_address(&self) -> Option<alloy_primitives::Address> {
+    fn contract_address(&self) -> Option<linera_alloy_primitives::Address> {
         self.contract_address
     }
 }

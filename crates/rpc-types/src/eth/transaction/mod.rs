@@ -5,7 +5,7 @@ use linera_alloy_consensus::{
     SignableTransaction, Signed, TxEip1559, TxEip2930, TxEip4844, TxEip4844Variant, TxEnvelope,
     TxLegacy, TxType,
 };
-use alloy_primitives::{Address, Bytes, TxKind, B256, U256};
+use linera_alloy_primitives::{Address, Bytes, TxKind, B256, U256};
 use serde::{Deserialize, Serialize};
 
 pub use linera_alloy_consensus::BlobTransactionSidecar;

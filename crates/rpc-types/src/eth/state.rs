@@ -1,6 +1,6 @@
 //! bindings for state overrides in eth_call
 
-use alloy_primitives::{Address, Bytes, B256, U256, U64};
+use linera_alloy_primitives::{Address, Bytes, B256, U256, U64};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
@@ -33,7 +33,7 @@ pub struct AccountOverride {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_primitives::address;
+    use linera_alloy_primitives::address;
 
     #[test]
     #[should_panic(expected = "invalid type")]

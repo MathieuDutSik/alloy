@@ -253,7 +253,7 @@ impl<N: Network> TxFiller<N> for GasFiller {
 mod tests {
     use super::*;
     use crate::{ProviderBuilder, WalletProvider};
-    use alloy_primitives::{address, U256};
+    use linera_alloy_primitives::{address, U256};
     use linera_alloy_rpc_types::TransactionRequest;
 
     #[tokio::test]

@@ -1,4 +1,4 @@
-use alloy_primitives::U256;
+use linera_alloy_primitives::U256;
 use serde::{
     de::{Error, Visitor},
     Deserialize, Deserializer, Serialize, Serializer,

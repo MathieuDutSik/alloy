@@ -2,7 +2,7 @@ use crate::{
     BuildResult, Ethereum, Network, NetworkSigner, TransactionBuilder, TransactionBuilderError,
 };
 use linera_alloy_consensus::{BlobTransactionSidecar, TxType, TypedTransaction};
-use alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
+use linera_alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
 use linera_alloy_rpc_types::{request::TransactionRequest, AccessList};
 
 impl TransactionBuilder<Ethereum> for TransactionRequest {
@@ -183,7 +183,7 @@ impl TransactionBuilder<Ethereum> for TransactionRequest {
 mod tests {
     use crate::{TransactionBuilder, TransactionBuilderError};
     use linera_alloy_consensus::{BlobTransactionSidecar, TxEip1559, TxType, TypedTransaction};
-    use alloy_primitives::Address;
+    use linera_alloy_primitives::Address;
     use linera_alloy_rpc_types::{AccessList, TransactionRequest};
 
     #[test]

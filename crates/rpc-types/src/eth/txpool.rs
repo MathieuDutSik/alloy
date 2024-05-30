@@ -1,7 +1,7 @@
 //! Types for the `txpool` namespace: <https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-txpool>
 
 use crate::Transaction;
-use alloy_primitives::{Address, U256};
+use linera_alloy_primitives::{Address, U256};
 use serde::{
     de::{self, Deserializer, Visitor},
     Deserialize, Serialize,

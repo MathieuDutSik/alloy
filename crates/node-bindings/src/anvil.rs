@@ -1,6 +1,6 @@
 //! Utilities for launching an Anvil instance.
 
-use alloy_primitives::{hex, Address};
+use linera_alloy_primitives::{hex, Address};
 use k256::{ecdsa::SigningKey, SecretKey as K256SecretKey};
 use std::{
     io::{BufRead, BufReader},

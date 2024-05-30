@@ -1,4 +1,4 @@
-use alloy_primitives::hex;
+use linera_alloy_primitives::hex;
 use k256::ecdsa;
 use std::fmt;
 use thiserror::Error;
@@ -20,10 +20,10 @@ pub enum Error {
         /// The chain ID provided by the transaction.
         tx: u64,
     },
-    /// [`alloy_dyn_abi`] error.
+    /// [`linera_alloy_dyn_abi`] error.
     #[error(transparent)]
     #[cfg(feature = "eip712")]
-    DynAbiError(#[from] alloy_dyn_abi::Error),
+    DynAbiError(#[from] linera_alloy_dyn_abi::Error),
     /// [`ecdsa`] error.
     #[error(transparent)]
     Ecdsa(#[from] ecdsa::Error),
@@ -32,7 +32,7 @@ pub enum Error {
     HexError(#[from] hex::FromHexError),
     /// Signature error.
     #[error(transparent)]
-    SignatureError(#[from] alloy_primitives::SignatureError),
+    SignatureError(#[from] linera_alloy_primitives::SignatureError),
     /// Generic error.
     #[error(transparent)]
     Other(#[from] Box<dyn std::error::Error + Send + Sync + 'static>),

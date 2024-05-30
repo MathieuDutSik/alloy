@@ -1,9 +1,9 @@
 use super::signer::NetworkSigner;
 use crate::Network;
 use linera_alloy_consensus::BlobTransactionSidecar;
-use alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
+use linera_alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
 use linera_alloy_rpc_types::AccessList;
-use alloy_sol_types::SolCall;
+use linera_alloy_sol_types::SolCall;
 use futures_utils_wasm::impl_future;
 
 /// Result type for transaction builders
@@ -58,7 +58,7 @@ pub trait TransactionBuilder<N: Network>: Default + Sized + Send + Sync + 'stati
     fn set_chain_id(&mut self, chain_id: ChainId);
 
     /// Builder-pattern method for setting the chain ID.
-    fn with_chain_id(mut self, chain_id: alloy_primitives::ChainId) -> Self {
+    fn with_chain_id(mut self, chain_id: linera_alloy_primitives::ChainId) -> Self {
         self.set_chain_id(chain_id);
         self
     }
@@ -100,16 +100,16 @@ pub trait TransactionBuilder<N: Network>: Default + Sized + Send + Sync + 'stati
     }
 
     /// Get the kind of transaction.
-    fn kind(&self) -> Option<alloy_primitives::TxKind>;
+    fn kind(&self) -> Option<linera_alloy_primitives::TxKind>;
 
     /// Clear the kind of transaction.
     fn clear_kind(&mut self);
 
     /// Set the kind of transaction.
-    fn set_kind(&mut self, kind: alloy_primitives::TxKind);
+    fn set_kind(&mut self, kind: linera_alloy_primitives::TxKind);
 
     /// Builder-pattern method for setting the kind of transaction.
-    fn with_kind(mut self, kind: alloy_primitives::TxKind) -> Self {
+    fn with_kind(mut self, kind: linera_alloy_primitives::TxKind) -> Self {
         self.set_kind(kind);
         self
     }

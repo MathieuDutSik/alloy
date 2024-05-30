@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-primitives.workspace = true
+linera-alloy-primitives.workspace = true
 linera-alloy-serde.workspace = true
 
 # serde
@@ -24,4 +24,4 @@ serde_json.workspace = true
 
 [features]
 default = ["std"]
-std = ["alloy-primitives/std", "linera-alloy-serde/std", "serde/std"]
+std = ["linera-alloy-primitives/std", "linera-alloy-serde/std", "serde/std"]

@@ -67,7 +67,7 @@ impl From<YubiSigner<Secp256k1>> for Wallet<YubiSigner<Secp256k1>> {
 mod tests {
     use super::*;
     use crate::SignerSync;
-    use alloy_primitives::{address, hex};
+    use linera_alloy_primitives::{address, hex};
 
     #[test]
     fn from_key() {

@@ -1,6 +1,6 @@
 //! Utility functions for working with Ethereum signatures.
 
-use alloy_primitives::{keccak256, Address};
+use linera_alloy_primitives::{keccak256, Address};
 use elliptic_curve::sec1::ToEncodedPoint;
 use k256::{
     ecdsa::{SigningKey, VerifyingKey},
@@ -43,7 +43,7 @@ pub fn raw_public_key_to_address(pubkey: &[u8]) -> Address {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_primitives::hex;
+    use linera_alloy_primitives::hex;
 
     // Only tests for correctness, no edge cases. Uses examples from https://docs.ethers.org/v5/api/utils/address/#utils-computeAddress
     #[test]

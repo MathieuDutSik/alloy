@@ -40,7 +40,7 @@ const MAX_RETRIES: usize = 3;
 ///
 /// ```no_run
 /// # async fn example<T: linera_alloy_transport::Transport + Clone>(client: linera_alloy_rpc_client::RpcClient<T>) -> Result<(), Box<dyn std::error::Error>> {
-/// use alloy_primitives::U64;
+/// use linera_alloy_primitives::U64;
 /// use linera_alloy_rpc_client::PollerBuilder;
 /// use futures_util::StreamExt;
 ///

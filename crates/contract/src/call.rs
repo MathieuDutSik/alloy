@@ -1,11 +1,11 @@
 use crate::{CallDecoder, Error, EthCall, Result};
-use alloy_dyn_abi::{DynSolValue, JsonAbiExt};
-use alloy_json_abi::Function;
+use linera_alloy_dyn_abi::{DynSolValue, JsonAbiExt};
+use linera_alloy_json_abi::Function;
 use linera_alloy_network::{Ethereum, Network, ReceiptResponse, TransactionBuilder};
-use alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
+use linera_alloy_primitives::{Address, Bytes, ChainId, TxKind, U256};
 use linera_alloy_provider::{PendingTransactionBuilder, Provider};
 use linera_alloy_rpc_types::{state::StateOverride, AccessList, BlobTransactionSidecar, BlockId};
-use alloy_sol_types::SolCall;
+use linera_alloy_sol_types::SolCall;
 use linera_alloy_transport::Transport;
 use std::{
     future::{Future, IntoFuture},
@@ -52,8 +52,8 @@ pub type RawCallBuilder<T, P, N = Ethereum> = CallBuilder<T, P, (), N>;
 /// ```no_run
 /// # async fn test<P: linera_alloy_contract::private::Provider>(provider: P) -> Result<(), Box<dyn std::error::Error>> {
 /// use linera_alloy_contract::SolCallBuilder;
-/// use alloy_primitives::{Address, U256};
-/// use alloy_sol_types::sol;
+/// use linera_alloy_primitives::{Address, U256};
+/// use linera_alloy_sol_types::sol;
 ///
 /// sol! {
 ///     #[sol(rpc)] // <-- Important!
@@ -86,9 +86,9 @@ pub type RawCallBuilder<T, P, N = Ethereum> = CallBuilder<T, P, (), N>;
 /// Using [`ContractInstance`](crate::ContractInstance):
 ///
 /// ```no_run
-/// # async fn test<P: linera_alloy_contract::private::Provider>(provider: P, dynamic_abi: alloy_json_abi::JsonAbi) -> Result<(), Box<dyn std::error::Error>> {
-/// use alloy_primitives::{Address, Bytes, U256};
-/// use alloy_dyn_abi::DynSolValue;
+/// # async fn test<P: linera_alloy_contract::private::Provider>(provider: P, dynamic_abi: linera_alloy_json_abi::JsonAbi) -> Result<(), Box<dyn std::error::Error>> {
+/// use linera_alloy_primitives::{Address, Bytes, U256};
+/// use linera_alloy_dyn_abi::DynSolValue;
 /// use linera_alloy_contract::{CallBuilder, ContractInstance, DynCallBuilder, Interface, RawCallBuilder};
 ///
 /// # stringify!(
@@ -117,7 +117,7 @@ pub type RawCallBuilder<T, P, N = Ethereum> = CallBuilder<T, P, (), N>;
 /// # }
 /// ```
 ///
-/// [sol]: alloy_sol_types::sol
+/// [sol]: linera_alloy_sol_types::sol
 #[derive(Clone)]
 #[must_use = "call builders do nothing unless you `.call`, `.send`, or `.await` them"]
 pub struct CallBuilder<T, P, D, N: Network = Ethereum> {
@@ -195,7 +195,7 @@ impl<T: Transport + Clone, P: Provider<T, N>, N: Network> RawCallBuilder<T, P, N
     /// Decode a return value from a constructor:
     ///
     /// ```no_run
-    /// # use alloy_sol_types::sol;
+    /// # use linera_alloy_sol_types::sol;
     /// sol! {
     ///     // NOTE: This contract is not meant to be deployed on-chain, but rather
     ///     // used in a static call with its creation code as the call data.
@@ -536,12 +536,12 @@ impl<T, P, D: CallDecoder, N: Network> std::fmt::Debug for CallBuilder<T, P, D, 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_primitives::{address, b256, bytes, hex, utils::parse_units, B256};
+    use linera_alloy_primitives::{address, b256, bytes, hex, utils::parse_units, B256};
     use linera_alloy_provider::{
         layers::AnvilProvider, Provider, ProviderBuilder, RootProvider, WalletProvider,
     };
     use linera_alloy_rpc_types::AccessListItem;
-    use alloy_sol_types::sol;
+    use linera_alloy_sol_types::sol;
     use linera_alloy_transport_http::Http;
     use reqwest::Client;
 

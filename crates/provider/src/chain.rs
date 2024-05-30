@@ -1,6 +1,6 @@
 use crate::{Provider, RootProvider};
 use linera_alloy_network::{Ethereum, Network};
-use alloy_primitives::{BlockNumber, U64};
+use linera_alloy_primitives::{BlockNumber, U64};
 use linera_alloy_rpc_client::{PollerBuilder, WeakClient};
 use linera_alloy_rpc_types::Block;
 use linera_alloy_transport::{RpcError, Transport};

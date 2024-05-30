@@ -1,6 +1,6 @@
 //! Provider-related utilities.
 
-use alloy_primitives::{U128, U64};
+use linera_alloy_primitives::{U128, U64};
 
 /// The number of blocks from the past for which the fee rewards are fetched for fee estimation.
 pub const EIP1559_FEE_ESTIMATION_PAST_BLOCKS: u64 = 10;

@@ -3,7 +3,7 @@
 use crate::{Provider, RootProvider};
 use linera_alloy_json_rpc::RpcError;
 use linera_alloy_network::Network;
-use alloy_primitives::B256;
+use linera_alloy_primitives::B256;
 use linera_alloy_rpc_types::Block;
 use linera_alloy_transport::{utils::Spawnable, Transport, TransportErrorKind, TransportResult};
 use futures::{stream::StreamExt, FutureExt, Stream};

@@ -17,7 +17,7 @@ workspace = true
 [dependencies]
 linera-alloy-consensus = { workspace = true, features = ["std"] }
 linera-alloy-network.workspace = true
-alloy-primitives.workspace = true
+linera-alloy-primitives.workspace = true
 linera-alloy-signer.workspace = true
 
 async-trait.workspace = true

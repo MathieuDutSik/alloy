@@ -30,7 +30,7 @@ After incorporating Alloy, you may wish to utilize specific features of the crat
 
 This repository contains the following crates:
 
-- [`alloy`]: Meta-crate for the entire project, including [`alloy-core`]
+- [`alloy`]: Meta-crate for the entire project, including [`linera-alloy-core`]
 - [`linera-alloy-consensus`] - Ethereum consensus interface
 - [`linera-alloy-contract`] - Interact with on-chain contracts
 - [`linera-alloy-eips`] - Ethereum Improvement Proposal (EIP) implementations
@@ -79,7 +79,7 @@ This repository contains the following crates:
 [`linera-alloy-transport-http`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-http
 [`linera-alloy-transport-ipc`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-ipc
 [`linera-alloy-transport-ws`]: https://github.com/alloy-rs/alloy/tree/main/crates/transport-ws
-[`alloy-core`]: https://docs.rs/alloy-core
+[`linera-alloy-core`]: https://docs.rs/linera-alloy-core
 [publish-subscribe]: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 [AWS KMS]: https://aws.amazon.com/kms
 [GCP KMS]: https://cloud.google.com/kms

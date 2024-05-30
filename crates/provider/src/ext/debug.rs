@@ -1,7 +1,7 @@
 //! This module extends the Ethereum JSON-RPC provider with the Debug namespace's RPC methods.
 use crate::Provider;
 use linera_alloy_network::Network;
-use alloy_primitives::{TxHash, B256};
+use linera_alloy_primitives::{TxHash, B256};
 use linera_alloy_rpc_types::{BlockNumberOrTag, TransactionRequest};
 use linera_alloy_rpc_types_trace::geth::{
     GethDebugTracingCallOptions, GethDebugTracingOptions, GethTrace, TraceResult,
@@ -148,7 +148,7 @@ mod test {
 
     use super::*;
     use linera_alloy_network::TransactionBuilder;
-    use alloy_primitives::{address, U256};
+    use linera_alloy_primitives::{address, U256};
 
     fn init_tracing() {
         let _ = tracing_subscriber::fmt::try_init();

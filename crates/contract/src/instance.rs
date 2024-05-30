@@ -1,11 +1,11 @@
 use crate::{CallBuilder, Event, Interface, Result};
-use alloy_dyn_abi::DynSolValue;
-use alloy_json_abi::{Function, JsonAbi};
+use linera_alloy_dyn_abi::DynSolValue;
+use linera_alloy_json_abi::{Function, JsonAbi};
 use linera_alloy_network::{Ethereum, Network};
-use alloy_primitives::{Address, Selector};
+use linera_alloy_primitives::{Address, Selector};
 use linera_alloy_provider::Provider;
 use linera_alloy_rpc_types::Filter;
-use alloy_sol_types::SolEvent;
+use linera_alloy_sol_types::SolEvent;
 use linera_alloy_transport::Transport;
 use std::marker::PhantomData;
 

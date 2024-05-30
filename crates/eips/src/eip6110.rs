@@ -4,7 +4,7 @@
 //!
 //! Provides validator deposits as a list of deposit operations added to the Execution Layer block.
 
-use alloy_primitives::{address, Address, FixedBytes, B256};
+use linera_alloy_primitives::{address, Address, FixedBytes, B256};
 use alloy_rlp::{RlpDecodable, RlpEncodable};
 
 /// Mainnet deposit contract address.

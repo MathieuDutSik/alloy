@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-primitives = { workspace = true, features = ["serde"] }
+linera-alloy-primitives = { workspace = true, features = ["serde"] }
 linera-alloy-serde.workspace = true
 
 serde.workspace = true

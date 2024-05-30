@@ -4,7 +4,7 @@
 
 #![allow(unknown_lints, non_local_definitions)]
 
-use alloy_primitives::{address, bytes, Address, Bytes, FixedBytes};
+use linera_alloy_primitives::{address, bytes, Address, Bytes, FixedBytes};
 use alloy_rlp::{RlpDecodable, RlpEncodable};
 
 /// The caller to be used when calling the EIP-7002 withdrawal requests contract at the end of the

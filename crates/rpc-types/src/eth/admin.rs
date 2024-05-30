@@ -1,6 +1,6 @@
 //! Types for the admin api
 use linera_alloy_genesis::ChainConfig;
-use alloy_primitives::{B256, U256};
+use linera_alloy_primitives::{B256, U256};
 use serde::{Deserialize, Serialize};
 use std::{
     collections::BTreeMap,

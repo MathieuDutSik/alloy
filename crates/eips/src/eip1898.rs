@@ -2,7 +2,7 @@
 
 #![allow(unknown_lints, non_local_definitions)]
 
-use alloy_primitives::{hex::FromHexError, ruint::ParseError, BlockHash, BlockNumber, B256, U64};
+use linera_alloy_primitives::{hex::FromHexError, ruint::ParseError, BlockHash, BlockNumber, B256, U64};
 use alloy_rlp::{bytes, Decodable, Encodable, Error as RlpError};
 use core::{
     fmt::{self, Debug, Display, Formatter},
@@ -701,7 +701,7 @@ impl fmt::Display for BlockHashOrNumber {
 pub struct ParseBlockHashOrNumberError {
     input: alloc::string::String,
     parse_int_error: ParseIntError,
-    hex_error: alloy_primitives::hex::FromHexError,
+    hex_error: linera_alloy_primitives::hex::FromHexError,
 }
 
 impl fmt::Display for ParseBlockHashOrNumberError {

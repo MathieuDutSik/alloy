@@ -15,7 +15,7 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-primitives = { workspace = true, features = ["rlp"] }
+linera-alloy-primitives = { workspace = true, features = ["rlp"] }
 alloy-rlp.workspace = true
 linera-alloy-eips.workspace = true
 linera-alloy-serde = { workspace = true, optional = true }
@@ -32,7 +32,7 @@ proptest-derive = { workspace = true, optional = true }
 serde = { workspace = true, features = ["derive"], optional = true }
 
 [dev-dependencies]
-alloy-primitives = { workspace = true, features = ["arbitrary", "rand"] }
+linera-alloy-primitives = { workspace = true, features = ["arbitrary", "rand"] }
 linera-alloy-signer.workspace = true
 
 arbitrary = { workspace = true, features = ["derive"] }
@@ -45,7 +45,7 @@ serde_json.workspace = true
 [features]
 default = ["std"]
 std = ["linera-alloy-eips/std", "c-kzg?/std"]
-k256 = ["alloy-primitives/k256"]
+k256 = ["linera-alloy-primitives/k256"]
 kzg = ["dep:c-kzg", "linera-alloy-eips/kzg", "std"]
 arbitrary = [
     "std",
@@ -56,7 +56,7 @@ arbitrary = [
 ]
 serde = [
     "dep:serde",
-    "alloy-primitives/serde",
+    "linera-alloy-primitives/serde",
     "dep:linera-alloy-serde",
     "linera-alloy-eips/serde",
 ]

@@ -1,6 +1,6 @@
 use super::types::{DerivationType, TrezorError};
 use linera_alloy_consensus::{SignableTransaction, TxEip1559};
-use alloy_primitives::{hex, Address, ChainId, Parity, TxKind, B256, U256};
+use linera_alloy_primitives::{hex, Address, ChainId, Parity, TxKind, B256, U256};
 use linera_alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
 use async_trait::async_trait;
 use std::fmt;
@@ -281,7 +281,7 @@ fn signature_from_trezor(x: trezor_client::client::Signature) -> Result<Signatur
 mod tests {
     use super::*;
     use linera_alloy_network::{EthereumSigner, TransactionBuilder};
-    use alloy_primitives::{address, b256};
+    use linera_alloy_primitives::{address, b256};
     use linera_alloy_rpc_types::{AccessList, AccessListItem, TransactionRequest};
 
     #[tokio::test]

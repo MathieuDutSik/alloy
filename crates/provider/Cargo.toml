@@ -30,7 +30,7 @@ linera-alloy-transport-ipc = { workspace = true, optional = true }
 linera-alloy-transport-ws = { workspace = true, optional = true }
 linera-alloy-pubsub = { workspace = true, optional = true }
 linera-alloy-transport.workspace = true
-alloy-primitives.workspace = true
+linera-alloy-primitives.workspace = true
 
 alloy-chains.workspace = true
 async-stream = "0.3"
@@ -52,7 +52,7 @@ url = { workspace = true, optional = true }
 linera-alloy-node-bindings.workspace = true
 linera-alloy-rpc-client = { workspace = true, features = ["reqwest"] }
 alloy-rlp.workspace = true
-alloy-sol-types.workspace = true
+linera-alloy-sol-types.workspace = true
 linera-alloy-signer.workspace = true
 linera-alloy-signer-wallet.workspace = true
 linera-alloy-transport-http = { workspace = true, features = ["reqwest"] }

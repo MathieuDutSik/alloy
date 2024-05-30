@@ -1,6 +1,6 @@
 use linera_alloy_eips::BlockId;
 use linera_alloy_network::Network;
-use alloy_primitives::Bytes;
+use linera_alloy_primitives::Bytes;
 use linera_alloy_rpc_client::{RpcCall, WeakClient};
 use linera_alloy_rpc_types::state::StateOverride;
 use linera_alloy_transport::{Transport, TransportErrorKind, TransportResult};

@@ -1,5 +1,5 @@
 use crate::transaction::SignableTransaction;
-use alloy_primitives::{Signature, B256};
+use linera_alloy_primitives::{Signature, B256};
 
 /// A transaction with a signature and hash seal.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -56,7 +56,7 @@ impl<T: SignableTransaction<Signature>> Signed<T, Signature> {
     /// Recover the signer of the transaction
     pub fn recover_signer(
         &self,
-    ) -> Result<alloy_primitives::Address, alloy_primitives::SignatureError> {
+    ) -> Result<linera_alloy_primitives::Address, linera_alloy_primitives::SignatureError> {
         let sighash = self.tx.signature_hash();
         self.signature.recover_address_from_prehash(&sighash)
     }

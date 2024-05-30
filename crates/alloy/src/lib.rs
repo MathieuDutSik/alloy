@@ -9,10 +9,10 @@
 /* --------------------------------------- Core re-exports -------------------------------------- */
 
 // This should generally not be used by downstream crates as we re-export everything else
-// individually. It is acceptable to use this if an item has been added to `alloy-core`
+// individually. It is acceptable to use this if an item has been added to `linera-alloy-core`
 // and it has not been added to the re-exports below.
 #[doc(hidden)]
-pub use alloy_core as core;
+pub use linera_alloy_core as core;
 
 #[doc(inline)]
 pub use self::core::primitives;
@@ -48,7 +48,7 @@ pub use self::core::rlp;
 macro_rules! sol {
     ($($t:tt)*) => {
         $crate::sol_types::sol! {
-            #![sol(alloy_sol_types = $crate::sol_types, linera_alloy_contract = $crate::contract)]
+            #![sol(linera_alloy_sol_types = $crate::sol_types, linera_alloy_contract = $crate::contract)]
             $($t)*
         }
     };

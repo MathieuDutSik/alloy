@@ -4,7 +4,7 @@
 
 #![allow(clippy::upper_case_acronyms)]
 
-use alloy_primitives::hex;
+use linera_alloy_primitives::hex;
 use std::fmt;
 use thiserror::Error;
 
@@ -46,7 +46,7 @@ pub enum LedgerError {
     SemVerError(#[from] semver::Error),
     /// Signature Error
     #[error(transparent)]
-    SignatureError(#[from] alloy_primitives::SignatureError),
+    SignatureError(#[from] linera_alloy_primitives::SignatureError),
     /// Thrown when trying to sign using EIP-712 with an incompatible Ledger Ethereum app.
     #[error("Ledger Ethereum app requires at least version {0}")]
     UnsupportedAppVersion(&'static str),

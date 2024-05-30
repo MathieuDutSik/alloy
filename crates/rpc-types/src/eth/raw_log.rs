@@ -1,6 +1,6 @@
 //! Ethereum log object.
 
-use alloy_primitives::{Address, Bloom, Bytes, B256};
+use linera_alloy_primitives::{Address, Bloom, Bytes, B256};
 use alloy_rlp::{RlpDecodable, RlpEncodable};
 
 /// Ethereum Log

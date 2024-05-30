@@ -15,13 +15,13 @@ exclude.workspace = true
 workspace = true
 
 [dependencies]
-alloy-primitives = { workspace = true, features = ["rlp", "serde"] }
+linera-alloy-primitives = { workspace = true, features = ["rlp", "serde"] }
 serde.workspace = true
 serde_json = { workspace = true, features = ["alloc"] }
 
 [dev-dependencies]
-alloy-primitives = { workspace = true, features = ["rand", "rlp", "serde", "arbitrary"] }
+linera-alloy-primitives = { workspace = true, features = ["rand", "rlp", "serde", "arbitrary"] }
 
 [features]
 default = ["std"]
-std = ["alloy-primitives/std", "serde/std", "serde_json/std"]
+std = ["linera-alloy-primitives/std", "serde/std", "serde_json/std"]

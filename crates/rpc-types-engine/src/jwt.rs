@@ -1,6 +1,6 @@
 //! JWT (JSON Web Token) utilities for the Engine API.
 
-use alloy_primitives::hex;
+use linera_alloy_primitives::hex;
 use jsonwebtoken::{
     decode, errors::ErrorKind, get_current_timestamp, Algorithm, DecodingKey, Validation,
 };

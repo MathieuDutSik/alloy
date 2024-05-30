@@ -7,9 +7,9 @@ pub enum ConversionError {
     /// Error during EIP-2718 transaction coding.
     #[error(transparent)]
     Eip2718Error(#[from] linera_alloy_eips::eip2718::Eip2718Error),
-    /// [`alloy_primitives::SignatureError`].
+    /// [`linera_alloy_primitives::SignatureError`].
     #[error(transparent)]
-    SignatureError(#[from] alloy_primitives::SignatureError),
+    SignatureError(#[from] linera_alloy_primitives::SignatureError),
     /// Missing signature for transaction.
     #[error("missing signature for transaction")]
     MissingSignature,

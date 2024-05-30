@@ -1,7 +1,7 @@
 //! Contains types related to the Inclusion lists that will be used by in the engine API RPC
 //! definitions.
 
-use alloy_primitives::{Address, B256};
+use linera_alloy_primitives::{Address, B256};
 use linera_alloy_rpc_types_engine::PayloadStatusEnum;
 use linera_alloy_serde::u64_via_ruint;
 use serde::{ser::SerializeMap, Deserialize, Serialize, Serializer};
@@ -122,7 +122,7 @@ pub struct InclusionListSummaryV1 {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_primitives::hex::FromHex;
+    use linera_alloy_primitives::hex::FromHex;
     use serde_json::json;
 
     #[test]

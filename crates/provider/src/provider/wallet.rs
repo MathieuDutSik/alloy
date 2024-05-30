@@ -3,7 +3,7 @@ use crate::{
     Provider,
 };
 use linera_alloy_network::{Ethereum, Network, NetworkSigner};
-use alloy_primitives::Address;
+use linera_alloy_primitives::Address;
 use linera_alloy_transport::Transport;
 
 /// Trait for Providers, Fill stacks, etc, which contain [`NetworkSigner`].

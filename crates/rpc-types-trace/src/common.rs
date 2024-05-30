@@ -1,6 +1,6 @@
 //! Types used by tracing backends.
 
-use alloy_primitives::TxHash;
+use linera_alloy_primitives::TxHash;
 use serde::{Deserialize, Serialize};
 
 /// The result of a single transaction trace.

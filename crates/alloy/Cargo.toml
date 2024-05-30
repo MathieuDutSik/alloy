@@ -16,7 +16,7 @@ workspace = true
 
 [dependencies]
 # core
-alloy-core = { workspace = true, default-features = false }
+linera-alloy-core = { workspace = true, default-features = false }
 
 # alloy
 linera-alloy-consensus = { workspace = true, default-features = false, optional = true }
@@ -68,7 +68,7 @@ default = ["std", "reqwest"]
 
 # std
 std = [
-    "alloy-core/std",
+    "linera-alloy-core/std",
     "linera-alloy-eips?/std",
     "linera-alloy-genesis?/std",
     "linera-alloy-serde?/std",
@@ -156,31 +156,31 @@ transport-ws = ["transports", "pubsub", "dep:linera-alloy-transport-ws"]
 
 # ---------------------------------------- Core re-exports --------------------------------------- #
 
-dyn-abi = ["alloy-core/dyn-abi"]
-json-abi = ["alloy-core/json-abi"]
-json = ["alloy-core/json"]
-sol-types = ["alloy-core/sol-types"]
+dyn-abi = ["linera-alloy-core/dyn-abi"]
+json-abi = ["linera-alloy-core/json-abi"]
+json = ["linera-alloy-core/json"]
+sol-types = ["linera-alloy-core/sol-types"]
 
-tiny-keccak = ["alloy-core/tiny-keccak"]
-native-keccak = ["alloy-core/native-keccak"]
-asm-keccak = ["alloy-core/asm-keccak"]
+tiny-keccak = ["linera-alloy-core/tiny-keccak"]
+native-keccak = ["linera-alloy-core/native-keccak"]
+asm-keccak = ["linera-alloy-core/asm-keccak"]
 
-postgres = ["alloy-core/postgres"]
-getrandom = ["alloy-core/getrandom"]
-rand = ["alloy-core/rand"]
-rlp = ["alloy-core/rlp"]
-serde = ["alloy-core/serde", "linera-alloy-eips?/serde", "linera-alloy-serde"]
-ssz = ["alloy-core/ssz", "linera-alloy-rpc-types?/ssz", "linera-alloy-rpc-types-engine?/ssz"]
+postgres = ["linera-alloy-core/postgres"]
+getrandom = ["linera-alloy-core/getrandom"]
+rand = ["linera-alloy-core/rand"]
+rlp = ["linera-alloy-core/rlp"]
+serde = ["linera-alloy-core/serde", "linera-alloy-eips?/serde", "linera-alloy-serde"]
+ssz = ["linera-alloy-core/ssz", "linera-alloy-rpc-types?/ssz", "linera-alloy-rpc-types-engine?/ssz"]
 arbitrary = [
-    "alloy-core/arbitrary",
+    "linera-alloy-core/arbitrary",
     "linera-alloy-consensus?/arbitrary",
     "linera-alloy-eips?/arbitrary",
     "linera-alloy-rpc-types?/arbitrary",
 ]
-k256 = ["alloy-core/k256", "linera-alloy-consensus?/k256", "linera-alloy-network?/k256"]
+k256 = ["linera-alloy-core/k256", "linera-alloy-consensus?/k256", "linera-alloy-network?/k256"]
 kzg = ["linera-alloy-consensus?/kzg"]
 eip712 = [
-    "alloy-core/eip712",
+    "linera-alloy-core/eip712",
     "linera-alloy-signer?/eip712",
     "linera-alloy-signer-aws?/eip712",
     "linera-alloy-signer-gcp?/eip712",

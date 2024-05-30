@@ -1,6 +1,6 @@
 use crate::{Network, TransactionBuilder};
 use linera_alloy_consensus::SignableTransaction;
-use alloy_primitives::Address;
+use linera_alloy_primitives::Address;
 use async_trait::async_trait;
 use auto_impl::auto_impl;
 use futures_utils_wasm::impl_future;
@@ -71,7 +71,7 @@ pub trait NetworkSigner<N: Network>: std::fmt::Debug + Send + Sync {
 /// Synchronous signers should implement both this trait and [`TxSignerSync`].
 ///
 /// [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
-/// [`ChainId`]: alloy_primitives::ChainId
+/// [`ChainId`]: linera_alloy_primitives::ChainId
 #[cfg_attr(target_arch = "wasm32", async_trait(?Send))]
 #[cfg_attr(not(target_arch = "wasm32"), async_trait)]
 #[auto_impl(&, &mut, Box, Rc, Arc)]
@@ -100,7 +100,7 @@ pub trait TxSigner<Signature> {
 /// the asynchronous methods to the synchronous ones.
 ///
 /// [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
-/// [`ChainId`]: alloy_primitives::ChainId
+/// [`ChainId`]: linera_alloy_primitives::ChainId
 #[auto_impl(&, &mut, Box, Rc, Arc)]
 pub trait TxSignerSync<Signature> {
     /// Get the address of the signer.

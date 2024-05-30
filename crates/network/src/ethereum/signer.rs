@@ -1,6 +1,6 @@
 use crate::{Network, NetworkSigner, TxSigner};
 use linera_alloy_consensus::{SignableTransaction, TxEnvelope, TypedTransaction};
-use alloy_primitives::Address;
+use linera_alloy_primitives::Address;
 use linera_alloy_signer::Signature;
 use async_trait::async_trait;
 use std::{collections::BTreeMap, sync::Arc};

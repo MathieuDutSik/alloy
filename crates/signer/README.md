@@ -40,7 +40,7 @@ Sign a transaction:
 
 ```rust
 use linera_alloy_consensus::TxLegacy;
-use alloy_primitives::{U256, address, bytes};
+use linera_alloy_primitives::{U256, address, bytes};
 use linera_alloy_signer::{Signer, SignerSync};
 use linera_alloy_network::{TxSignerSync};
 

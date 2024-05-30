@@ -1,5 +1,5 @@
 use linera_alloy_node_bindings::Anvil;
-use alloy_primitives::U64;
+use linera_alloy_primitives::U64;
 use linera_alloy_rpc_client::{ClientBuilder, RpcCall};
 
 #[tokio::test]

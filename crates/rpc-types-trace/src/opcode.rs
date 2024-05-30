@@ -1,6 +1,6 @@
 //! Types for opcode tracing.
 
-use alloy_primitives::B256;
+use linera_alloy_primitives::B256;
 use serde::{Deserialize, Serialize};
 
 /// Opcode gas usage for a transaction.

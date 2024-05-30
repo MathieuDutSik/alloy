@@ -1,5 +1,5 @@
 use crate::{eth::log::Log as RpcLog, BlockNumberOrTag, Transaction};
-use alloy_primitives::{keccak256, Address, Bloom, BloomInput, B256, U256, U64};
+use linera_alloy_primitives::{keccak256, Address, Bloom, BloomInput, B256, U256, U64};
 use itertools::{EitherOrBoth::*, Itertools};
 use serde::{
     de::{DeserializeOwned, MapAccess, Visitor},
@@ -319,7 +319,7 @@ impl Filter {
     /// Match a block by its hash
     ///
     /// ```rust
-    /// # use alloy_primitives::B256;
+    /// # use linera_alloy_primitives::B256;
     /// # use linera_alloy_rpc_types::Filter;
     /// # fn main() {
     /// let filter = Filter::new().select(B256::ZERO);
@@ -395,7 +395,7 @@ impl Filter {
     /// Match only a specific address `("0xAc4b3DacB91461209Ae9d41EC517c2B9Cb1B7DAF")`
     ///
     /// ```rust
-    /// # use alloy_primitives::Address;
+    /// # use linera_alloy_primitives::Address;
     /// # use linera_alloy_rpc_types::Filter;
     /// # fn main() {
     /// let filter = Filter::new()
@@ -407,7 +407,7 @@ impl Filter {
     /// "0x8ad599c3A0ff1De082011EFDDc58f1908eb6e6D8"])`
     ///
     /// ```rust
-    /// # use alloy_primitives::Address;
+    /// # use linera_alloy_primitives::Address;
     /// # use linera_alloy_rpc_types::Filter;
     /// # fn main() {
     /// let addresses = vec![

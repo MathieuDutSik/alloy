@@ -1,4 +1,4 @@
-use alloy_primitives::{LogData, B256};
+use linera_alloy_primitives::{LogData, B256};
 use serde::{Deserialize, Serialize};
 
 /// Ethereum Log emitted by a transaction
@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 pub struct Log<T = LogData> {
     #[serde(flatten)]
     /// Consensus log object
-    pub inner: alloy_primitives::Log<T>,
+    pub inner: linera_alloy_primitives::Log<T>,
     /// Hash of the block the transaction that emitted this log was mined in
     pub block_hash: Option<B256>,
     /// Number of the block the transaction that emitted this log was mined in
@@ -41,7 +41,7 @@ pub struct Log<T = LogData> {
 
 impl<T> Log<T> {
     /// Getter for the address field. Shortcut for `log.inner.address`.
-    pub const fn address(&self) -> alloy_primitives::Address {
+    pub const fn address(&self) -> linera_alloy_primitives::Address {
         self.inner.address
     }
 
@@ -71,7 +71,7 @@ impl Log<LogData> {
     }
 
     /// Decode the log data into a typed log.
-    pub fn log_decode<T: alloy_sol_types::SolEvent>(&self) -> alloy_sol_types::Result<Log<T>> {
+    pub fn log_decode<T: linera_alloy_sol_types::SolEvent>(&self) -> linera_alloy_sol_types::Result<Log<T>> {
         let decoded = T::decode_log(&self.inner, false)?;
         Ok(Log {
             inner: decoded,
@@ -103,13 +103,13 @@ impl<T> Log<T>
 where
     for<'a> &'a T: Into<LogData>,
 {
-    /// Reserialize the inner data, returning an [`alloy_primitives::Log`].
-    pub fn reserialize_inner(&self) -> alloy_primitives::Log {
-        alloy_primitives::Log { address: self.inner.address, data: (&self.inner.data).into() }
+    /// Reserialize the inner data, returning an [`linera_alloy_primitives::Log`].
+    pub fn reserialize_inner(&self) -> linera_alloy_primitives::Log {
+        linera_alloy_primitives::Log { address: self.inner.address, data: (&self.inner.data).into() }
     }
 
     /// Reserialize the data, returning a new `Log` object wrapping an
-    /// [`alloy_primitives::Log`]. this copies the log metadata, preserving
+    /// [`linera_alloy_primitives::Log`]. this copies the log metadata, preserving
     /// the original object.
     pub fn reserialize(&self) -> Log<LogData> {
         Log {
@@ -125,14 +125,14 @@ where
     }
 }
 
-impl<T> AsRef<alloy_primitives::Log<T>> for Log<T> {
-    fn as_ref(&self) -> &alloy_primitives::Log<T> {
+impl<T> AsRef<linera_alloy_primitives::Log<T>> for Log<T> {
+    fn as_ref(&self) -> &linera_alloy_primitives::Log<T> {
         &self.inner
     }
 }
 
-impl<T> AsMut<alloy_primitives::Log<T>> for Log<T> {
-    fn as_mut(&mut self) -> &mut alloy_primitives::Log<T> {
+impl<T> AsMut<linera_alloy_primitives::Log<T>> for Log<T> {
+    fn as_mut(&mut self) -> &mut linera_alloy_primitives::Log<T> {
         &mut self.inner
     }
 }
@@ -151,7 +151,7 @@ impl<T> AsMut<T> for Log<T> {
 
 #[cfg(test)]
 mod tests {
-    use alloy_primitives::{Address, Bytes};
+    use linera_alloy_primitives::{Address, Bytes};
 
     use super::*;
     use arbitrary::Arbitrary;
@@ -168,9 +168,9 @@ mod tests {
     #[test]
     fn serde_log() {
         let mut log = Log {
-            inner: alloy_primitives::Log {
+            inner: linera_alloy_primitives::Log {
                 address: Address::with_last_byte(0x69),
-                data: alloy_primitives::LogData::new_unchecked(
+                data: linera_alloy_primitives::LogData::new_unchecked(
                     vec![B256::with_last_byte(0x69)],
                     Bytes::from_static(&[0x69]),
                 ),

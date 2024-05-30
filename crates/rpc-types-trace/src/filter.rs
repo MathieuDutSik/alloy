@@ -1,5 +1,5 @@
 //! `trace_filter` types and support
-use alloy_primitives::Address;
+use linera_alloy_primitives::Address;
 use linera_alloy_serde::num::u64_opt_via_ruint;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;

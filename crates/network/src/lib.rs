@@ -9,7 +9,7 @@
 use linera_alloy_consensus::TxReceipt;
 use linera_alloy_eips::eip2718::{Eip2718Envelope, Eip2718Error};
 use linera_alloy_json_rpc::RpcObject;
-use alloy_primitives::Address;
+use linera_alloy_primitives::Address;
 use core::fmt::{Debug, Display};
 
 mod transaction;

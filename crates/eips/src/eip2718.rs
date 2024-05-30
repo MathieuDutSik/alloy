@@ -5,7 +5,7 @@
 #[cfg(not(feature = "std"))]
 use crate::alloc::{vec, vec::Vec};
 
-use alloy_primitives::{keccak256, Sealed, B256};
+use linera_alloy_primitives::{keccak256, Sealed, B256};
 use alloy_rlp::{Buf, BufMut, Header, EMPTY_STRING_CODE};
 use core::{
     fmt,

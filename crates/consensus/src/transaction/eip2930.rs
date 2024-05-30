@@ -1,6 +1,6 @@
 use crate::{SignableTransaction, Signed, Transaction, TxType};
 use linera_alloy_eips::eip2930::AccessList;
-use alloy_primitives::{keccak256, Bytes, ChainId, Signature, TxKind, U256};
+use linera_alloy_primitives::{keccak256, Bytes, ChainId, Signature, TxKind, U256};
 use alloy_rlp::{length_of_length, BufMut, Decodable, Encodable, Header};
 use core::mem;
 
@@ -310,7 +310,7 @@ impl Decodable for TxEip2930 {
 mod tests {
     use super::TxEip2930;
     use crate::{SignableTransaction, TxEnvelope};
-    use alloy_primitives::{Address, Signature, TxKind, U256};
+    use linera_alloy_primitives::{Address, Signature, TxKind, U256};
     use alloy_rlp::{Decodable, Encodable};
 
     #[test]
@@ -359,7 +359,7 @@ mod tests {
         assert_eq!(encoded.len(), envelope.length());
 
         assert_eq!(
-            alloy_primitives::hex::encode(&encoded),
+            linera_alloy_primitives::hex::encode(&encoded),
             "b86401f8610180010294000000000000000000000000000000000000000003820102c080a0840cfc572845f5786e702984c2a582528cad4b49b2a10b9db1be7fca90058565a025e7109ceb98168d95b09b18bbf6b685130e0562f233877d492b94eee0c5b6d1"
         );
 

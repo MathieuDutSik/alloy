@@ -1,9 +1,9 @@
 use crate::Error;
 use linera_alloy_network::Ethereum;
-use alloy_primitives::{Address, LogData};
+use linera_alloy_primitives::{Address, LogData};
 use linera_alloy_provider::{FilterPollerBuilder, Network, Provider};
 use linera_alloy_rpc_types::{Filter, Log};
-use alloy_sol_types::SolEvent;
+use linera_alloy_sol_types::SolEvent;
 use linera_alloy_transport::{Transport, TransportResult};
 use futures::Stream;
 use futures_util::StreamExt;
@@ -131,7 +131,7 @@ impl<T: Transport + Clone, E: SolEvent> EventPoller<T, E> {
     /// Starts the poller and returns a stream that yields the decoded event and the raw log.
     ///
     /// Note that this stream will not return `None` until the provider is dropped.
-    pub fn into_stream(self) -> impl Stream<Item = alloy_sol_types::Result<(E, Log)>> + Unpin {
+    pub fn into_stream(self) -> impl Stream<Item = linera_alloy_sol_types::Result<(E, Log)>> + Unpin {
         self.poller
             .into_stream()
             .flat_map(futures_util::stream::iter)
@@ -139,7 +139,7 @@ impl<T: Transport + Clone, E: SolEvent> EventPoller<T, E> {
     }
 }
 
-fn decode_log<E: SolEvent>(log: &Log) -> alloy_sol_types::Result<E> {
+fn decode_log<E: SolEvent>(log: &Log) -> linera_alloy_sol_types::Result<E> {
     let log_data: &LogData = log.as_ref();
 
     E::decode_raw_log(log_data.topics().iter().copied(), &log_data.data, false)
@@ -190,7 +190,7 @@ pub(crate) mod subscription {
 
     impl<E: SolEvent> EventSubscription<E> {
         /// Converts the subscription into a stream.
-        pub fn into_stream(self) -> impl Stream<Item = alloy_sol_types::Result<(E, Log)>> + Unpin {
+        pub fn into_stream(self) -> impl Stream<Item = linera_alloy_sol_types::Result<(E, Log)>> + Unpin {
             self.sub.into_stream().map(|log| decode_log(&log).map(|e| (e, log)))
         }
     }
@@ -199,8 +199,8 @@ pub(crate) mod subscription {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use alloy_primitives::U256;
-    use alloy_sol_types::sol;
+    use linera_alloy_primitives::U256;
+    use linera_alloy_sol_types::sol;
 
     sol! {
         // solc v0.8.24; solc a.sol --via-ir --optimize --bin

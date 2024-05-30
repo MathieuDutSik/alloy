@@ -2,7 +2,7 @@
 
 use crate::types::{DerivationType, LedgerError, INS, P1, P1_FIRST, P2};
 use linera_alloy_consensus::SignableTransaction;
-use alloy_primitives::{hex, Address, ChainId, B256};
+use linera_alloy_primitives::{hex, Address, ChainId, B256};
 use linera_alloy_signer::{sign_transaction_with_chain_id, Result, Signature, Signer};
 use async_trait::async_trait;
 use coins_ledger::{
@@ -12,9 +12,9 @@ use coins_ledger::{
 use futures_util::lock::Mutex;
 
 #[cfg(feature = "eip712")]
-use alloy_dyn_abi::TypedData;
+use linera_alloy_dyn_abi::TypedData;
 #[cfg(feature = "eip712")]
-use alloy_sol_types::{Eip712Domain, SolStruct};
+use linera_alloy_sol_types::{Eip712Domain, SolStruct};
 
 /// A Ledger Ethereum signer.
 ///
@@ -299,7 +299,7 @@ impl LedgerSigner {
 mod tests {
     use super::*;
     use linera_alloy_network::TxSigner;
-    use alloy_primitives::{address, bytes, U256};
+    use linera_alloy_primitives::{address, bytes, U256};
     use alloy_rlp::Decodable;
     use serial_test::serial;
     use std::sync::OnceLock;

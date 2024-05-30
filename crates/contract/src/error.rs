@@ -1,5 +1,5 @@
-use alloy_dyn_abi::Error as AbiError;
-use alloy_primitives::Selector;
+use linera_alloy_dyn_abi::Error as AbiError;
+use linera_alloy_primitives::Selector;
 use linera_alloy_transport::TransportError;
 use thiserror::Error;
 
@@ -29,9 +29,9 @@ pub enum Error {
     TransportError(#[from] TransportError),
 }
 
-impl From<alloy_sol_types::Error> for Error {
+impl From<linera_alloy_sol_types::Error> for Error {
     #[inline]
-    fn from(e: alloy_sol_types::Error) -> Self {
+    fn from(e: linera_alloy_sol_types::Error) -> Self {
         Self::AbiError(e.into())
     }
 }

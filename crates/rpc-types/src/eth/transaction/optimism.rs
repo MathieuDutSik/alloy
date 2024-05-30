@@ -1,7 +1,7 @@
 //! Misc Optimism-specific types.
 
 use crate::other::OtherFields;
-use alloy_primitives::{B256, U128, U64};
+use linera_alloy_primitives::{B256, U128, U64};
 use serde::{Deserialize, Serialize};
 
 /// Optimism specific transaction fields

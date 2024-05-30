@@ -1,6 +1,6 @@
 use crate::{ReceiptWithBloom, TxReceipt};
 use linera_alloy_eips::eip2718::{Decodable2718, Encodable2718};
-use alloy_primitives::{bytes::BufMut, Bloom, Log};
+use linera_alloy_primitives::{bytes::BufMut, Bloom, Log};
 use alloy_rlp::{Decodable, Encodable};
 
 /// Receipt envelope, as defined in [EIP-2718].

@@ -18,10 +18,10 @@ workspace = true
 linera-alloy-consensus = { workspace = true, features = ["std"] }
 linera-alloy-eips = { workspace = true, features = ["serde"] }
 linera-alloy-json-rpc.workspace = true
-alloy-primitives.workspace = true
+linera-alloy-primitives.workspace = true
 linera-alloy-rpc-types.workspace = true
 linera-alloy-signer.workspace = true
-alloy-sol-types.workspace = true
+linera-alloy-sol-types.workspace = true
 
 auto_impl.workspace = true
 async-trait.workspace = true
@@ -33,4 +33,4 @@ linera-alloy-signer-wallet.workspace = true
 tokio.workspace = true
 
 [features]
-k256 = ["alloy-primitives/k256", "linera-alloy-consensus/k256"]
+k256 = ["linera-alloy-primitives/k256", "linera-alloy-consensus/k256"]

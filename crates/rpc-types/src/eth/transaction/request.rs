@@ -5,7 +5,7 @@ use linera_alloy_consensus::{
     TxEip1559, TxEip2930, TxEip4844, TxEip4844Variant, TxEip4844WithSidecar, TxEnvelope, TxLegacy,
     TxType, TypedTransaction,
 };
-use alloy_primitives::{Address, Bytes, ChainId, TxKind, B256, U256};
+use linera_alloy_primitives::{Address, Bytes, ChainId, TxKind, B256, U256};
 use serde::{Deserialize, Serialize};
 use std::hash::Hash;
 
@@ -796,7 +796,7 @@ pub struct TransactionInputError;
 mod tests {
     use super::*;
     use crate::WithOtherFields;
-    use alloy_primitives::b256;
+    use linera_alloy_primitives::b256;
 
     // <https://github.com/paradigmxyz/reth/issues/6670>
     #[test]

@@ -4,7 +4,7 @@ use crate::{
     Provider,
 };
 use linera_alloy_network::{Network, TransactionBuilder};
-use alloy_primitives::Address;
+use linera_alloy_primitives::Address;
 use linera_alloy_transport::{Transport, TransportResult};
 use dashmap::DashMap;
 use std::sync::Arc;
@@ -115,7 +115,7 @@ impl NonceFiller {
 mod tests {
     use super::*;
     use crate::{ProviderBuilder, WalletProvider};
-    use alloy_primitives::{address, U256};
+    use linera_alloy_primitives::{address, U256};
     use linera_alloy_rpc_types::TransactionRequest;
 
     #[tokio::test]

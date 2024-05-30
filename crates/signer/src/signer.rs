@@ -1,12 +1,12 @@
 use crate::Result;
-use alloy_primitives::{eip191_hash_message, Address, ChainId, Signature, B256};
+use linera_alloy_primitives::{eip191_hash_message, Address, ChainId, Signature, B256};
 use async_trait::async_trait;
 use auto_impl::auto_impl;
 
 #[cfg(feature = "eip712")]
-use alloy_dyn_abi::eip712::TypedData;
+use linera_alloy_dyn_abi::eip712::TypedData;
 #[cfg(feature = "eip712")]
-use alloy_sol_types::{Eip712Domain, SolStruct};
+use linera_alloy_sol_types::{Eip712Domain, SolStruct};
 
 /// Asynchronous Ethereum signer.
 ///
@@ -144,7 +144,7 @@ mod tests {
     #[tokio::test]
     async fn unimplemented() {
         #[cfg(feature = "eip712")]
-        alloy_sol_types::sol! {
+        linera_alloy_sol_types::sol! {
             #[derive(Default, serde::Serialize)]
             struct Eip712Data {
                 uint64 a;

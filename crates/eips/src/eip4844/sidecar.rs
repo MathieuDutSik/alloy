@@ -3,7 +3,7 @@
 use crate::eip4844::{
     kzg_to_versioned_hash, Blob, Bytes48, BYTES_PER_BLOB, BYTES_PER_COMMITMENT, BYTES_PER_PROOF,
 };
-use alloy_primitives::{bytes::BufMut, B256};
+use linera_alloy_primitives::{bytes::BufMut, B256};
 use alloy_rlp::{Decodable, Encodable};
 
 #[cfg(feature = "arbitrary")]
@@ -215,7 +215,7 @@ where
 {
     use serde::Deserialize;
 
-    let raw_blobs = Vec::<alloy_primitives::Bytes>::deserialize(deserializer)?;
+    let raw_blobs = Vec::<linera_alloy_primitives::Bytes>::deserialize(deserializer)?;
     let mut blobs = Vec::with_capacity(raw_blobs.len());
     for blob in raw_blobs {
         blobs.push(Blob::try_from(blob.as_ref()).map_err(serde::de::Error::custom)?);

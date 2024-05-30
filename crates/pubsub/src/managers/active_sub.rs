@@ -1,6 +1,6 @@
 use crate::RawSubscription;
 use linera_alloy_json_rpc::SerializedRequest;
-use alloy_primitives::B256;
+use linera_alloy_primitives::B256;
 use serde_json::value::RawValue;
 use std::{fmt, hash::Hash};
 use tokio::sync::broadcast;

@@ -3,7 +3,7 @@
 //! <https://www.quicknode.com/docs/ethereum/ots_getBlockTransactions>
 //! <https://github.com/otterscan/otterscan/blob/develop/docs/custom-jsonrpc.md>
 
-use alloy_primitives::{Address, Bloom, Bytes, U256};
+use linera_alloy_primitives::{Address, Bloom, Bytes, U256};
 use linera_alloy_rpc_types::{Block, Rich, Transaction, TransactionReceipt};
 use serde::{Deserialize, Serialize};
 
@@ -131,7 +131,7 @@ pub struct OtsReceipt {
     /// The logs sent from contracts.
     ///
     /// Note: this is set to null.
-    pub logs: Option<Vec<alloy_primitives::Log>>,
+    pub logs: Option<Vec<linera_alloy_primitives::Log>>,
     /// The bloom filter.
     ///
     /// Note: this is set to null.

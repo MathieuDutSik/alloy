@@ -1,5 +1,5 @@
 use crate::{BlobsBundleV1, ExecutionPayloadV3, ExecutionPayloadV4, PayloadAttributes};
-use alloy_primitives::{Bytes, B256, U256};
+use linera_alloy_primitives::{Bytes, B256, U256};
 use serde::{Deserialize, Serialize};
 
 /// Optimism Payload Attributes

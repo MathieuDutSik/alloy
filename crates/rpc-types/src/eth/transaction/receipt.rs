@@ -1,6 +1,6 @@
 use crate::{Log, WithOtherFields};
 use linera_alloy_consensus::{AnyReceiptEnvelope, ReceiptEnvelope, TxType};
-use alloy_primitives::{Address, B256};
+use linera_alloy_primitives::{Address, B256};
 use serde::{Deserialize, Serialize};
 
 /// Transaction receipt
@@ -131,7 +131,7 @@ pub type AnyTransactionReceipt = WithOtherFields<TransactionReceipt<AnyReceiptEn
 mod test {
     use super::*;
     use linera_alloy_consensus::{Receipt, ReceiptWithBloom};
-    use alloy_primitives::{address, b256, bloom, Bloom};
+    use linera_alloy_primitives::{address, b256, bloom, Bloom};
     use arbitrary::Arbitrary;
     use rand::Rng;
 

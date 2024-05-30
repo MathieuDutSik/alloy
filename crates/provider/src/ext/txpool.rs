@@ -1,7 +1,7 @@
 //! This modules extends the Ethereum JSON-RPC provider with the Txpool namespace available in geth.
 use crate::Provider;
 use linera_alloy_network::{Ethereum, Network};
-use alloy_primitives::Address;
+use linera_alloy_primitives::Address;
 use linera_alloy_rpc_types::txpool::{TxpoolContent, TxpoolContentFrom, TxpoolInspect, TxpoolStatus};
 use linera_alloy_transport::{Transport, TransportResult};
 

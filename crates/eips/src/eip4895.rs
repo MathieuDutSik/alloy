@@ -2,7 +2,7 @@
 //!
 //! [EIP-4895]: https://eips.ethereum.org/EIPS/eip-4895
 
-use alloy_primitives::{Address, U256};
+use linera_alloy_primitives::{Address, U256};
 use alloy_rlp::{RlpDecodable, RlpEncodable};
 
 /// Multiplier for converting gwei to wei.

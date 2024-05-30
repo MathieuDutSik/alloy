@@ -1,5 +1,5 @@
 //! Signature related RPC values
-use alloy_primitives::U256;
+use linera_alloy_primitives::U256;
 use serde::{Deserialize, Serialize};
 
 /// Container type for all signature fields in RPC
@@ -62,12 +62,12 @@ where
     }
 }
 
-impl TryFrom<Signature> for alloy_primitives::Signature {
-    type Error = alloy_primitives::SignatureError;
+impl TryFrom<Signature> for linera_alloy_primitives::Signature {
+    type Error = linera_alloy_primitives::SignatureError;
 
     fn try_from(value: Signature) -> Result<Self, Self::Error> {
         let parity = if let Some(y_parity) = value.y_parity {
-            alloy_primitives::Parity::Parity(y_parity.0)
+            linera_alloy_primitives::Parity::Parity(y_parity.0)
         } else {
             value.v.to::<u64>().try_into()?
         };

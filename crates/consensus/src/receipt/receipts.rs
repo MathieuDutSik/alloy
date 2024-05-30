@@ -1,7 +1,7 @@
 use core::borrow::Borrow;
 
 use super::TxReceipt;
-use alloy_primitives::{Bloom, Log};
+use linera_alloy_primitives::{Bloom, Log};
 use alloy_rlp::{length_of_length, BufMut, Decodable, Encodable};
 
 #[cfg(not(feature = "std"))]

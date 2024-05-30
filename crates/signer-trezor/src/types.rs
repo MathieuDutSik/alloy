@@ -2,7 +2,7 @@
 //!
 //! [Official Docs](https://docs.trezor.io/trezor-firmware/index.html)
 
-use alloy_primitives::hex;
+use linera_alloy_primitives::hex;
 use std::fmt;
 use thiserror::Error;
 
@@ -41,7 +41,7 @@ pub enum TrezorError {
     Semver(#[from] semver::Error),
     /// Signature Error
     #[error(transparent)]
-    SignatureError(#[from] alloy_primitives::SignatureError),
+    SignatureError(#[from] linera_alloy_primitives::SignatureError),
     /// Thrown when trying to sign an EIP-712 struct with an incompatible Trezor Ethereum app
     /// version.
     #[error("Trezor Ethereum app requires at least version {0:?}")]

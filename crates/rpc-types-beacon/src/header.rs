@@ -2,7 +2,7 @@
 //!
 //! See also <https://ethereum.github.io/beacon-APIs/#/Beacon/getBlockHeaders>
 
-use alloy_primitives::{Bytes, B256};
+use linera_alloy_primitives::{Bytes, B256};
 use serde::{Deserialize, Serialize};
 use serde_with::{serde_as, DisplayFromStr};
 

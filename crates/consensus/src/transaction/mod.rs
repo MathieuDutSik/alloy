@@ -1,7 +1,7 @@
 //! Transaction types.
 
 use crate::Signed;
-use alloy_primitives::{keccak256, ChainId, TxKind, B256, U256};
+use linera_alloy_primitives::{keccak256, ChainId, TxKind, B256, U256};
 use core::any;
 
 #[cfg(not(feature = "std"))]
@@ -60,7 +60,7 @@ pub trait Transaction: any::Any + Send + Sync + 'static {
 /// A signable transaction.
 ///
 /// A transaction can have multiple signature types. This is usually
-/// [`alloy_primitives::Signature`], however, it may be different for future EIP-2718 transaction
+/// [`linera_alloy_primitives::Signature`], however, it may be different for future EIP-2718 transaction
 /// types, or in other networks. For example, in Optimism, the deposit transaction signature is the
 /// unit type `()`.
 pub trait SignableTransaction<Signature>: Transaction {

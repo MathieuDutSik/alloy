@@ -107,7 +107,7 @@ where
 #[cfg(test)]
 mod tests {
     use crate::{Provider, ProviderBuilder};
-    use alloy_primitives::{address, b256, U256};
+    use linera_alloy_primitives::{address, b256, U256};
     use linera_alloy_rpc_types::TransactionRequest;
 
     #[tokio::test]

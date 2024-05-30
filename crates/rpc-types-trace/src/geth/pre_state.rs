@@ -1,6 +1,6 @@
 //! Pre-state Geth tracer types.
 
-use alloy_primitives::{Address, Bytes, B256, U256};
+use linera_alloy_primitives::{Address, Bytes, B256, U256};
 use serde::{Deserialize, Serialize};
 use std::collections::{btree_map, BTreeMap};
 

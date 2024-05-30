@@ -1,6 +1,6 @@
 use crate::managers::InFlight;
 use linera_alloy_json_rpc::{Id, Response};
-use alloy_primitives::U256;
+use linera_alloy_primitives::U256;
 use std::collections::BTreeMap;
 
 /// Manages in-flight requests.

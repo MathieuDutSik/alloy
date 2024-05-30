@@ -16,7 +16,7 @@ workspace = true
 # ethereum
 linera-alloy-eips = { workspace = true, features = ["serde"] }
 linera-alloy-rpc-types-engine.workspace = true
-alloy-primitives.workspace = true
+linera-alloy-primitives.workspace = true
 
 # ssz
 ethereum_ssz_derive = { workspace = true, optional = true }
@@ -34,6 +34,6 @@ serde_json.workspace = true
 ssz = [
     "dep:ethereum_ssz",
     "dep:ethereum_ssz_derive",
-    "alloy-primitives/ssz",
+    "linera-alloy-primitives/ssz",
     "linera-alloy-rpc-types-engine/ssz",
 ]

@@ -1,4 +1,4 @@
-use alloy_primitives::hex;
+use linera_alloy_primitives::hex;
 use k256::ecdsa;
 use thiserror::Error;
 

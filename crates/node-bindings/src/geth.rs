@@ -2,7 +2,7 @@
 
 use crate::unused_port;
 use linera_alloy_genesis::{CliqueConfig, Genesis};
-use alloy_primitives::{hex, Address, B256};
+use linera_alloy_primitives::{hex, Address, B256};
 use k256::ecdsa::SigningKey;
 use std::{
     borrow::Cow,

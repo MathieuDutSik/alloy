@@ -8,7 +8,7 @@ use crate::{
 use linera_alloy_eips::eip2718::Encodable2718;
 use linera_alloy_json_rpc::{RpcError, RpcParam, RpcReturn};
 use linera_alloy_network::{Ethereum, Network};
-use alloy_primitives::{
+use linera_alloy_primitives::{
     hex, Address, BlockHash, BlockNumber, Bytes, StorageKey, StorageValue, TxHash, B256, U128,
     U256, U64,
 };
@@ -205,7 +205,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     /// ```no_run
     /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
     /// use futures::StreamExt;
-    /// use alloy_primitives::keccak256;
+    /// use linera_alloy_primitives::keccak256;
     /// use linera_alloy_rpc_types::Filter;
     ///
     /// let signature = keccak256("Transfer(address,address,uint256)".as_bytes());
@@ -347,7 +347,7 @@ pub trait Provider<T: Transport + Clone = BoxTransport, N: Network = Ethereum>:
     ///
     /// ```no_run
     /// # async fn example(provider: impl linera_alloy_provider::Provider) -> Result<(), Box<dyn std::error::Error>> {
-    /// use alloy_primitives::{address, b256};
+    /// use linera_alloy_primitives::{address, b256};
     /// use linera_alloy_rpc_types::Filter;
     /// use futures::StreamExt;
     ///
@@ -932,9 +932,9 @@ mod tests {
     use crate::{ProviderBuilder, WalletProvider};
     use linera_alloy_network::TransactionBuilder;
     use linera_alloy_node_bindings::Anvil;
-    use alloy_primitives::{address, b256, bytes};
+    use linera_alloy_primitives::{address, b256, bytes};
     use linera_alloy_rpc_types::request::TransactionRequest;
-    use alloy_sol_types::SolValue;
+    use linera_alloy_sol_types::SolValue;
 
     fn init_tracing() {
         let _ = tracing_subscriber::fmt::try_init();

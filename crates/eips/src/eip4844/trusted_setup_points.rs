@@ -1,5 +1,5 @@
 use alloc::boxed::Box;
-use alloy_primitives::hex;
+use linera_alloy_primitives::hex;
 use core::fmt;
 use derive_more::{AsMut, AsRef, Deref, DerefMut};
 

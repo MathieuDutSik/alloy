@@ -1,11 +1,11 @@
 use std::{future::IntoFuture, marker::PhantomData};
 
-use alloy_dyn_abi::{DynSolValue, FunctionExt};
-use alloy_json_abi::Function;
+use linera_alloy_dyn_abi::{DynSolValue, FunctionExt};
+use linera_alloy_json_abi::Function;
 use linera_alloy_network::Network;
-use alloy_primitives::Bytes;
+use linera_alloy_primitives::Bytes;
 use linera_alloy_rpc_types::{state::StateOverride, BlockId};
-use alloy_sol_types::SolCall;
+use linera_alloy_sol_types::SolCall;
 use linera_alloy_transport::Transport;
 
 use crate::{Error, Result};
