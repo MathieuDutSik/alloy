@@ -8,8 +8,8 @@ edition = "2021"
 rust-version = "1.76"
 authors = ["Alloy Contributors"]
 license = "MIT OR Apache-2.0"
-homepage = "https://github.com/alloy-rs/alloy"
-repository = "https://github.com/alloy-rs/alloy"
+homepage = "https://github.com/MathieuDutSik/alloy"
+repository = "https://github.com/MathieuDutSik/alloy"
 exclude = ["benches/", "tests/"]
 
 [workspace.lints]
@@ -61,11 +61,11 @@ linera-alloy-transport-ws = { version = "0.1.0", default-features = false, path 
 
 test-utils = { version = "0.1.0", default-features = false, path = "crates/internal-test-utils", package = "alloy-internal-test-utils" }
 
-linera-alloy-core = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/core", rev = "8222990af11f01bc775a442a3cd145d6ec00a87e", default-features = false }
-linera-alloy-dyn-abi = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/dyn-abi", rev = "8222990af11f01bc775a442a3cd145d6ec00a87e", default-features = false }
-linera-alloy-json-abi = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/json-abi", rev = "8222990af11f01bc775a442a3cd145d6ec00a87e", default-features = false }
-linera-alloy-primitives = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/primitives", rev = "8222990af11f01bc775a442a3cd145d6ec00a87e", default-features = false }
-linera-alloy-sol-types = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/sol-types", rev = "8222990af11f01bc775a442a3cd145d6ec00a87e", default-features = false }
+linera-alloy-core = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/core", rev = "bd87215914c8f9665a229253f596a0f133687c88", default-features = false }
+linera-alloy-dyn-abi = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/dyn-abi", rev = "bd87215914c8f9665a229253f596a0f133687c88", default-features = false }
+linera-alloy-json-abi = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/json-abi", rev = "bd87215914c8f9665a229253f596a0f133687c88", default-features = false }
+linera-alloy-primitives = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/primitives", rev = "bd87215914c8f9665a229253f596a0f133687c88", default-features = false }
+linera-alloy-sol-types = { git = "https://github.com/MathieuDutSik/ethreum_core/", subdir = "crates/sol-types", rev = "bd87215914c8f9665a229253f596a0f133687c88", default-features = false }
 
 alloy-rlp = { version = "0.3", default-features = false }
 
