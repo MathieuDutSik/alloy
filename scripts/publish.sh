@@ -7,4 +7,5 @@ set -x -e
 # Publish the given packages.
 while read LINE; do
     cargo publish -p $LINE
+    sleep 660
 done
