@@ -28,9 +28,9 @@ linera-alloy-sol-types = { workspace = true, optional = true, features = ["std"]
 linera-alloy-dyn-abi = { workspace = true, optional = true, features = ["std", "eip712"] }
 
 [dev-dependencies]
-linera-alloy-consensus = { workspace = true, features = ["std"] }
-linera-alloy-network.workspace = true
-linera-alloy-signer-wallet.workspace = true
+#linera-alloy-consensus = { workspace = true, features = ["std"] }
+#linera-alloy-network.workspace = true
+#linera-alloy-signer-wallet.workspace = true
 assert_matches.workspace = true
 serde_json.workspace = true
 serde.workspace = true
