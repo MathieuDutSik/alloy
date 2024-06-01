@@ -1,5 +1,7 @@
 [package]
 name = "linera-alloy-rpc-types-beacon"
+description = "Rpc-types related to beacon"
+
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
